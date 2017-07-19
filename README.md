@@ -1,4 +1,4 @@
-<img src="http://wittelab.ucsf.edu/images/orchid.png" alt="Orchid" height=150px; align="left">
+<img src="http://wittelab.ucsf.edu/images/orchid.png" alt="Orchid" height=150px; align="right">
 
 # orchid
 A management, annotation, and machine learning system for analyzing cancer mutations.  
@@ -34,7 +34,7 @@ An annotation is simply a value that can be associated with a particular mutatio
 At this time, many regulatory and coding features of the human genome have been extensively cataloged, resulting in a wealth of data to mine. If we gather enough biological data, we can increase our understanding of each individual mutation and its possible role in cancer, or at least can start to see if patterns emerge from the data. 
 
 Here's an example: If we arrange a set of mutations in rows and all the corresponding feature values in columns, mutational profiles can be visualized:  
-![Mutational Profile](http://wittelab.ucsf.edu/images/mutational_profile.png)
+![Mutational Profile](http://wittelab.ucsf.edu/images/mutational_profiles.png)
 Here higher feature column values are shown as being more orange, while lower feature column values are whiter. There is also a final column of sample labels, which can be used to train supervised machine learning algorithms for the purpose of future sample classification.
 
 
@@ -48,5 +48,5 @@ I've attempted to make each of these steps as painless as possible.
 Please refer to the wiki to begin! 
 
 
-_NOTE:_
-_This software requires the use of other code and/or data that must be obtained with respect to its license or copyright. Generally speaking, this implies orchid's use is restricted to non-commercial activities. Orchid itself is licensed under the MIT license requiring only preservation of copyright and license notices._
+_NOTICE:_
+_This software requires the use of other code and/or data that must be obtained with respect to its license or copyright. Generally speaking, this implies orchid's use is restricted to non-commercial activities. Orchid itself is licensed under the MIT license requiring only preservation of copyright and license notices. Please see the LICENSE file for more details._
