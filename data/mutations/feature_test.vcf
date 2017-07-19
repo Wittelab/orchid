@@ -1,0 +1,33 @@
+##fileformat=VCFv4.0
+##fileDate=20170531
+##source=feature test snps
+##INFO=<ID=ICGC_DONOR_ID,Number=1,Type=String,Description=\"The ICGC donor ID\">
+##INFO=<ID=TYPE,Number=1,Type=String,Description=\"The type of mutation\">
+##INFO=<ID=REF_ALLELE,Number=1,Type=String,Description=\"The reference allele\">
+#CHROM	POS		ID                                         	REF	ALT	QUAL	FILTER	INFO	FORMAT
+1	159406592	cadd|5.386                                 	T	A	.	.	.	.
+5	62672568	cadd_raw|-0.187049                         	G	C	.	.	.	.
+12	62234203	consequence|intron_variant                 	T	A	.	.	.	.
+17	66091133	consequence|intergenic_region              	A	T	.	.	.	.
+19	00326453	consequence|downstream_gene_variant        	A	G	.	.	.	.
+14	105936257	consequence|3_prime_UTR_variant            	C	G	.	.	.	.
+14	20404275	consequence|synonymous_variant             	C	T	.	.	.	.
+12	51318927	consequence|missense_variant               	G	T	.	.	.	.
+11	102219913	consequence|5_prime_UTR_variant            	G	C	.	.	.	.
+11	47431510	consequence|5_prime_UTR_premature_start_cod	A	C	.	.	.	.
+10	80137924	consequence|intragenic_variant             	A	G	.	.	.	.
+20	47633875	consequence|stop_gained                    	T	G	.	.	.	.
+8	145617534	consequence|splice_region_variant          	C	A	.	.	.	.
+1	06186725	consequence|stop_lost                      	T	G	.	.	.	.
+11	13443343	consequence|start_lost                     	T	A	.	.	.	.
+X	62857909	consequence|stop_retained_variant          	T	G	.	.	.	.
+6	54735045	consequence|initiator_codon_variant        	C	T	.	.	.	.
+14	12582321	frequency|2                                	A	G	.	.	.	DONOR_ID=DOFREQ2;
+2	207974726	wgrna|hsa-mir-2355                         	C	A	.	.	.	.
+X	153289510	targetscans|MECP2:miR-7/7ab:2              	A	T	.	.	.	.
+1	57199122	remap|ESR1                                 	T	G	.	.	.	.
+3	189645933	gwas|rs710521                               A	G	.	.	.	.
+9	139266496	gwas|rs4077515                             	G	A	.	.	.	.
+10	23583331	dnase|662                                  	A	G	.	.	.	.
+14	12582321	frequency|2                                	A	G	.	.	.	DONOR_ID=DOFREQ1;
+1	16166000	cnv|-0.001                                 	T	A	.	.	.	DONOR_ID=DO10004;
