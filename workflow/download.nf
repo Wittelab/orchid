@@ -26,9 +26,10 @@ process pythonPackages {
         bash Anaconda2-4.4.0-Linux-x86_64.sh -b -p $HOME/anaconda2
     fi
     echo "Installing python modules"
+    conda clean --index-cache
     conda config --add channels conda-forge
-    conda install -y IPython numpy  pandas  seaborn  matplotlib sklearn scipy urlparse
-    conda install -y dill category_encoders python-snappy mysql-connector-python json
+    conda install -y IPython numpy  pandas  seaborn  matplotlib scikit-learn scipy
+    conda install -y dill category_encoders python-snappy mysql-connector-python
     pip install mysql-python
     pip install memsql
     echo "Python modules installed"
@@ -44,36 +45,43 @@ process getSNPEff {
     echo true
 
     '''
-    [ -f $CODE_DIR/external/snpEff/GRCh37.68/snpEffectPredictor.bin ] && echo "snpEFF already installed" && exit 0
     # Make the data directory 
-    mkdir -p $CODE_DIR/external/snpEff
-    cd $CODE_DIR/external/snpEff
+    mkdir -p $CODE_DIR/external
+    cd $CODE_DIR/external
+    [ -f snpEff/data/GRCh37.68/snpEffectPredictor.bin ] && echo "snpEFF already installed" && exit 0
+    rm -rf snpEff
+    echo "Installing SnpEff"
     wget -t 10 -Nc https://sourceforge.net/projects/snpeff/files/snpEff_v3_6_core.zip
     unzip snpEff_v3_6_core.zip
     rm snpEff_v3_6_core.zip
     cd snpEff
     # Change the data directory to the new location
-    sed -i -e "s|./data/|$CODE_DIR/external/snpEff/|" snpEff.config
+    sed -i -e "s|./data/|$CODE_DIR/external/snpEff/data|" snpEff.config
+    rm -f snpEff.config-e
     # Download the GRCh37 annotation database for snpEff
-    java -jar snpEff.jar download -v GRCh37.68
+    wget http://downloads.sourceforge.net/project/snpeff/databases/v3_6/snpEff_v3_6_GRCh37.68.zip
+    unzip snpEff_v3_6_GRCh37.68.zip
     echo "SnpEff installed"
     '''
 }
 
 
 // The CADD mutation simulator © University of Washington and Hudson-Alpha Institute for Biotechnology
-// Please contact the authors if you would like to generated simulated mutations (exclusive copyright)
+// This software is released under a MIT license (license text available from the ZIP-archive)
 // http://cadd.gs.washington.edu/simulator
 // NOTE: This is referenced in the publication Kircher, Martin et al. 2014 "A General Framework for estimating the Relative Pathogenicity of Human Genetic Variants." Nature genetics 46(3): 310-15.
 process getSimulator {
     echo true
 
     '''
-    echo "Installing simulator"
+    mkdir -p $CODE_DIR/external
     cd $CODE_DIR/external
     [ -d simulator ] && echo "Simulator already installed" && exit 0
+    echo "Installing simulator"
+    rm -rf simulator
     wget -t 10 -Nc http://cadd.gs.washington.edu/static/NG-TR35288_Supp_File1_simulator.zip
     unzip NG-TR35288_Supp_File1_simulator.zip
+    rm -f NG-TR35288_Supp_File1_simulator.zip
     echo "Simulator installed"
     '''
 }
@@ -89,6 +97,7 @@ process getHg19 {
     mkdir -p $HG19_DIR
     cd $HG19_DIR
     [ -f reference_genome.fa ] && echo "hg19 reference sequences already installed" && exit 0
+    echo "Installing hg19"
     wget -t 10 -Nc -r -nd --no-parent hgdownload.cse.ucsc.edu:goldenPath/hg19/chromosomes
     # Prepare reference genome file:
     wget -t 10 -nc ftp://ftp.ensembl.org/pub/release-68/fasta/homo_sapiens/dna/Homo_sapiens.GRCh37.68.dna.toplevel.fa.gz
