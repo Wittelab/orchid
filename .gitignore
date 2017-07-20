@@ -1,0 +1,16 @@
+.DS_Store
+work
+.nextflow*
+*timeline*
+*trace*
+workflow/work
+workflow/.nextflow*
+workflow/*timeline*
+workflow/*trace*
+code/external/*
+data/*
+*.pyc
+*.csv
+*.html
+notebooks/.ipynb_checkpoints/
+jupytercert.pem

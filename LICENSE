@@ -1,6 +1,8 @@
 MIT License
 
-Copyright (c) 2017 The Witte Lab
+Copyright (c) 2017 The Witte Lab. (orchid)
+Copyright (c) Continuum Analytics, Inc. All Rights Reserved. (Anaconda)
+Copyright (c) Pablo Cingolani. (SnpEff)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,3 +21,17 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+
+The Software uses third party resources listed below in Table 1 (“Third Party 
+Resources”), although they are not provided in this code repository. 
+Certain licenses attach to Third Party Resources and by using Software 
+you agree to abide by those licenses if you obtain these Third Party Resources.
+
+
+Table 1 Third Party Resources
+Third party code          Link                                          License type
+================          ================                              ================
+Anaconda2 v4.4.0          https://www.continuum.io/downloads            BSD
+SnpEff v3.6               http://snpeff.sourceforge.net/download.html   LGPLv3
+
