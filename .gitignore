@@ -8,7 +8,9 @@ workflow/.nextflow*
 workflow/*timeline*
 workflow/*trace*
 code/external/*
-data/*
+data/features/*
+data/hg19/*
+data/simulator/*
 *.pyc
 *.csv
 *.html
