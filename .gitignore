@@ -4,6 +4,7 @@ work
 *timeline*
 *trace*
 workflow/work
+workflow/nextflow
 workflow/.nextflow*
 workflow/*timeline*
 workflow/*trace*
