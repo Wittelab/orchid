@@ -21,9 +21,11 @@ process pythonPackages {
     '''
     set -x
     if ! [ -x "$(command -v conda)" ]; then
-        echo "Installing conda"
+        echo "Installing Anaconda"
         wget https://repo.continuum.io/archive/Anaconda2-4.4.0-Linux-x86_64.sh
         bash Anaconda2-4.4.0-Linux-x86_64.sh -b -p $HOME/anaconda2
+        echo \'PATH=$PATH:$HOME/anaconda2/bin\' >> ~/.bash_profile
+        source ~/.bash_profile
     fi
     echo "Installing python modules"
     conda clean --index-cache

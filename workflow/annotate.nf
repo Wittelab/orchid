@@ -220,8 +220,11 @@ process annotateCNV {
 
     input:
     file bed_file from cnv_beds
-    each feature from params.annotation['cnv']
+    file feature from params.annotation['cnv']
     
+    when:
+    feature != ''
+
     shell:
     '''
     # Get the donor ids for each variant (need to sort by id for proper file alignment)
