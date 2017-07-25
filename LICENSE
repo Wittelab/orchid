@@ -1,9 +1,6 @@
 MIT License
 
 Copyright (c) 2017 The Witte Lab at University of California, San Francisco. (orchid)
-Copyright (c) Continuum Analytics, Inc. All Rights Reserved. (Anaconda)
-Copyright (c) Pablo Cingolani. (SnpEff)
-Copyright (c) 2013 Jay Shendure's lab at the University of Washington. (CADD Simulator)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,16 +20,32 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+The Software makes use of but does not modify or directly redistribute the third 
+party resources listed below in Table 1 (“Third Party Resources”). Certain 
+licenses attach to Third Party Resources and by using Software you agree to 
+abide by those licenses if you obtain these Third Party Resources.
 
-The Software uses but does not directly redistribute the third party resources 
-listed below in Table 1 (“Third Party Resources”). Certain licenses attach to 
-Third Party Resources and by using Software you agree to abide by those licenses 
-if you obtain these Third Party Resources.
-
+Copyright (c) Continuum Analytics, Inc. All Rights Reserved. (Anaconda)
+Copyright (c) Pablo Cingolani. (SnpEff)
+Copyright (c) 2013 Jay Shendure's lab at the University of Washington. (CADD Simulator)
+Copyright (c) Comparative Bioinformatics group at the Barcelona Center for Genomic Regulation (CRG). (Nextflow)
+Copyright (c) 2010-2016, scikit-learn developers. (scikit-learn)
+Copyright (c) 2012, PyData Development Team. (pandas)
+Copyright (c) 2012-2017, Michael Waskom. (seaborn)
+Copyright (c) 2012-2016, The Matplotlib development team. (matplotlib)
+Copyright (c) 2015-, Jupyter Development Team. (juypter notebook)
+Copyright (c) 2016, Will McGinnis. (category_encoders)
 
 Table 1 Third Party Resources
-Third party code          Link                                          License type
-================          ================                              ================
-Anaconda2 v4.4.0          https://www.continuum.io/downloads            BSD
-SnpEff v3.6               http://snpeff.sourceforge.net/download.html   LGPLv3
-CADD simulator            http://cadd.gs.washington.edu/simulator       MIT
+Third party code          Link                                                   License type
+================          ================                                       ================
+Anaconda2 v4.4.0          https://www.continuum.io/downloads                     BSD
+SnpEff v3.6               http://snpeff.sourceforge.net/download.html            LGPLv3
+CADD simulator            http://cadd.gs.washington.edu/simulator                MIT
+Nextflow v0.23.4          https://www.nextflow.io/                               GPLv3
+scikit-learn              http://scikit-learn.org/stable/index.html              BSD
+pandas                    http://pandas.pydata.org/                              New BSD
+seaborn                   https://seaborn.pydata.org/                            New BSD
+matplotlib                https://matplotlib.org/                                Modified PSF
+jupyter notebook          http://jupyter.org/index.html                          New BSD
+category_encoders         http://contrib.scikit-learn.org/categorical-encoding/  New BSD
