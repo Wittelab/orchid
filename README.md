@@ -9,7 +9,7 @@ A management, annotation, and machine learning system for analyzing cancer mutat
 Please refer to the following publication for a detailed description of this software:  
 xxxx
 
-or, for the quick and dirty explanation:  
+or, for a quick and dirty explanation:  
   
 <br />  
 
@@ -22,7 +22,7 @@ The purpose of orchid is to facilitate machine learning of tumor genetic data. F
 
 _What is a 'tumor mutational profile'?_
   
-A mutational profile is the annotated set of mutations within a tumor. A typical tumor might contain thousands of simple somatic mutations, most of which are believed to be irrelevant to disease and arise simply due to an important hallmark of cancer-- an unstable genome. However, some of these mutations (be it one, ten, or even a hundred) may play an important role in carcinogenesis and/or be important in identifying characteristics of a tumor (like aggressiveness). There is a growing body of research that concerns itself with separating important from non-important mutations, but another approach is to analyze them all in aggregate with machine learning algorithms to try to tease subtle patterns apart. 
+A mutational profile is the annotated set of mutations within a tumor. A typical tumor might contain thousands of mutations, most of which are believed to be irrelevant to disease and arise simply due to an important hallmark of cancer-- an unstable genome. However, some of these mutations (be it one, ten, or even a hundred) may play an important role in carcinogenesis and/or be important in identifying characteristics of a tumor (like aggressiveness). There is a growing body of research that concerns itself with separating important from non-important mutations, but another approach is to analyze them all in aggregate with machine learning algorithms to try to tease subtle patterns apart. Afterall, even the _pattern_ of irrelevant mutations may reflect the underlying biology of the tumor (e.g., https://goo.gl/6tHS7Q).
 
 <br />  
 
