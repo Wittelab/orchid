@@ -36,6 +36,7 @@ process pythonPackages {
     conda install -y dill category_encoders python-snappy mysql-connector-python
     pip install mysql-python
     pip install memsql
+    pip install restkit
     echo "Python modules installed"
     '''
 }

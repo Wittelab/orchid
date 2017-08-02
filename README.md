@@ -9,7 +9,7 @@ A management, annotation, and machine learning system for analyzing cancer mutat
 Please refer to the following publication for a detailed description of this software:  
 xxxx
 
-or, for the quick and dirty explanation:  
+or, for a quick and dirty explanation:  
   
 <br />  
 
@@ -22,7 +22,7 @@ The purpose of orchid is to facilitate machine learning of tumor genetic data. F
 
 _What is a 'tumor mutational profile'?_
   
-A mutational profile is the annotated set of mutations within a tumor. A typical tumor might contain thousands of simple somatic mutations, most of which are believed to be irrelevant to disease and arise simply due to an important hallmark of cancer-- an unstable genome. However, some of these mutations (be it one, ten, or even a hundred) may play an important role in carcinogenesis and/or be important in identifying characteristics of a tumor (like aggressiveness). There is a growing body of research that concerns itself with separating important from non-important mutations, but another approach is to analyze them all in aggregate with machine learning algorithms to try to tease subtle patterns apart. 
+A mutational profile is the annotated set of mutations within a tumor. A typical tumor might contain thousands of mutations, most of which are believed to be irrelevant to disease and arise simply due to an important hallmark of cancer-- an unstable genome. However, some of these mutations (be it one, ten, or even a hundred) may play an important role in carcinogenesis and/or be important in identifying characteristics of a tumor (like aggressiveness). There is a growing body of research that concerns itself with separating important from non-important mutations, but another approach is to analyze them all in aggregate with machine learning algorithms to try to tease subtle patterns apart. Afterall, even the _pattern_ of irrelevant mutations may reflect the underlying biology of the tumor (e.g., [trinucleotide signatures](https://goo.gl/6tHS7Q)).
 
 <br />  
 
@@ -33,9 +33,10 @@ An annotation is simply a numeric or ordinal value that can be associated with a
 
 At this time, many regulatory and coding features of the human genome have been extensively cataloged, resulting in a wealth of data to mine. If we gather enough biological data, we can increase our understanding of each individual mutation and its possible role in cancer, or at least begin to see if patterns emerge from the data. 
 
-Here's an example. If we arrange a set of mutations from a tumor in rows and all the corresponding feature values in columns, a mutational profile can be visualized like this:  
-![Mutational Profile](http://wittelab.ucsf.edu/images/mutational_profiles.png)
-Here higher feature column values (or more severe categories) are shown as being more orange, while lower feature column values are whiter. There is also a final column of sample labels, which is ultimately what we're interested in the machine learning. In other words, this column's values are used to train supervised machine learning algorithms for the purpose of future sample classification. 
+Here's an example. If we arrange a set of mutations from a tumor in rows and corresponding feature values in columns, a mutational profile can be created and visualized:  
+![Mutational Profile](http://wittelab.ucsf.edu/images/mutational_profiles.png)  
+
+Here large feature values (or more 'severe' categories) are shown as more orange, while lower feature values are whiter. There is also a final column of sample labels, which is ultimately what we're interested in learning. In other words, this column's values are used to train supervised machine learning algorithms for the purpose of future sample classification. 
 
 
 # Getting Started
@@ -44,7 +45,7 @@ Here higher feature column values (or more severe categories) are shown as being
 3. Build the database  
 4. Perform machine learning  
 
-Please refer to the wiki to begin! 
+Please refer to the [wiki](https://github.com/Wittelab/orchid/wiki) to begin! 
 
 
 _NOTICE:_
