@@ -17,6 +17,8 @@
 // Anaconda is BSD licensed which gives you permission to use Anaconda commercially and for redistribution.
 process pythonPackages {
     echo true
+    tag { "This can take a while..." }
+
 
     '''
     set -x
