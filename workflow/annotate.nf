@@ -289,6 +289,9 @@ process annotateKEGG {
     input: 
     each feature from params.annotation['kegg-cancer']
     
+    when:
+    params.use_kegg
+    
     shell:
     '''
     mysql -u$MYSQL_USER -h$MYSQL_IP -P$MYSQL_PORT -D$MYSQL_DB -NB -e "

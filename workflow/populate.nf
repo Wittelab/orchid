@@ -177,6 +177,9 @@ process populateKegg {
 
     echo true
 
+    when:
+    params.use_kegg
+
     '''
     # Try to import kegg tables from a pregenerated mysql dump before populating these tables
     # This will save many hours requerying kegg directly
@@ -199,6 +202,9 @@ process finishKEGG {
     input: 
     val ok1 from kegg_populated
     val ok2 from mutations_populated
+    
+    when:
+    params.use_kegg
     
     shell:
     '''
