@@ -16,4 +16,5 @@ data/simulator/*
 *.csv
 *.html
 notebooks/.ipynb_checkpoints/
+notebooks/private
 jupytercert.pem

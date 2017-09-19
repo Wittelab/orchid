@@ -10,6 +10,7 @@ from collections import defaultdict
 import numpy as np
 import pandas as pd
 import seaborn as sns
+import inspect as inspect
 import matplotlib.pyplot as plt
 from matplotlib.colors import rgb2hex, hex2color
 from matplotlib.pylab import cm
@@ -20,7 +21,7 @@ from sklearn import svm, linear_model                                           
 from copy import deepcopy                                                                                # To duplicate models
 from sklearn.externals import joblib                                                                     # To save jobs
 from sklearn.ensemble import RandomForestClassifier                                                      # Random Forest model
-from sklearn.model_selection import cross_val_score, train_test_split, GridSearchCV, ShuffleSplit        # Cross validation, parameter tuning
+from sklearn.model_selection import *                                                                    # Cross validation, parameter tuning
 from sklearn.metrics import *                                                                            # To assess model performance
 from sklearn.multiclass import OneVsRestClassifier                                                       # For multi class problems
 from sklearn.neighbors import LSHForest
@@ -40,7 +41,8 @@ class MutationMatrix(pd.DataFrame):
 
     _metadata          = [
                           'chunk_size', 'db_uri', 'db_metadata', 'mutation_table', 'mutation_table_id', 'mutation_id_column', 'donor_id_column', 'annotation_columns', 'feature_categories', 'features', 
-                          'label_column', 'quiet', 'loaded', 'encoded', 'collapsed', 'normalized', 'imputer', 'scaler','normalize_options', 'model', 'X_train', 'X_test', 'Y_train', 'Y_test'
+                          'label_column', 'quiet', 'mutations_loaded', 'features_loaded', 'encoded', 'collapsed', 'normalized', 'imputer', 'scaler', 'model', 'le', 'train_ids', 'X_train', 'X_test', 
+                          'Y_train', 'Y_test', 'Y_probabilities', 'Y_predictions', 'normalize_options', 'normalize_options', 'number_cpus'
                          ]
     
     chunk_size         = 10000
@@ -56,22 +58,28 @@ class MutationMatrix(pd.DataFrame):
     features           = None
     feature_transforms = {}
     quiet              = True
-    loaded             = False
+    mutations_loaded   = False
+    features_loaded    = False
     encoded            = False
     collapsed          = False
     normalized         = False    # Whether this MutationMatrix has been normalized
     imputer            = None     # The imputer used to normalize this MutationMatrix
     scaler             = None     # The scaler used to normalize this MutationMatrix
-    model              = None
-    X_train            = None
-    X_test             = None
-    Y_train            = None
-    Y_test             = None
+    model              = None     # The model used to train data
+    le                 = None     # The label encoder used to convert label_column labels to numeric indices 
+    train_ids          = None     # The ssm ids used for training
+    X_train            = None     # The training examples
+    X_test             = None     # The testing examples or None when cross-validating
+    Y_train            = None     # The corresponding training labels
+    Y_test             = None     # The corresponding testing labels or None when cross-validating
+    Y_probabilities    = None
+    Y_predictions      = None
 
     normalize_options  = {
                            'nan_strat'      : 'median',
                            'scaler_strat'   : 'standard',
                          }
+    number_cpus        = -1
 
 
     @property
@@ -85,12 +93,13 @@ class MutationMatrix(pd.DataFrame):
     # Some data, and/or metadata
     # TODO: Add column populator
     def __init__(self, *args, **kwargs):
+        """ initialize the MutationMatrix """
         self.db_uri   = kwargs.pop('db_uri', None)
         self.quiet    = kwargs.pop('quiet', True)
         super(MutationMatrix, self).__init__(*args, **kwargs)
 
     def __finalize__(self, other, method=None, **kwargs):
-        """propagate metadata from other to self """
+        """ propagate metadata from other to self """
         # merge operation: using metadata of the left object
         if method == 'merge':
             for name in self._metadata:
@@ -105,7 +114,8 @@ class MutationMatrix(pd.DataFrame):
         return self
 
     def __getitem__(self, key):
-        "BUGFIX: Series generated from MutationMatrix retain old values, so force pd.Series to flush cache"
+        """ get a MutationMatrix property """
+        """ BUGFIX: Series generated from MutationMatrix retain old values, so force pd.Series to flush cache """
         self._clear_item_cache()
         result = super(MutationMatrix, self).__getitem__(key)
         result._clear_item_cache()
@@ -113,6 +123,7 @@ class MutationMatrix(pd.DataFrame):
         return result
 
     def _get_db_column_type(self, table, column):
+        """ get the column data type (int or char) from a column in the backing database table """
         db = urlparse(self.db_uri).path.strip('/')
         syntax = "SELECT DATA_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = '%s' AND TABLE_NAME = '%s' AND COLUMN_NAME = '%s'" % (db, table, column)
         type_ = pd.read_sql(syntax, self.db_uri)['DATA_TYPE'][0]
@@ -122,13 +133,15 @@ class MutationMatrix(pd.DataFrame):
             return 'char'
 
     def set_backing_database(self, db_uri):
+        """ set the backing database for which the MutationMatrix loads data """
         self.db_uri = db_uri
         self.load_metadata()
 
     def load_metadata(self):
+        """ load metadata (features, table names, etc) provided by orchid_db into the MutationMatrix """
         ## db_uri
         if self.db_uri==None:
-            print "Plese select a database using set_backing_database(database_uri). Metadata will then be automatically loaded."
+            print "Please select a database using set_backing_database(database_uri). Metadata will then be automatically loaded."
             return
         self.db_metadata = {}
         syntax = "SELECT metavalue FROM metadata WHERE metakey='features'"
@@ -146,6 +159,12 @@ class MutationMatrix(pd.DataFrame):
 
 
     def set_features(self, feature_list=None):
+        """
+        Set the features of this MutationMatrix (stored as a Pandas Index). These features will be used to predict the label classes when modeling.
+
+        Arguments:
+        feature_list (optional): A list of column names in the MutationMatrix to designate as model features.
+        """
         if type(feature_list)!=type(None):
             self.features = pd.Index(list(feature_list))
         else:
@@ -160,7 +179,13 @@ class MutationMatrix(pd.DataFrame):
         #            features.append(subfeature['column'].lower())
         #    self.features = features
 
+
     def add_labels(self, mapping):
+        """
+        Adds a label column to the MutationMatrix. Labels are the classes used for supervised learning.
+
+        mapping (required): a dataframe with two columns: 1) column label and values that match the MutationMatrix, and 2) A column of values to merge into the MutationMatrix.
+        """
         mapping_columns = set(pd.DataFrame(mapping).columns)
         label_column = mapping_columns.difference(set(list(self.columns)+[self.index.name]))
         if len(label_column)==0:
@@ -177,14 +202,28 @@ class MutationMatrix(pd.DataFrame):
             self._data = pd.DataFrame(self.merge(mapping, how='left', left_on=anchor_column, right_on=anchor_column))._data
         self.label_column = label_column
 
+
     def set_label_column(self, col_name):
+        """
+        Set the label column, that is, which column should be predicted.
+        NOTE: Is a feature column is specified as the label it will be removed from the feature list if present.
+
+        Arguments:
+        col_name (required): The name of a column in the MutationMatrix to use for the label. It can be a feature column.
+        """
+        # First, check to see if the column exists
         if col_name not in self.columns:
-            print "You must specify a column label that exists in the MutationMatrix, or merge a label column into the MutationMatrix using add_labels()"
+            print "You must specify a column label that exists in the MutationMatrix, or merge a label column into the MutationMatrix using add_labels()."
+            return
+        # Check to see if there are at least 2 columns.
+        num_values = len(self[col_name].value_counts())
+        if num_values < 2:
+            print "This label column has less than 2 unique values and can't be used for prediction."
             return
         if col_name in self.features:
             self.features = self.features.drop(col_name)
-
         self.label_column = col_name
+
 
 
     def set_normalize_options(self, nan_strat='zero', scaler_strat='mms'):
@@ -206,7 +245,7 @@ class MutationMatrix(pd.DataFrame):
         self.load_features(*args, **kwargs)
 
 
-    def load_mutations(self, ids=None, by='donor', number_real='all', number_simulated=None, quiet=None):
+    def load_mutations(self, ids=None, by='donor', number_real='all', number_simulated=None, quiet=None, *args, **kwargs):
         # Check input
         quiet = self.quiet if quiet==None else quiet
         ## db_uri
@@ -309,47 +348,12 @@ class MutationMatrix(pd.DataFrame):
         mutations = mutations.set_index(self.mutation_table_id)
         self._data = mutations._data
         self.annotation_columns = mutations.columns
+        self.mutations_loaded = True
         if not quiet: print "Done"
         return
 
 
-    def _load_feature_data(self, mutations, quiet=None, feature_categories=None):
-        quiet = self.quiet if quiet==None else quiet
-        if feature_categories==None:
-            print "You must specify a list of feature categories (feature tables) to load feature data from if calling _load_feature_data manually."
-            return
-        #####
-        # Join featurized data
-        #####
-        ids = list(mutations.index)
-        for i, tbl in enumerate(feature_categories):
-            
-            if not quiet:
-                try:
-                    clear_output(wait=True)
-                except:
-                    pass
-                print "%2d/%2d [%3.1f%% complete]  Loading feature '%s'   %s \r" % (i+1, len(feature_categories), 100*((i+1)/float(len(feature_categories))), tbl, " "*100)
-                sys.stdout.flush()
-            # To temporarily store chunked mutations 
-            chunk_mutations = None
-
-            for i in xrange(0, len(ids)+1, self.chunk_size):
-                # The current chunks ids
-                chunk_ids = [str(a) for a in ids[i:(i+self.chunk_size-1)]]
-                # Convert the ids to a MySQL like search string, depending on the table key type
-                syntax = "SELECT * FROM feature_%s WHERE %s IN (%s)" % (tbl, self.mutation_table_id, ", ".join(chunk_ids))
-                temp   = pd.read_sql(syntax, self.db_uri)
-                # Make sure the join ids are ints for the encoded_mutations merge (otherwise get nothing but NaNs!)
-                temp[self.mutation_table_id] = temp[self.mutation_table_id].astype(int)
-                chunk_mutations = pd.concat([chunk_mutations, temp])
-            chunk_mutations = chunk_mutations.set_index(self.mutation_table_id)
-            mutations = mutations.merge(chunk_mutations, how='left', left_index=True, right_index=True)
-        if not quiet: print "Done"
-        return mutations
-
-
-    def load_features(self, quiet=None, override=False, by=None, feature_categories=None):
+    def load_features(self, quiet=None, override=False, by=None, feature_categories=None, *args, **kwargs):
         # Allow 'by' shortcuts to be consistent with the load function()
         if by == 'donor':    by = self.donor_id_column
         if by == 'mutation': by = self.mutation_id_column
@@ -357,10 +361,10 @@ class MutationMatrix(pd.DataFrame):
         quiet = self.quiet if quiet==None else quiet
         ## db_uri
         if self.db_uri==None:
-            print "Plese select a database using the set_backing_database(database_uri) method."
+            print "Please select a database using the set_backing_database(database_uri) method."
             return
         # Check to see if this has been done before
-        if self.loaded and not override:
+        if self.features_loaded and not override:
             print "The MutationMatrix features have already been loaded. Use 'override' set to 'True' to load features again."
             return
         # Check to see that 'by' is either a valid column or None (to just chunk data for encoding as done by _encode_data)
@@ -391,15 +395,48 @@ class MutationMatrix(pd.DataFrame):
         # The table columns have updated, so need to reset the features
         self.feature_categories = feature_categories
         self.set_features()
-        self.loaded = True
+        self.features_loaded = True
         return
+
+
+    def _load_feature_data(self, mutations, quiet=None, feature_categories=None, *args, **kwargs):
+        quiet = self.quiet if quiet==None else quiet
+        if feature_categories==None:
+            print "You must specify a list of feature categories (feature tables) to load feature data from if calling _load_feature_data manually."
+            return
+
+        ids = list(mutations.index)
+        for i, tbl in enumerate(feature_categories):
+            if not quiet:
+                try:
+                    clear_output(wait=True)
+                except:
+                    pass
+                print "%2d/%2d [%3.1f%% complete]  Loading feature '%s'   %s \r" % (i+1, len(feature_categories), 100*((i+1)/float(len(feature_categories))), tbl, " "*100)
+                sys.stdout.flush()
+            # To temporarily store chunked mutations 
+            chunk_mutations = None
+
+            for i in xrange(0, len(ids), self.chunk_size):
+                # The current chunks ids
+                chunk_ids = [str(a) for a in ids[i:(i+self.chunk_size-1)]]
+                # Convert the ids to a MySQL like search string, depending on the table key type
+                syntax = "SELECT * FROM feature_%s WHERE %s IN (%s)" % (tbl, self.mutation_table_id, ", ".join(chunk_ids))
+                temp   = pd.read_sql(syntax, self.db_uri)
+                # Make sure the join ids are ints for the encoded_mutations merge (otherwise get nothing but NaNs!)
+                temp[self.mutation_table_id] = temp[self.mutation_table_id].astype(int)
+                chunk_mutations = pd.concat([chunk_mutations, temp])
+            chunk_mutations = chunk_mutations.set_index(self.mutation_table_id)
+            mutations = mutations.merge(chunk_mutations, how='left', left_index=True, right_index=True)
+        if not quiet: print "Done"
+        return mutations
 
 
     # strategies: a dictionary mapping feature (table) name to defined scikitlearn.preprocessing or category_encoders encoder class with a fit_transform() function
     # sklearn: http://scikit-learn.org/stable/modules/classes.html#module-sklearn.preprocessing
     # category_encoders: http://contrib.scikit-learn.org/categorical-encoding/index.html 
     # to_numeric columns are ignored, categorical encoding defaults to defaults to 'one-hot'
-    def encode(self, strategies={}, quiet=None, override=False, features=None, drop_undefined=True):
+    def encode(self, strategies={}, quiet=None, override=False, features=None, drop_undefined=True, *args, **kwargs):
         quiet = self.quiet if quiet==None else quiet
         ## db_uri
         if self.db_uri==None:
@@ -477,6 +514,10 @@ class MutationMatrix(pd.DataFrame):
         if not quiet: print "Done"
         return
 
+    def load_and_encode(self, *args, **kwargs):
+        self.load_mutations(*args, **kwargs)
+        self.load_features(*args, **kwargs)
+        self.encode(*args, **kwargs)
 
     def collapse(self, quiet=None, override=False, by='donor_id', how='mean'):
         quiet = self.quiet if quiet==None else quiet
@@ -538,17 +579,26 @@ class MutationMatrix(pd.DataFrame):
 
 
     def select_features(self, model=None, n_splits=50, quiet=None):
+        """
+        Uses a provided model (defaults to a random forest) to perform feature selection with a leave-one-out approach, repeating a desired number of times with data subsets to build a consensus of feature importance. 
+
+        Arguments:
+        model (optional; defaults to a random forest): A scikit-learn model to assess performance of each feature in the model.
+        n_splits (optional; defaults to 50): The number of models to use to build a feature importance consensus. 
+        quiet (optional; defaults to MutationMatrix default): Whether to be verbose or not.
+        """
         quiet = self.quiet if quiet==None else quiet
         if model==None:
-            print "No model specified, using a random forest classifier"
+            print "No model specified, using a random forest classifier."
             model =  RandomForestClassifier(n_estimators=50)
 
 
         X, Y = self.normalize2XY()
         features = self.features
-        tissue_map = {a: b for a,b in enumerate(Y.unique())}
-        map_tissue = {b: a for a,b in tissue_map.iteritems()}
-        Y = np.array(Y.apply(lambda k: map_tissue[k]))
+
+        Y_map = {a: b for a,b in enumerate(Y.unique())}
+        map_Y = {b: a for a,b in Y_map.iteritems()}
+        Y = np.array(Y.apply(lambda k: map_Y[k]))
         X = np.array(X)
         scores = defaultdict(list)
         
@@ -577,7 +627,13 @@ class MutationMatrix(pd.DataFrame):
 
 
     def normalize2XY(self, normalize_options=None, quiet=None):
-        # Set defaults
+        """
+        Uses the default normalization parameters to make a normalized feature vector matrix (X) and a label vector (Y).
+
+        Arguments:
+        normalize_options (optional; defaults to MutationMatrix defaults): The inputer and scaler normalization parameters.
+        quiet (optional; defaults to MutationMatrix default): Whether to be verbose or not.
+        """
         normalize_options = self.normalize_options if normalize_options == None else normalize_options
         quiet             = self.quiet             if quiet             == None else quiet
 
@@ -595,6 +651,14 @@ class MutationMatrix(pd.DataFrame):
 
 
     def normalize(self, normalize_options=None, quiet=None, override=False):
+        """
+        Normalizes the MutationMatrix creating a normalized feature vector matrix and a label vector column as a dataframe.
+
+        Arguments:
+        normalize_options (optional; defaults to MutationMatrix defaults): The inputer and scaler normalization parameters.
+        quiet (optional; defaults to MutationMatrix default): Whether to be verbose or not.
+        override (optional; False): Will repeat the normalization process even if it has already been performed.
+        """
         # Set defaults
         normalize_options = self.normalize_options if normalize_options == None else normalize_options
         quiet             = self.quiet             if quiet             == None else quiet
@@ -620,112 +684,150 @@ class MutationMatrix(pd.DataFrame):
         return
 
 
-    def random_forest(self, optimize_parameters=False, estimate_stability=True, sanity_check=True, cv=5, n_estimators=40, test_size=0.30, model_parameters=None):
-        if self.label_column==None:
-            print "You should specify a label column with set_label_column() before running the random forest"
+    def make_model(self, optimize_parameters=False, cross_validate=True, sanity_check=False, cv=10, test_size=0.0, model_type='rf', **model_parameters):
+        if not self.mutations_loaded:
+            print "No mutation data has been loaded into the MutationMatrix, please use load() or load_mutations() before modeling."
             return
-        print "Running random forest..."
+        if not self.features_loaded:
+            print "No feature data has been loaded into the MutationMatrix, please use load() or load_features() before modeling."
+            return 
+        if not self.encoded:
+            print "Data has not yet been encoded. Please use encode() before modeling."
+            return
+        if self.label_column==None:
+            print "You should specify a label column with set_label_column() before modeling."
+            return
+        if test_size < 0.0 or test_size >= 1.0:
+            print "When specifying a 'test_size', please provide a value between 0 and 1.0."
+            return
         
-        # Normalize data
+
+        # Get the initial data
         X = self[self.features]
-        X, self.imputer, self.scaler = self._normalize(X)
         Y = list(self[self.label_column].apply(str))
 
-        # Split the dataset in testing and training sets and create a vanilla random forest classifer as the model
-        self.X_train, self.X_test, self.Y_train, self.Y_test = train_test_split(X, Y, test_size=test_size, random_state=0)
-        self.model = RandomForestClassifier(n_estimators=n_estimators)
+        # Split the dataset in testing and training sets if needed
+        if test_size>0:
+            self.X_train, self.X_test, self.Y_train, self.Y_test = train_test_split(X, Y, test_size=test_size, random_state=0)
+        else:
+            self.X_train = X
+            self.Y_train = Y
+
+
+        ## Normalize data
+        # Save the training ids 
+        self.train_ids = self.X_train.index
+        # Normalize training data
+        self.X_train, self.imputer, self.scaler = self._normalize(self.X_train)
+
+        # Encode Labels
+        self.le = LabelEncoder()
+        self.Y_train = self.le.fit_transform(self.Y_train)
+
+        # Initialize the model
+        self.model = self._prepare_model(model_type, **model_parameters)
 
         # If grid search is requested, do it, and update the model with the best parameters
         if optimize_parameters:
-            print "Optimizing parameters using training data..."
+            print "Optimizing parameters with %d-fold cross validation." % cv
+            if 'param_grid' in model_parameters.keys() and not self.quiet: print "...", model_parameters['param_grid']
             sys.stdout.flush()
-            param_grid = {
-                          "max_depth": [1, 3, 5, None],
-                          "max_features": [1, .5, 10, 'auto', None],
-                          "min_samples_split": [2, 3, 10],
-                          "min_samples_leaf": [2, 3, 10],
-                          "bootstrap": [True, False],
-                          "criterion": ["gini", "entropy"]
-                         }
-            grid_search = self._grid_search(param_grid)
-            model_parameters = grid_search.best_params_
-        
-        # If available re-instantiate the model with either passed model_parameters generated or those generated with optimize_parameters=True
-        if model_parameters is not None:
-            self.model = RandomForestClassifier(n_estimators=n_estimators, **model_parameters)
-        
+            model_parameters.update(self._grid_search(cv=cv, **model_parameters))
+            # Re-initiate the model 
+            self.model = self._prepare_model(model_type, **model_parameters)
+        # The param grid is only used for grid search, which is now done. Remove this to avoid confusion on what model parameters were actually run.
+        model_parameters.pop('param_grid', None)
+
         # Use One-vs-rest classification scheme for multi-class case
-        if len(set(Y))>2:
-            print "Multiclass prediction detected, using a one-vs-rest classification strategy"
+        if len(set(self.Y_train))>2:
+            print "Multi-class prediction detected, using a one-vs-rest classification strategy."
             sys.stdout.flush()
             self.model = OneVsRestClassifier(self.model)
 
-        print "Modeling with training data"
-        self.model.fit(self.X_train, self.Y_train)
-
-        if estimate_stability:
-            print "Estimating model stability with %d-fold cross validation" % cv
+        probabilities = None
+        if cross_validate == True:
+            print "Building a %s using %d-fold cross validation." % (model_type, cv)
+            if not self.quiet: print "...", model_parameters
             sys.stdout.flush()
-            self._cross_validate(cv=cv)
+            probs, preds = self._cross_validate(cv=cv)
+            self.Y_probabilities = probs
+            self.Y_predictions = preds
+        else:
+            print "Building a %s model using %0.2f%% of the data" % (model_type, (1.0-test_size)*100)
+            if not self.quiet: print "...", model_parameters
+            self.model.fit(self.X_train, self.Y_train)
+            ## Should update Y_test
+            self.Y_probabilities = self.model.predict_proba(self.X_test)
+            # Get training class labels and get test class predictions
+            labels = self.le.inverse_transform(sorted(set(self.Y_train)))
+            self.Y_predictions = map(lambda k: labels[k], self.Y_probabilities.argmax(axis=1))
 
         if sanity_check:
-            print "Running sanity check by modeling with shuffled labels..."
+            print "Running sanity check by modeling with shuffled labels."
             sys.stdout.flush()
             self._sanity_check(cv=cv)
 
 
-    def svm(self, optimize_parameters=False, estimate_stability=False, sanity_check=False, cv=5, n_estimators=40, test_size=0.30, model_parameters=None):
-        if self.label_column==None:
-            print "You should specify a label column with set_label_column() before running the SVM"
-            return
-        print "Running support vector machine..."
-        
-        # Normalize data
-        X = self[self.features]
-        X, self.imputer, self.scaler = self._normalize(X)
-        Y = list(self[self.label_column])
 
-        # Split the dataset in testing and training sets and create a vanilla random forest classifer as the model
-        self.X_train, self.X_test, self.Y_train, self.Y_test = train_test_split(X, Y, test_size=test_size, random_state=0)
-        self.model = svm.SVC(kernel='linear', probability=True)
+    def random_forest(self, optimize_parameters=False, cross_validate=True, sanity_check=False, cv=10, test_size=0.0, **model_parameters):
+        """
+        Performs random forest modeling on a prepared MutationMatrix. Generally speaking, 'prepared' means data has been loaded, encoded, and feature/label columns have been set. 
+        By default, modeling is performed with cross validation using 'cv' number of folds and class prediction probabilities are returned. However, no model is generated for future prediction.
+        If not cross validating and 'test_size' is provided, then that portion of data will be withheld for testing and a model will be built with remaining data. The model and training/testing data is subsequently saved to the MutationMatrix.
+        Any of the scikit-learn random forest parameters can be passed.
 
-        # If grid search is requested, do it, and update the model with the best parameters
-        if optimize_parameters:
-            print "Optimizing parameters not yet supported for the SVM..."
-            ##sys.stdout.flush()
-            ##param_grid = {
-            ##              "max_depth": [1, 3, 5, None],
-            ##              "max_features": [1, .5, 10, 'auto', None],
-            ##              "min_samples_split": [2, 3, 10],
-            ##              "min_samples_leaf": [2, 3, 10],
-            ##              "bootstrap": [True, False],
-            ##              "criterion": ["gini", "entropy"]
-            ##             }
-            ##grid_search = self._grid_search(param_grid)
-            ##model_parameters = grid_search.best_params_
-        
-        # If available re-instantiate the model with either passed model_parameters generated or those generated with optimize_parameters=True
-        if model_parameters is not None:
-            self.model = svm.SVC(**model_parameters)
-        
-        # Use One-vs-rest classification scheme for multi-class case
-        if len(set(Y))>2:
-            print "Multiclass prediction detected, using a one-vs-rest classification strategy"
-            sys.stdout.flush()
-            self.model = OneVsRestClassifier(self.model)
+        Arguments:
+        optimize_parameters (optional; False): Use grid search to find a set optional modeling parameters. This is either applied to the entire dataset in a cross validated fashion ('cv' is specified), or to the training dataset ('cv' is 0).
+        cross_validate (optional; True): Whether to test model performance through cross validation using 'cv' number of folds. NOTE: cross-validation only assesses performance within the dataset, it cannot be used to generate predictive models for other data (set to False if you wish to do this).
+        sanity_check (optional; False): After modeling, shuffle the labels and remodel to determine if classification matches a null model distribution (i.e. accuracy matches random label guessing). This helps reduce modeling error due to systematic issues with the data such as high class label imbalance. 
+        cv (optional; defaults to 10): The number of cross-validation folds to use when modeling.
+        n_estimators (optional; defaults to 40): The number of random forest estimators to use (i.e. forest size). 
+        test_size (optional; defaults to 0.0): The portion of data to use for testing, specified between 0 and 1. Remaining data is used to build the model.
+        """
+        if 'param_grid' not in model_parameters.keys():
+            model_parameters['param_grid'] = {
+                  "max_depth":         [1, 3, 5, None],
+                  "max_features":      [1, .5, 10, 'auto', None],
+                  "min_samples_split": [2, 3, 10],
+                  "min_samples_leaf":  [2, 3, 10],
+                  "bootstrap":         [True, False],
+                  "criterion":         ["gini", "entropy"]
+                 }
+        if 'n_estimators' not in model_parameters.keys():
+            model_parameters['n_estimators'] = 40
+        self.make_model(optimize_parameters, cross_validate, sanity_check, cv, test_size, model_type='rf', **model_parameters)
+    def rf(self, optimize_parameters=False, cross_validate=True, sanity_check=False, cv=10, test_size=0.0, **model_parameters):
+        self.random_forest(optimize_parameters, cross_validate, sanity_check, cv, test_size, **model_parameters)
 
-        print "Modeling with training data"
-        self.model.fit(self.X_train, self.Y_train)
 
-        if estimate_stability:
-            print "Estimating model stability with %d-fold cross validation" % cv
-            sys.stdout.flush()
-            self._cross_validate(cv=cv)
+    def support_vector_machine(self, optimize_parameters=False, cross_validate=True, sanity_check=False, cv=10, test_size=0.0, **model_parameters):
+        """
+        Performs support vector machine modeling on a prepared MutationMatrix. Generally speaking, 'prepared' means data has been loaded, encoded, and feature/label columns have been set. 
+        By default, modeling is performed with cross validation using 'cv' number of folds and class prediction probabilities are returned. However, no model is saved for future prediction. 
+        If 'test_size' is provided, then that portion of data will be withheld for testing and a model will be built with remaining data. The model and training/testing data is saved to the MutationMatrix.
+        Any of the scikit-learn SVC parameters can be passed. 
 
-        if sanity_check:
-            print "Running sanity check by modeling with shuffled labels..."
-            sys.stdout.flush()
-            self._sanity_check(cv=cv)
+        Arguments:
+        optimize_parameters (optional; False): Use grid search to find a set optional modeling parameters. This is either applied to the entire dataset in a cross validated fashion ('cv' is specified), or to the training dataset ('cv' is 0).
+        cross_validate (optional; True): Whether to test model performance through cross validation using 'cv' number of folds. NOTE: cross-validation only assesses performance within the dataset, it cannot be used to generate predictive models for other data (set to False if you wish to do this).
+        sanity_check (optional; True): After modeling, shuffle the labels and remodel to determine if classification matches a null model distribution (i.e. accuracy matches random label guessing). This helps reduce modeling error due to systematic issues with the data such as high class label imbalance. 
+        cv (optional; defaults to 10): The number of cross-validation folds to use when modeling.
+        test_size (optional; defaults to None): The portion of data to use for testing, specified between 0 and 1. Remaining data is used to build the model.
+        """
+        if 'param_grid' not in model_parameters.keys():
+            model_parameters['param_grid'] = {
+                  "kernel": ('linear', 'rbf'), 
+                  "C":      [1, 10]
+                  }
+        if 'kernel' not in model_parameters.keys():
+            model_parameters['kernel'] = 'linear'
+        if 'probability' not in model_parameters.keys():
+            model_parameters['probability'] = True
+        if 'class_weight' not in model_parameters.keys():
+            model_parameters['class_weight'] = 'balanced'
+        self.make_model(optimize_parameters, cross_validate, sanity_check, cv, test_size, model_type='svm', **model_parameters)
+    def svm(self, optimize_parameters=False, cross_validate=True, sanity_check=False, cv=10, test_size=0.0, **model_parameters):
+        self.support_vector_machine(optimize_parameters, cross_validate, sanity_check, cv, test_size, **model_parameters)
 
 
     def predict(self, X_df=None):
@@ -791,7 +893,7 @@ class MutationMatrix(pd.DataFrame):
 
     def show_class_predictions(self, as_heatmap=False, cmap="Reds"):
         if self.model==None:
-            print "You should run a model before making class predictions"
+            print "You should run a model before making class predictions."
             return
 
         labels = pd.DataFrame(self.Y_test)
@@ -859,7 +961,7 @@ class MutationMatrix(pd.DataFrame):
 
     def show_confusion_matrix(self, as_heatmap=True, cmap="Reds", annot=True, font_size=20, normalize=True, return_data=False):
         if self.model==None:
-            print "You should run a model before making class predictions"
+            print "You should run a model before making class predictions."
             return
 
         labels = pd.DataFrame(self.Y_test)
@@ -899,7 +1001,7 @@ class MutationMatrix(pd.DataFrame):
 
     def classify_predictions(self, include_training=False):
         if self.model==None:
-            print "You should run a model before making class predictions"
+            print "You should run a model before making class predictions."
             return
 
         labels = None
@@ -951,7 +1053,7 @@ class MutationMatrix(pd.DataFrame):
 
     def show_confidence_plot(self, left="True Positive", right="False Positive", left_color="#EEEEEE", right_color="#AACFE5", plot_options=None, title='Classification Probability Distributions'):
         if self.model==None:
-            print "You should run a model before making class predictions"
+            print "You should run a model before making class predictions."
             return
 
         # Allow passed plot options to superceed default options
@@ -993,59 +1095,6 @@ class MutationMatrix(pd.DataFrame):
         plt.title(title)
         plt.legend(bbox_to_anchor=(0.25, 0.98), loc="bottom", borderaxespad=0.)
 
-
-
-    def my_pr_curves(self, title='', cmap="terrain"):
-        # Generate predictions 
-        predictions=self.predict()
-        predictions = predictions.set_index('Actual')
-        columns = list(set(predictions.columns))
-
-        # Setup the plot
-        colors = self._get_colors(cmap=cmap, n=len(columns))
-        colormap = dict(zip(columns, colors))
-        sns.set(style="white")
-        sns.set_context("poster", font_scale=2, rc={"lines.linewidth": 2})
-        plt.figure(figsize=(30, 20))
-
-        # Calculate PR curves for each column
-
-        for column in columns:
-            x = [0.]
-            y = [1.]
-            auc = 0
-            other_columns = [t for t in columns if t!=column]
-            subset = predictions.ix[predictions.index==column]
-            this   = subset[column]
-            others = subset[other_columns]
-            for i in xrange(0,101,1):
-                cutoff = (i/100.)
-                TP = (this>=cutoff).sum()
-                FP = ((others>=cutoff).sum()).mean()
-                AP = len(this) 
-                PP = TP+FP
-                PR = TP/float(PP)
-                RC = TP/float(AP)
-                if np.isnan(PR):
-                    PR = 1.0
-                x.append(PR)
-                y.append(RC)
-                auc += RC*PR
-            auc /= 100
-            #x = np.maximum.accumulate(x[::-1])[::-1]
-            final = pd.DataFrame({'x':x, 'y':y})
-            final = final.sort_values(by='x')
-            plt.plot(final['x'], final['y'], color=colormap[column], alpha=.75, lw=6, label='{0:} ({1:0.2f})'.format(column, auc))
-        plt.plot([0,1], [0.5,0.5], 'k--', lw=1)
-        plt.xlabel('Recall')
-        plt.ylabel('Precision')
-        plt.legend(loc="lower left")
-        plt.xlim([-0.005, 1.0])
-        plt.ylim([0.001, 1.05])
-        plt.title(title)
-        sns.set_context("poster", font_scale=1.5, rc={"lines.linewidth": 2})
-        plt.show()
-        return
 
     def show_roc_curves(self, title='ROC Curve(s)', *args, **kwargs):
         show_curves(*args, metric='ROC', title=title, **kwargs)
@@ -1311,12 +1360,12 @@ class MutationMatrix(pd.DataFrame):
         X = np.array(pd.DataFrame(X).apply(pd.to_numeric, errors='coerce'))
 
         # Deal with all zero columns
-        if not quiet: print "Normalizing data..."
-        if not quiet: print "Columns with all NaN values will be set to 0."
+        if not quiet: print "Normalizing data."
+        if not quiet: print "... Columns with all NaN values will be set to 0."
         X[:, np.all(pd.isnull(X), axis=0)] = 0
 
         # Deal with remaining zeros
-        if not quiet: print "Imputing remaining NaNs using the '%s' strategy." % nan_strat
+        if not quiet: print "... Imputing remaining NaNs using the '%s' strategy." % nan_strat
         if imputer == None:
             if nan_strat=='zero':
                 imputer = np.nan_to_num
@@ -1330,7 +1379,7 @@ class MutationMatrix(pd.DataFrame):
             X = imputer.transform(X)
 
         # Scale values
-        if not quiet: print "Scaling values with the '%s' strategy." % scaler_strat
+        if not quiet: print "... Scaling values with the '%s' strategy." % scaler_strat
         if scaler == None:
             if scaler_strat =='mms':
                 scaler = MinMaxScaler().fit(X)
@@ -1341,36 +1390,28 @@ class MutationMatrix(pd.DataFrame):
         return (X, imputer, scaler)
 
 
-    def _grid_search(self, param_grid=None):
-        if param_grid==None:
-            print "To use grid search, please provide a dictionary of possible parameter values."
-            return
-        if self.X_train==None or self.Y_train==None:
+    def _grid_search(self, cv=None, **model_parameters):
+        if self.X_train is None or self.Y_train is None:
             print "Training data must be specified before running this function. Try calling a modeling function first."
             return 
 
-        # Utility function to report best scores
-        def report(results, n_top=3):
-            for i in range(1, n_top + 1):
-                candidates = np.flatnonzero(results['rank_test_score'] == i)
-                for candidate in candidates:
-                    print("Model with rank: {0}".format(i))
-                    print("Mean validation score: {0:.3f} (std: {1:.3f})".format(
-                          results['mean_test_score'][candidate],
-                          results['std_test_score'][candidate]))
-                    print("Parameters: {0}".format(results['params'][candidate]))
-                    print("")
+        param_grid = None
+        if 'param_grid' in model_parameters.keys():
+            param_grid = model_parameters['param_grid']
+        else:
+            print "To use grid search, please provide a dictionary of possible parameter values."
+            return {}
 
         # run grid search
-        grid_search = GridSearchCV(self.model, param_grid)
+        grid_search = GridSearchCV(self.model, param_grid, cv=cv, n_jobs=self.number_cpus)
         start = time.time()
         grid_search.fit(self.X_train, self.Y_train)
         stop = time.time()
 
-        print("GridSearchCV took %.2f seconds." % (stop-start))
-        print grid_search.best_params_
-        print grid_search.best_score_
-        return grid_search
+        if not self.quiet: print "... GridSearchCV took %.2f seconds." % (stop-start)
+        if not self.quiet: print "...", grid_search.best_params_ 
+        #print grid_search.best_score_
+        return grid_search.best_params_
 
 
     # Checks the sanity of a model by randomizing the labels and remodeling
@@ -1383,18 +1424,88 @@ class MutationMatrix(pd.DataFrame):
             return
         model = deepcopy(self.model)
         new_labels = deepcopy(self.Y_train)
-        print "Shuffling labels..."
+        if not self.quiet: print "... Shuffling labels"
         shuffle(new_labels)
 
-        scores = cross_val_score(model, self.X_train, new_labels, cv=cv)
-        print "Accuracy: %0.2f (+/- %0.2f)" % (scores.mean(), scores.std() * 2)
-        print "Expected by chance: %.2f" % (1./len(set(self.Y_train)))
+        scores = cross_val_score(model, self.X_train, new_labels, cv=cv, n_jobs=self.number_cpus)
+        print "... Accuracy: %0.2f (+/- %0.2f)" % (scores.mean(), scores.std() * 2)
+        print "... Expected by chance: %.2f" % (1./len(set(self.Y_train)))
+
+
+    #def _cross_validate(self, cv=5):
+    #    probabilities = cross_val_predict(self.model, self.X_train, self.Y_train, cv=cv, n_jobs=self.number_cpus, method='predict_proba')
+    #    # Pandas orders results as the sorted Y labels
+    #    labels = sorted(set(self.Y_train))
+    #    # Get prediction labels from the probabilities 
+    #    predictions = map(lambda k: labels[k], probabilities.argmax(axis=1))
+    #    # Get the scores 
+    #    scores = [1 if x[0]==y[0] else 0 for x,y in zip(predictions, self.Y_train) ]
+    #    print "... Accuracy within dataset: %0.2f overall" % (sum(scores)/float(len(scores)))
+    #    print "... Expected by chance: %.2f" % (1./len(set(self.Y_train)))
+    #    probabilities = pd.DataFrame(probabilities, columns = labels)
+    #    return probabilities
 
 
     def _cross_validate(self, cv=5):
-        rf_scores = cross_val_score(self.model, self.X_train, self.Y_train, cv=cv)
-        print "Accuracy within training set ONLY: %0.2f (+/- %0.2f)" % (rf_scores.mean(), rf_scores.std() * 2)
-        print "Expected by chance: %.2f" % (1./len(set(self.Y_train)))
+        # Define the cross validation 
+        cv = StratifiedKFold(n_splits=cv)
+        # To store class prediction probabilities when example is in the test set
+        probabilities = None
+        # To store what fold each test example was predicted in (by index)
+        cv_usage = []
+        # Used to sort the final probabilities to correspond to self.X_train
+        order = []
+        # Used to store the fraction of correctly predicted classes
+        scores = []
+        # Used to store the final predictions
+        predictions = []
+        for tr_ixs, te_ixs in cv.split(self.X_train, self.Y_train):
+            # Make sure at least one of each class is present, or quit
+            if len(set(self.Y_train[tr_ixs])) < len(set(self.Y_train)):
+                print "WARNING: During cross-validation, one of the folds did not receive at least one example for every class, skipping this fold."
+                continue
+            # Get the test probabilities for this fold
+            probas_ = self.model.fit(self.X_train[tr_ixs], self.Y_train[tr_ixs]).predict_proba(self.X_train[te_ixs])
+            # Store for later
+            probabilities = pd.concat([probabilities, pd.DataFrame(probas_)])
+            # Store the set of test examples used in this fold
+            cv_usage.append(self.train_ids[te_ixs])
+            # Store the order of test examples 
+            order = order + list(te_ixs)
+            # Call each test example by highest probability and score
+            labels = sorted(set(self.Y_train[tr_ixs]))
+            predictions_ = map(lambda k: labels[k], probas_.argmax(axis=1))
+            predictions = predictions + predictions_
+            scores_ = [1 if a==b else 0 for a,b in zip(predictions, self.Y_train[te_ixs])]
+            # Store the fraction of correctly predicted classes
+            scores.append(sum(scores_)/float(len(scores_)))
+        # Add indices and columns, sort and readd original indices
+        probabilities.index = order
+        probabilities.columns = self.le.inverse_transform(sorted(set(self.Y_train)))
+        probabilities.sort_index(inplace=True)
+        probabilities.index = self.train_ids[order]
+        # Decode predictions 
+        predictions = self.le.inverse_transform(predictions)
+        scores = pd.Series(scores)
+        print "... Accuracy: %0.2f (+/- %0.2f)" % (scores.mean(), scores.std() * 2)
+        print "... Expected by chance: %.2f" % (1./len(set(self.Y_train)))
+        return (probabilities, predictions)
+
+
+
+    def _prepare_model(self, model_type, **model_parameters):
+        if model_type =='rf':
+            argnames = set(inspect.getargspec(RandomForestClassifier.__init__)[0])
+            kwargs = {k: v for k, v in model_parameters.iteritems() if k in argnames}
+            model = RandomForestClassifier(**kwargs)
+        elif model_type == 'svm':
+            argnames = set(inspect.getargspec(svm.SVC.__init__)[0])
+            kwargs = {k: v for k, v in model_parameters.iteritems() if k in argnames}
+            model = svm.SVC(**kwargs)
+        else:
+            print "Only MutationMatrix random forests and support vector machines are supported at this time."
+            return None
+        return model
 
 
 def load_matrix(filename="MutationMatrix.pkl"):
