@@ -1,0 +1,961 @@
+project_code	study_donor_involved_in	submitted_donor_id	donor_sex	donor_vital_status	disease_status_last_followup	donor_relapse_type	donor_age_at_diagnosis	donor_age_at_enrollment	donor_age_at_last_followup	donor_relapse_interval	donor_diagnosis_icd10	donor_tumour_staging_system_at_diagnosis	donor_tumour_stage_at_diagnosis	donor_tumour_stage_at_diagnosis_supplemental	donor_survival_time	donor_interval_of_last_followup	prior_malignancy	cancer_type_prior_malignancy	cancer_history_first_degree_relative	Primary Site	donor_id	mutation_count
+BOCA-FR		IC280	female								C40-C41									Bone	DO50633	1298
+CLLE-ES		60	female	deceased	stable	progression (liquid tumours)	62.0	72.0	77.0	3586.0	C91.1	BINET	A		5281.0	5281.0				Blood	DO51966	5416
+BOCA-FR		IC044	female	deceased			15.0	15.0	17.0	330.0	C40-C41		Non-metastatic stage		489.0	489.0				Bone	DO50636	338
+BOCA-FR		IC300	male	alive	complete remission		19.0	19.0	24.0		C40-C41		Metastatic stage		1670.0	1670.0				Bone	DO50630	411
+PRAD-US		TCGA-G9-6361	male	alive	complete remission		61.0		63.0		C61					1008.0	unknown		unknown	Prostate	DO36328	48
+PRAD-US		TCGA-EJ-7125	male	alive	complete remission		44.0		49.0		C61					1860.0	unknown		unknown	Prostate	DO36326	41
+PRAD-US		TCGA-EJ-5527	male	alive	complete remission		69.0		70.0		C61					397.0	unknown		unknown	Prostate	DO36322	74
+PRAD-US		TCGA-G9-6378	male	alive	complete remission		54.0		55.0		C61					664.0	unknown		unknown	Prostate	DO36320	51
+BOCA-FR		IC204	male	alive	complete remission		9.0	9.0	19.0		C40-C41		Metastatic stage		3730.0	3730.0				Bone	DO50625	77
+BOCA-FR		IC057	female	alive	progression		15.0	15.0	18.0	1223.0	C40-C41		Non-metastatic stage		1223.0	1223.0				Bone	DO50628	615
+PACA-AU		ICGC_0346	male	deceased			64.0	64.0			C25.0	TNM			787.0	787.0	unknown		unknown	Pancreas	DO35009	4539
+SKCM-US		TCGA-FS-A1YX	female	deceased			39.0		39.0		C49.9				1478.0		unknown		unknown	Skin	DO37663	32
+PRAD-US		TCGA-G9-6332	male	alive	complete remission		55.0		61.0		C61					2328.0	unknown		unknown	Prostate	DO36330	52
+BOCA-FR		IC024	male	alive	complete remission		12.0	12.0	28.0		C40-C41		Non-metastatic stage		5957.0	5957.0				Bone	DO50612	166
+BOCA-FR		IC264	male	deceased			12.0	12.0	14.0	398.0	C40-C41		Metastatic stage		553.0	553.0				Bone	DO50615	477
+BOCA-FR		IC096	male	deceased			15.0	15.0	19.0	913.0	C40-C41		Non-metastatic stage		1321.0	1321.0				Bone	DO50618	324
+PRAD-US		TCGA-EJ-5522	male	alive	complete remission		51.0		54.0		C61					1403.0	unknown		unknown	Prostate	DO36307	47
+BOCA-FR		IC263	female				10.0	10.0			C40-C41									Bone	DO50609	227
+BOCA-FR		IC284	male	deceased			17.0	17.0	21.0	572.0	C40-C41		Non-metastatic stage		1295.0	1295.0				Bone	DO50604	394
+BOCA-FR		IC058	female	deceased		local recurrence	4.0	4.0	21.0	1183.0	C40-C41		Non-metastatic stage		6061.0	6061.0				Bone	DO50607	1781
+THCA-US		TCGA-BJ-A0ZA	female	alive	complete remission		67.0		67.0		C73					264.0	unknown		unknown	Head and neck	DO38928	19
+THCA-US		TCGA-BJ-A0ZC	male	alive	complete remission		55.0		55.0		C73					183.0	unknown		unknown	Head and neck	DO38938	21
+THCA-US		TCGA-BJ-A0ZE	female	alive	complete remission		63.0		63.0		C73					237.0	unknown		unknown	Head and neck	DO38935	18
+PACA-AU		ICGC_0341	male	alive	progression	distant recurrence/metastasis	65.0	65.0			C25.0	TNM			764.0	764.0	unknown		unknown	Pancreas	DO35073	119
+PRAD-US		TCGA-CH-5767	male	alive	complete remission		66.0		67.0		C61					458.0	unknown		unknown	Prostate	DO36347	61
+PRAD-US		TCGA-CH-5764	male	alive	complete remission		66.0		66.0		C61					31.0	unknown		unknown	Prostate	DO36346	65
+PRAD-US		TCGA-EJ-5499	male	alive	complete remission		61.0		62.0		C61					533.0	unknown		unknown	Prostate	DO36342	56
+BOCA-FR		IC273	male	alive	progression		24.0	24.0	34.0	1323.0	C40-C41				3683.0	3683.0				Bone	DO50644	355
+BOCA-FR		IC268	male	alive	complete remission		12.0	12.0	22.0		C40-C41		Non-metastatic stage		3859.0	3859.0				Bone	DO50646	245
+BOCA-FR		IC343	female	alive	complete remission		10.0	10.0	15.0		C40-C41		Non-metastatic stage		1787.0	1787.0				Bone	DO50641	277
+PRAD-US		TCGA-EJ-7784	male	alive	complete remission		63.0		63.0		C61					167.0	unknown		unknown	Prostate	DO36355	92
+UTCA-FR		PA16009	female	alive	complete remission		52.0				C56	TNM				394.0	yes		no	Uterus	DO229100	17282
+UTCA-FR		PA1600A	female	alive	complete remission		64.0				C56	TNM				481.0	yes		yes	Uterus	DO229102	11202
+UTCA-FR		PA16015	female	alive	complete remission		67.0				C56	TNM				330.0	no		yes	Uterus	DO229104	10796
+PRAD-FR		PA13007	male	alive	relapse	local recurrence	64.0	64.0	66.0	291.0	C61	TNM	T2N0M0		587.0	587.0	unknown		no	Prostate	DO229119	6899
+PRAD-FR		PA12022	male	alive	complete remission	local recurrence	62.0	63.0	67.0		C61	TNM	T1cN0M0		1661.0	1661.0	unknown		no	Prostate	DO229113	3320
+THCA-US		TCGA-EM-A3O8	female	alive	complete remission		33.0		33.0		C73					15.0	unknown		unknown	Head and neck	DO38912	13
+BLCA-US		TCGA-CU-A3YL	male	alive	complete remission		67.0		67.0		C67.9					247.0	unknown		unknown	Bladder	DO834	267
+BLCA-US		TCGA-FD-A3SM	male	alive	progression		70.0		70.0		C67.2					186.0	unknown		unknown	Bladder	DO838	231
+BOCA-FR		IC282	female	alive	complete remission		50.0	50.0	55.0		C40-C41		Non-metastatic stage		1974.0	1974.0				Bone	DO50513	926
+BOCA-FR		IC254	male	deceased		local recurrence	11.0	11.0	15.0	910.0	C40-C41		Non-metastatic stage		1142.0	1142.0				Bone	DO50514	365
+SKCM-US		TCGA-EE-A2MH	male	deceased			66.0		66.0		C77.3				516.0		unknown		unknown	Skin	DO37539	186
+BOCA-FR		IC128	male	deceased			20.0	20.0	28.0	670.0	C40-C41		Non-metastatic stage		2917.0	2917.0				Bone	DO50511	367
+SKCM-US		TCGA-EE-A29H	female	alive	complete remission		59.0		61.0		C77.3					979.0	unknown		unknown	Skin	DO37535	383
+BOCA-FR		IC174	female	alive	complete remission		21.0	21.0	32.0		C40-C41		Non-metastatic stage		3808.0	3808.0				Bone	DO50509	434
+BOCA-FR		IC053	female	alive	complete remission		16.0	16.0	21.0		C40-C41		Metastatic stage		1821.0	1821.0				Bone	DO50501	412
+BOCA-FR		IC198	male	deceased			9.0	9.0	11.0	330.0	C40-C41		Metastatic stage		439.0	439.0				Bone	DO50505	310
+BOCA-FR		IC224	male	alive	complete remission		9.0	9.0	18.0		C40-C41		Non-metastatic stage		3268.0	3268.0				Bone	DO50507	217
+STAD-US		TCGA-CG-4301	female	alive	progression		75.0		75.0		C16.0					92.0	unknown		unknown	Stomach	DO38879	57
+STAD-US		TCGA-BR-6565	male	alive	complete remission		67.0		67.0		C16.2					19.0	unknown		unknown	Stomach	DO38843	167
+STAD-US		TCGA-CG-4440	female	deceased			68.0		68.0		C16.2				122.0		unknown		unknown	Stomach	DO38855	137
+SKCM-US		TCGA-FS-A1ZG	female	deceased			60.0		60.0		C77.9				295.0		unknown		unknown	Skin	DO37523	45
+STAD-US		TCGA-CG-5719	female	alive	complete remission		54.0		54.0		C16.2					31.0	unknown		unknown	Stomach	DO38827	109
+STAD-US		TCGA-CG-4305	male	alive	complete remission		69.0		70.0		C16.3					485.0	unknown		unknown	Stomach	DO38823	1389
+STAD-US		TCGA-BR-6705	female	alive	complete remission		68.0		68.0		C16.2					53.0	unknown		unknown	Stomach	DO38835	120
+STAD-US		TCGA-D7-6526	female	alive	complete remission		67.0		67.0		C16.2					201.0	unknown		unknown	Stomach	DO38803	246
+STAD-US		TCGA-BR-4363	female	alive			60.0		60.0		C16.2					0.0	unknown		unknown	Stomach	DO38815	692
+STAD-US		TCGA-BR-4279	male	alive			43.0		43.0		C16.9					0.0	unknown		unknown	Stomach	DO38811	57
+BOCA-FR		IC121	male	deceased			22.0	22.0	23.0	322.0	C40-C41		Metastatic stage		398.0	398.0				Bone	DO50594	685
+BOCA-FR		IC973	male	alive			27.0	27.0	28.0	251.0	C40-C41		Non-metastatic stage		251.0	251.0				Bone	DO50597	187
+BOCA-FR		IC215	male	alive	complete remission		15.0	15.0	24.0		C40-C41		Non-metastatic stage		3310.0	3310.0				Bone	DO50599	291
+PRAD-US		TCGA-HC-7211	male	alive	complete remission		62.0		62.0		C61					24.0	unknown		unknown	Prostate	DO36287	45
+BOCA-FR		IC046	male	alive	complete remission		6.0	6.0	7.0		C40-C41		Non-metastatic stage		323.0	323.0				Bone	DO50591	268
+BOCA-FR		IC295	female	alive	complete remission		29.0	29.0	37.0		C40-C41		Non-metastatic stage		2843.0	2843.0				Bone	DO50581	461
+BOCA-FR		IC297	male	deceased		local recurrence	14.0	14.0	18.0	142.0	C40-C41		Metastatic stage		1376.0	1376.0				Bone	DO50584	809
+BOCA-FR		IC076	male	alive	complete remission		11.0	11.0	22.0		C40-C41		Non-metastatic stage		4077.0	4077.0				Bone	DO50586	284
+BOCA-FR		IC105	male	deceased		local recurrence	20.0	20.0	21.0	300.0	C40-C41		Metastatic stage		357.0	357.0				Bone	DO50588	706
+PRAD-US		TCGA-G9-6499	male	alive	complete remission		66.0		69.0		C61					1109.0	unknown		unknown	Prostate	DO36298	55
+BOCA-FR		IC196	male	alive	complete remission		17.0	17.0	25.0		C40-C41		Metastatic stage		2795.0	2795.0				Bone	DO50570	319
+BOCA-FR		IC296	female	alive	complete remission		28.0	28.0	36.0		C40-C41		Metastatic stage		2862.0	2862.0				Bone	DO50572	965
+BOCA-FR		IC015	female	alive	complete remission		4.0	4.0	18.0	1234.0	C40-C41		Non-metastatic stage		4965.0	4965.0				Bone	DO50573	142
+BOCA-FR		IC136	male	deceased		local recurrence	47.0	47.0	48.0	94.0	C40-C41		Metastatic stage		291.0	291.0				Bone	DO50575	805
+BOCA-FR		IC318	male	alive			13.0	13.0	15.0	255.0	C40-C41		Non-metastatic stage		525.0	525.0				Bone	DO50577	36
+PRAD-US		TCGA-G9-6329	male	alive	complete remission		67.0		69.0		C61					923.0	unknown		unknown	Prostate	DO36281	38
+BOCA-FR		IC111	female	alive	complete remission		15.0	15.0	25.0		C40-C41		Non-metastatic stage		3514.0	3514.0				Bone	DO50567	330
+BOCA-FR		IC248	female	alive	complete remission		25.0	25.0	33.0		C40-C41		Non-metastatic stage		2981.0	2981.0				Bone	DO50568	430
+BOCA-FR		IC106	male	deceased			16.0	16.0	17.0	335.0	C40-C41		Metastatic stage		405.0	405.0				Bone	DO50561	404
+BOCA-FR		IC092	male	deceased		local recurrence	15.0	15.0	16.0	352.0	C40-C41		Metastatic stage		428.0	428.0				Bone	DO50562	328
+BOCA-FR		IC272	male	deceased			17.0	17.0	20.0	524.0	C40-C41		Metastatic stage		982.0	982.0				Bone	DO50564	313
+BOCA-FR		IC278	male	alive	complete remission		21.0	21.0	29.0		C40-C41		Non-metastatic stage		2837.0	2837.0				Bone	DO50565	367
+PRAD-US		TCGA-G9-6348	male	alive	complete remission		68.0		71.0		C61					1144.0	unknown		unknown	Prostate	DO36274	71
+BOCA-FR		IC294	female	alive	complete remission		16.0	16.0	21.0		C40-C41		Non-metastatic stage		2060.0	2060.0				Bone	DO50557	204
+BOCA-FR		IC831	female	alive	complete remission		10.0	10.0	16.0		C40-C41		Non-metastatic stage		1906.0	1906.0				Bone	DO50559	251
+BOCA-FR		IC302	female	deceased			8.0	8.0	11.0	744.0	C40-C41		Non-metastatic stage		1047.0	1047.0				Bone	DO50550	258
+BOCA-FR		IC288	male	deceased			18.0	18.0	19.0	159.0	C40-C41		Metastatic stage		532.0	532.0				Bone	DO50551	426
+BOCA-FR		IC324	male	deceased			18.0	18.0	19.0	347.0	C40-C41		Non-metastatic stage		398.0	398.0				Bone	DO50555	408
+PRAD-US		TCGA-EJ-5519	male	alive	complete remission		64.0		67.0		C61					1153.0	unknown		unknown	Prostate	DO36247	131
+PRAD-US		TCGA-CH-5748	male	alive	progression		64.0		64.0		C61					31.0	unknown		unknown	Prostate	DO36243	64
+PRAD-US		TCGA-CH-5766	male	alive	complete remission		55.0		55.0		C61					31.0	unknown		unknown	Prostate	DO36241	57
+SKCM-US		TCGA-EE-A2A6	male	alive	complete remission		43.0		47.0		C77.4					1787.0	unknown		unknown	Skin	DO37591	364
+BOCA-FR		IC262	male	alive	complete remission		15.0	15.0	25.0		C40-C41		Non-metastatic stage		3916.0	3916.0				Bone	DO50545	357
+BOCA-FR		IC277	male				39.0	39.0			C40-C41									Bone	DO50547	613
+BOCA-FR		IC303	female	alive	complete remission		13.0	13.0	18.0		C40-C41		Non-metastatic stage		1814.0	1814.0				Bone	DO50549	191
+BOCA-FR		IC311	male	deceased			36.0	36.0	38.0	647.0	C40-C41		Metastatic stage		925.0	925.0				Bone	DO50541	147
+BOCA-FR		IC286	male	alive	complete remission		26.0	26.0	32.0		C40-C41		Metastatic stage		2211.0	2211.0				Bone	DO50542	494
+BOCA-FR		IC149	female	alive	complete remission		8.0	8.0	15.0		C40-C41		Non-metastatic stage		2640.0	2640.0				Bone	DO50543	196
+BOCA-FR		IC325	male	alive	progression		14.0	14.0	15.0	237.0	C40-C41		Metastatic stage		340.0	340.0				Bone	DO50544	508
+PRAD-US		TCGA-EJ-7782	male	alive	complete remission		71.0		71.0		C61					350.0	unknown		unknown	Prostate	DO36256	530
+BOCA-FR		IC116	female	alive	complete remission		14.0	14.0	23.0		C40-C41		Metastatic stage		3205.0	3205.0				Bone	DO50534	358
+BOCA-FR		IC112	male	deceased			35.0	35.0	36.0	307.0	C40-C41		Metastatic stage		369.0	369.0				Bone	DO50537	593
+BOCA-FR		IC147	female	alive	complete remission		12.0	12.0	19.0	1239.0	C40-C41		Metastatic stage		2667.0	2667.0				Bone	DO50530	405
+BOCA-FR		IC093	female	deceased		local recurrence	16.0	16.0	17.0	361.0	C40-C41		Metastatic stage		500.0	500.0				Bone	DO50531	382
+SKCM-US		TCGA-EE-A2MC	male	deceased			73.0		73.0		C77.3				1871.0		unknown		unknown	Skin	DO37559	939
+STAD-US		TCGA-B7-5818	male	alive	complete remission		62.0		62.0		C16.2					3.0	unknown		unknown	Stomach	DO38883	463
+SKCM-US		TCGA-FS-A1ZA	female	deceased			45.0		45.0		C77.9				843.0		unknown		unknown	Skin	DO37551	1427
+ESCA-CN		ESCC-017	male	deceased			53.0	53.0			C15	TNM	T2N1M0	IIB	215.0	215.0	unknown		unknown	Esophagus	DO48205	35
+ESCA-CN		ESCC-014	male	alive			47.0	47.0			C15	TNM	T2N0M0	IIB	1197.0	1197.0	unknown		unknown	Esophagus	DO48202	62
+BOCA-FR		IC009	male	alive	complete remission		11.0	11.0	13.0		C40-C41		Metastatic stage		535.0	535.0				Bone	DO50524	282
+BOCA-FR		IC049	female	deceased			12.0	12.0	22.0	3098.0	C40-C41		Non-metastatic stage		3674.0	3674.0				Bone	DO50526	469
+ESCA-CN		ESCC-015	female	alive			58.0	58.0			C15	TNM	T2N0M0	IIB	867.0	867.0	unknown		unknown	Esophagus	DO48203	197
+BOCA-FR		IC306	male	deceased			17.0	17.0	21.0	578.0	C40-C41		Non-metastatic stage		1590.0	1590.0				Bone	DO50528	274
+ESCA-CN		ESCC-012	male	deceased			64.0	64.0			C15	TNM	T2N1M0	IIB	904.0	904.0	unknown		unknown	Esophagus	DO48200	55
+BOCA-FR		IC929	female	alive	complete remission		6.0	6.0	11.0		C40-C41		Metastatic stage		1805.0	1805.0				Bone	DO50520	193
+BOCA-FR		IC310	female	deceased			4.0	4.0	5.0		C40-C41		Non-metastatic stage		517.0	517.0				Bone	DO50522	25
+SKCM-US		TCGA-EE-A2MS	male	alive	complete remission		72.0		83.0		C77.3					4151.0	unknown		unknown	Skin	DO37567	3397
+STAD-US		TCGA-BR-4191	male	alive			72.0		72.0		C16.9					0.0	unknown		unknown	Stomach	DO38891	220
+ESCA-CN		ESCC-010	male	alive			47.0	47.0			C15	TNM	T2N0M0	IIB	980.0	980.0	unknown		unknown	Esophagus	DO48198	82
+ESCA-CN		ESCC-011	male	alive			64.0	64.0			C15	TNM	T2N0M0	IIB	661.0	661.0	unknown		unknown	Esophagus	DO48199	57
+ESCA-CN		ESCC-005	male	deceased			65.0	65.0			C15	TNM	T2N0M0	IIB	894.0	894.0	unknown		unknown	Esophagus	DO48194	70
+ESCA-CN		ESCC-004	male	deceased			60.0	60.0			C15	TNM	T2N0M0	IIB	469.0	469.0	unknown		unknown	Esophagus	DO48193	31
+ESCA-CN		ESCC-008	female	alive			64.0	64.0			C15	TNM	T2N1M0	IIB	1355.0	1355.0	unknown		unknown	Esophagus	DO48196	55
+ESCA-CN		ESCC-006	male	alive			47.0	47.0			C15	TNM	T2N1M0	IIB	1287.0	1287.0	unknown		unknown	Esophagus	DO48195	70
+ESCA-CN		ESCC-001	male	alive			74.0	74.0			C15	TNM	T2N2M0	IIIA	749.0	749.0	unknown		unknown	Esophagus	DO48190	20
+ESCA-CN		ESCC-003	female	alive			54.0	54.0			C15	TNM	T2N1M0	IIB	1381.0	1381.0	unknown		unknown	Esophagus	DO48192	84
+BOCA-FR		IC349	female	alive	complete remission		15.0	15.0	17.0		C40-C41		Metastatic stage		475.0	475.0				Bone	DO50493	121
+BOCA-FR		IC1057	male	alive			42.0	42.0	42.0		C40-C41				23.0	23.0				Bone	DO50495	939
+BOCA-FR		IC197	male	deceased			12.0	12.0	13.0		C40-C41		Metastatic stage		275.0	275.0				Bone	DO50491	318
+BOCA-FR		IC309	male	alive	relapse		24.0	24.0	27.0	209.0	C40-C41		Metastatic stage		988.0	988.0				Bone	DO50483	333
+BOCA-FR		IC086	female	deceased			13.0	13.0	14.0	141.0	C40-C41		Non-metastatic stage		282.0	282.0				Bone	DO50485	557
+BOCA-FR		IC242	female	deceased			7.0	7.0	8.0	467.0	C40-C41		Non-metastatic stage		545.0	545.0				Bone	DO50481	87
+SKCA-BR		ML_43	female	deceased	progression	distant recurrence/metastasis	64.0	64.0	64.0	0.0	C43	AJCC/2009	4		245.0	1956.0	yes	C50.9	no	Skin	DO219880	3356
+SKCA-BR		ML_15	male	deceased	progression		53.0	54.0	54.0	21.0	C43	AJCC/2009	4	E	303.0	1618.0	no		no	Skin	DO219876	5461
+SKCA-BR		ML_103	female	alive	complete remission		86.0	86.0	89.0		C43	AJCC/2009	1	B	1268.0	1268.0	no		yes	Skin	DO219872	9897
+PACA-CA		PCSI_0009	female	deceased			43.0	43.0	44.0	166.0	C25	TNM			253.0		unknown		no	Pancreas	DO35208	301
+EOPC-DE		EOPC-129	male	alive	stable		49.0	49.0	53.0		C61	DRE and ultrasound	T1c		1218.0	1218.0	no		no	Prostate	DO228061	2889
+EOPC-DE		EOPC-132	male	alive	relapse		48.0	48.0	49.0	240.0	C61	DRE and ultrasound	T1c		371.0	371.0	no			Prostate	DO228063	2539
+EOPC-DE		EOPC-155	male	alive	stable		45.0	46.0	48.0		C61	DRE and ultrasound	T1c		837.0	837.0	no			Prostate	DO228080	2369
+EOPC-DE		EOPC-166	male	alive	stable		47.0	47.0	50.0		C61	DRE and ultrasound	T1c		827.0	827.0	no			Prostate	DO228089	2494
+EOPC-DE		EOPC-175	male	alive	stable		48.0	48.0	50.0		C61	DRE and ultrasound	T1c		614.0	614.0	no			Prostate	DO228098	2128
+PAEN-AU		ICGC_0539	female	alive	stable		71.0	71.0			C25.4	TNM			17.0	17.0	unknown		unknown	Pancreas	DO48580	12
+SKCA-BR		ML_109	male	deceased	progression	distant recurrence/metastasis	50.0	50.0	50.0	0.0	C43	AJCC/2009	4		339.0	352.0	no		yes	Skin	DO228016	13225
+SKCA-BR		ML_113	female	alive	progression	distant recurrence/metastasis	67.0	67.0	69.0	724.0	C43	AJCC/2009	3	B	860.0	860.0	no		yes	Skin	DO228018	7952
+SKCA-BR		ML_57	female	deceased	progression	distant recurrence/metastasis	85.0	86.0	87.0	595.0	C43	AJCC/2009	4		722.0	722.0			unknown	Skin	DO228010	6197
+SKCA-BR		ML_90	female	deceased	stable		72.0	72.0	76.0		C43	AJCC/2009	2		1796.0	1796.0	no		yes	Skin	DO228015	8474
+EOPC-DE		EOPC-087	male	alive	stable		45.0	45.0	48.0		C61	DRE and ultrasound	T1c		805.0	805.0	no		unknown	Prostate	DO228028	371
+SKCA-BR		ML_123	female	alive	complete remission		50.0	52.0	53.0		C43	AJCC/2009	2	B	1421.0	1421.0	no		yes	Skin	DO228020	5358
+EOPC-DE		EOPC-101	male	alive			44.0	44.0	44.0		C61	DRE and ultrasound	T1c		107.0	107.0	no		no	Prostate	DO228039	1573
+EOPC-DE		EOPC-097	male	alive	stable		48.0	48.0	49.0		C61	DRE and ultrasound	T2b		414.0	414.0	no		unknown	Prostate	DO228035	847
+EOPC-DE		EOPC-099	male	alive	stable		51.0	52.0	53.0		C61	DRE and ultrasound	T1c		449.0	449.0	no		unknown	Prostate	DO228037	1026
+SKCM-US		TCGA-FS-A1ZS	male	alive	progression		54.0		66.0		C77.9					4526.0	unknown		unknown	Skin	DO37806	340
+THCA-US		TCGA-BJ-A18Z	male	alive			58.0		58.0		C73					184.0	unknown		unknown	Head and neck	DO49745	23
+SKCM-US		TCGA-FS-A1YW	male	deceased			52.0		52.0		C77.9				6598.0		unknown		unknown	Skin	DO37734	207
+SKCM-US		TCGA-D9-A1JX	female	alive	progression		80.0		80.0		C77.4					195.0	unknown		unknown	Skin	DO37711	231
+PBCA-DE		ICGC_GBM45	male				31.0	31.0			C71.9									Brain	DO228163	4286
+PBCA-DE		ICGC_GBM48	female				5.0	5.0			C71.9									Brain	DO228165	3651
+PBCA-DE		ICGC_GBM53	female				5.0	5.0			C71.9									Brain	DO228167	1364
+PBCA-DE		ICGC_GBM52	male				4.0	4.0			C71.9									Brain	DO228166	662
+PBCA-DE		ICGC_GBM59	female								C71.9									Brain	DO228171	4637
+PBCA-DE		ICGC_GBM62	male								C71.9									Brain	DO228173	4692
+PBCA-DE		ICGC_GBM65	male				5.0	5.0			C71.9									Brain	DO228175	1456
+PBCA-DE		ICGC_GBM82	female								C71.9									Brain	DO228178	1893
+PBCA-DE		ICGC_GBM79	male								C71.9									Brain	DO228177	4084
+PBCA-DE		ICGC_GBM83	female								C71.9									Brain	DO228179	2987
+PBCA-DE		ICGC_GBM96	male				15.0	15.0			C71.9									Brain	DO228183	3752
+PBCA-DE		ICGC_GBM98	male								C71.9									Brain	DO228185	2461
+PRAD-US		TCGA-HC-7081	male	alive	progression		62.0		62.0		C61					72.0	unknown		unknown	Prostate	DO49789	48
+PACA-CA		PCSI_0085	female	deceased	relapse	distant recurrence/metastasis	54.0	54.0	57.0	373.0	C25.1	AJCC/UICC TNM	IA		1262.0	1262.0	no		yes	Pancreas	DO35140	8132
+EOPC-DE		EOPC-186	male	alive	stable		52.0	52.0	53.0		C61	DRE and ultrasound	T1c		383.0	383.0	no		no	Prostate	DO228109	4680
+EOPC-DE		EOPC-180	male	alive	stable		51.0	51.0	55.0		C61	DRE and ultrasound	T2a		1593.0	1593.0	no		no	Prostate	DO228103	2532
+EOPC-DE		EOPC-195	male	alive	stable		47.0	47.0	50.0		C61	DRE and ultrasound	T1c		874.0	874.0	no			Prostate	DO228116	1785
+EOPC-DE		LOPC-023	male	alive	stable		61.0	61.0	64.0		C61	DRE and ultrasound	T1c		1145.0	1145.0	no		unknown	Prostate	DO228127	3094
+EOPC-DE		LOPC-022	male	alive	progression		66.0	66.0	68.0	44.0	C61	DRE and ultrasound	T1c		804.0	804.0	no		unknown	Prostate	DO228126	13899
+PBCA-DE		ICGC_GBM7	male				28.0	28.0			C71.9									Brain	DO228139	2116
+PBCA-DE		ICGC_GBM24	male				11.0	11.0			C71.9									Brain	DO228149	2048
+PBCA-DE		ICGC_GBM18	female				7.0	7.0			C71.9									Brain	DO228145	2657
+PBCA-DE		ICGC_GBM17	female				18.0	18.0			C71.9									Brain	DO228144	4164
+PBCA-DE		ICGC_GBM22	male				14.0	14.0			C71.9									Brain	DO228147	3113
+PBCA-DE		ICGC_GBM38	female				8.0	8.0			C71.9									Brain	DO228159	2197
+PBCA-DE		ICGC_GBM27	male				8.0	8.0			C71.9									Brain	DO228152	2303
+PBCA-DE		ICGC_GBM26	female								C71.9									Brain	DO228151	2735
+PBCA-DE		ICGC_GBM43	female				19.0	19.0			C71.9									Brain	DO228161	4017
+STAD-US		TCGA-CG-4469	male	deceased			70.0		70.0		C16.9				215.0		unknown		unknown	Stomach	DO38507	343
+STAD-US		TCGA-CG-5727	male	alive	complete remission		66.0		68.0		C16.2					944.0	unknown		unknown	Stomach	DO38511	180
+UCEC-US		TCGA-BG-A0M0	female	alive	complete remission		66.0		66.0		C54.1					238.0	unknown		unknown	Uterus	DO40810	153
+MALY-DE		4171706	female	alive	complete remission		70.0	70.0	74.0		C82.0	Ann Arbor Stage	III,N		1506.0	1506.0	no		unknown	Blood	DO27839	4794
+UCEC-US		TCGA-B5-A0K6	female	alive	complete remission		58.0		59.0		C54.1					418.0	unknown		unknown	Uterus	DO40808	245
+MALY-DE		4110498	male	alive	complete remission		8.0	8.0	12.0		C83.7	Murphy Stage	B-ALL		1742.0	1742.0	no		unknown	Blood	DO228298	2894
+STAD-US		TCGA-B7-5816	female	alive	complete remission		51.0		51.0		C16.2					171.0	unknown		unknown	Stomach	DO38599	1533
+STAD-US		TCGA-BR-6454	male	alive			58.0		58.0		C16.0					0.0	unknown		unknown	Stomach	DO38595	176
+STAD-US		TCGA-CG-4306	male	deceased			90.0		90.0		C16.3				31.0		unknown		unknown	Stomach	DO38567	1326
+STAD-US		TCGA-CD-5801	male	alive			69.0		69.0		C16.3					15.0	unknown		unknown	Stomach	DO38563	593
+UCEC-US		TCGA-BG-A0RY	female	alive	complete remission		68.0		68.0		C54.1					128.0	unknown		unknown	Uterus	DO40875	62
+STAD-US		TCGA-BR-6453	male	alive	complete remission		54.0		54.0		C16.2					0.0	unknown		unknown	Stomach	DO38543	221
+UCEC-US		TCGA-BG-A0M6	female	alive	complete remission		73.0		73.0		C54.1					241.0	unknown		unknown	Uterus	DO40863	49
+PACA-CA		PCSI_0330	male	deceased	relapse	distant recurrence/metastasis	52.0	52.0	56.0	939.0		TNM	T3N1Mx		1399.0	1399.0				Pancreas	DO51517	9283
+STAD-US		TCGA-CG-5733	female	deceased			83.0		83.0		C16.3				641.0		unknown		unknown	Stomach	DO38551	1405
+STAD-US		TCGA-D7-6820	male	alive	complete remission		64.0		64.0		C16.2					89.0	unknown		unknown	Stomach	DO38531	111
+PACA-AU		ICGC_0512	female	deceased	progression	distant recurrence/metastasis	61.0	61.0		230.0	C25.0	TNM			251.0	251.0	unknown		unknown	Pancreas	DO49198	7459
+PACA-AU		ICGC_0513	male	deceased	progression	distant recurrence/metastasis	52.0	52.0		327.0	C25.3	TNM			1095.0	1095.0	unknown		unknown	Pancreas	DO49199	4318
+SKCA-BR		ML_59	male	deceased	progression	distant recurrence/metastasis	63.0	63.0	64.0	118.0	C43	AJCC/2009	3	C	590.0	1122.0	no		yes	Skin	DO218868	21163
+SKCA-BR		ML_50	male	deceased	progression	distant recurrence/metastasis	60.0	60.0	60.0	114.0	C43	AJCC/2009	3	C	260.0	1493.0	no		no	Skin	DO218862	10310
+MALY-DE		4114033	male					71.0			C83.3								unknown	Blood	DO228222	29405
+PACA-AU		ICGC_0524	male	deceased	progression	local recurrence	59.0	59.0		323.0	C25.0	TNM			440.0	440.0	unknown		unknown	Pancreas	DO49189	92
+PACA-AU		ICGC_0511	male	deceased	progression	distant recurrence/metastasis	70.0	70.0		482.0	C25.0	TNM			514.0	514.0	unknown		unknown	Pancreas	DO49197	95
+SKCA-BR		ML_34	male	alive	stable	distant recurrence/metastasis	67.0	68.0	69.0		C43	AJCC/2009	2	B	890.0	890.0	no		no	Skin	DO218854	8014
+PACA-AU		ICGC_0508	female	deceased	progression	local recurrence	61.0	61.0		528.0	C25.0	TNM			823.0	823.0	unknown		unknown	Pancreas	DO49190	28
+SKCA-BR		ML_29	female	alive	complete remission		72.0	72.0	76.0		C43	AJCC/2009	2	C	1677.0	1677.0	no		no	Skin	DO218852	8664
+MALY-DE		4138464	female	alive	complete remission		47.0	47.0	51.0		C83.3	Ann Arbor Stage	II,N,E		1633.0	1633.0	no		unknown	Blood	DO228236	9167
+MALY-DE		4174742	female	alive	complete remission		4.0	4.0	12.0		C83.7	Murphy Stage	IV		3125.0	3125.0	no		unknown	Blood	DO228238	1608
+SKCA-BR		ML_10	female	alive	complete remission		39.0	39.0	43.0		C43	AJCC/2009	1	B	1564.0	1564.0	no		no	Skin	DO218845	8603
+SKCA-BR		ML_09	male	deceased	progression	distant recurrence/metastasis	54.0	57.0	58.0	1023.0	C43	AJCC/2009	1	A	1941.0	2221.0	yes	C44.9	no	Skin	DO218844	12374
+SKCA-BR		ML_07	female	deceased	progression	distant recurrence/metastasis	48.0	48.0	50.0	238.0	C43	AJCC/2009	3	C	666.0	980.0	yes	C53	no	Skin	DO218843	17334
+SKCA-BR		ML_14	male	deceased	progression	distant recurrence/metastasis	59.0	59.0	61.0	35.0	C43	AJCC/2009	3	B	1124.0	1780.0	no		yes	Skin	DO218846	21308
+EOPC-DE		EOPC-013	male	alive	stable		45.0	45.0	46.0		C61	DRE and ultrasound	T1c		384.0	384.0	no		unknown	Prostate	DO228248	2069
+MALY-DE		4108627	female	alive	complete remission		5.0	5.0	11.0		C83.7	Murphy Stage	B-ALL		2380.0	2380.0	no		unknown	Blood	DO228242	1545
+EOPC-DE		EOPC-015	male	alive	stable		48.0	48.0	49.0		C61	DRE and ultrasound	T1c		219.0	219.0	no		no	Prostate	DO228254	2023
+PACA-AU		ICGC_0380	male	deceased	stable		70.0	70.0			C25.0	TNM			154.0	154.0	unknown		unknown	Pancreas	DO49154	74
+PACA-AU		ICGC_0381	female	deceased	progression	local recurrence	78.0	78.0		413.0	C25.0	TNM			442.0	442.0	unknown		unknown	Pancreas	DO49155	48
+MALY-DE		4112817	male	alive	partial remission		49.0	49.0	51.0		C82.0	Ann Arbor Stage	IV,N,S		959.0	959.0	no		unknown	Blood	DO228263	4120
+PACA-AU		ICGC_0372	female	alive	stable		68.0	68.0			C25.0	TNM			564.0	564.0	unknown		unknown	Pancreas	DO49146	29
+PACA-AU		ICGC_0376	female	deceased	progression	local recurrence	68.0	68.0		238.0	C25.0	TNM			330.0	330.0	unknown		unknown	Pancreas	DO49150	6507
+PACA-AU		ICGC_0377	male	deceased	progression		74.0	74.0			C25.0	TNM			56.0	56.0	unknown		unknown	Pancreas	DO49151	4061
+PACA-AU		ICGC_0418	female	alive	progression	distant recurrence/metastasis	57.0	57.0		168.0	C25.0	TNM			309.0	309.0	unknown		unknown	Pancreas	DO49136	149
+MALY-DE		4152611	male	alive	complete remission		7.0	7.0	8.0		C83.7	Murphy Stage	B-ALL		557.0	557.0	no		unknown	Blood	DO228274	1933
+PACA-AU		ICGC_0416	female	alive	progression	distant recurrence/metastasis	83.0	83.0		98.0	C25.0	TNM			350.0	350.0	unknown		unknown	Pancreas	DO49134	86
+PACA-AU		ICGC_0368	male	deceased	progression		71.0	71.0			C25.0	TNM			111.0	111.0	unknown		unknown	Pancreas	DO49142	4313
+PACA-AU		ICGC_0366	female	deceased	progression	distant recurrence/metastasis	74.0	74.0		292.0	C25.0	TNM			560.0	560.0	unknown		unknown	Pancreas	DO49140	111
+STAD-US		TCGA-BR-4370	female	alive			74.0		74.0		C16.3					0.0	unknown		unknown	Stomach	DO38499	1334
+STAD-US		TCGA-BR-4292	female	alive			73.0		73.0		C16.2					0.0	unknown		unknown	Stomach	DO38495	1661
+SKCA-BR		ML_81	female	deceased	progression	distant recurrence/metastasis	29.0	38.0	38.0	22.0	C43	AJCC/2009	4		3403.0	5642.0	no		no	Skin	DO218892	26352
+SKCA-BR		ML_76	male	deceased	progression	distant recurrence/metastasis	69.0	73.0	74.0	329.0	C43	AJCC/2009	3		1959.0	2254.0	yes	C44.9	no	Skin	DO218886	27802
+SKCA-BR		ML_73	male	alive	complete remission		28.0	28.0	30.0		C43	AJCC/2009	1	B	960.0	960.0	no		yes	Skin	DO218882	8741
+THCA-US		TCGA-BJ-A28Z	female	alive			46.0		46.0		C73					37.0	unknown		unknown	Head and neck	DO39714	27
+THCA-US		TCGA-BJ-A3PU	male	alive	progression		52.0		52.0		C73					305.0	unknown		unknown	Head and neck	DO40700	28
+PACA-AU		ICGC_0361	male	alive	progression	distant recurrence/metastasis	55.0	55.0		251.0	C25.0	TNM			406.0	406.0	unknown		unknown	Pancreas	DO49125	19
+PACA-AU		ICGC_0493	female	deceased	progression	distant recurrence/metastasis	80.0	80.0		209.0	C25.0	TNM			348.0	348.0	unknown		unknown	Pancreas	DO49123	44
+STAD-US		TCGA-CG-4437	male	alive	complete remission		83.0		83.0		C16.0					245.0	unknown		unknown	Stomach	DO38467	602
+STAD-US		TCGA-CG-5726	male	deceased			73.0		73.0		C16.3				881.0		unknown		unknown	Stomach	DO38483	1690
+STAD-US		TCGA-D7-5578	male	alive	complete remission		80.0		80.0		C16.2					109.0	unknown		unknown	Stomach	DO38475	288
+PACA-AU		ICGC_0532	male	deceased	progression	distant recurrence/metastasis	59.0	59.0		129.0	C25.0	TNM			445.0	445.0	unknown		unknown	Pancreas	DO49105	7685
+THCA-US		TCGA-FE-A235	female	alive	complete remission		26.0		34.0		C73					3130.0	unknown		unknown	Head and neck	DO39774	17
+STAD-US		TCGA-BR-4253	female	alive			80.0		80.0		C16.2					0.0	unknown		unknown	Stomach	DO38455	99
+THCA-US		TCGA-EM-A1CS	female	alive			55.0		56.0		C73					566.0	unknown		unknown	Head and neck	DO40741	15
+STAD-US		TCGA-CG-4449	male	alive	progression		81.0		82.0		C16.3					580.0	unknown		unknown	Stomach	DO38439	115
+STAD-US		TCGA-CD-5800	female	alive	complete remission		51.0		51.0		C16.3					11.0	unknown		unknown	Stomach	DO38431	177
+STAD-US		TCGA-BR-4366	male	alive			87.0		87.0		C16.3					0.0	unknown		unknown	Stomach	DO38419	166
+EOPC-DE		EOPC-059	male	alive	stable		48.0	48.0	50.0		C61	DRE and ultrasound	T1c		753.0	753.0	no		no	Prostate	DO228335	900
+MALY-DE		4138652	male	alive	stable		45.0	45.0	50.0		C82.0	Ann Arbor Stage	IV,N		2079.0	2079.0	no		yes	Blood	DO228351	3416
+MALY-DE		4198478	male	alive	complete remission		7.0	7.0	13.0		C83.7	Murphy Stage	III		2506.0	2506.0	no		unknown	Blood	DO228368	4083
+MALY-DE		4197438	male	deceased	partial remission		71.0	71.0	71.0		C83.0	Ann Arbor Stage	II,N		288.0	288.0	no		unknown	Blood	DO228365	1805
+EOPC-DE		EOPC-066	male	alive	relapse		41.0	41.0	44.0	316.0	C61	DRE and ultrasound	T1c		1078.0	1078.0	no		unknown	Prostate	DO228370	1713
+MALY-DE		4148771	female	alive	relapse		64.0	64.0	74.0	1936.0	C82.0	Ann Arbor Stage	IV,N,S,E		3664.0	3664.0	no		unknown	Blood	DO228379	6887
+STAD-US		TCGA-CG-4475	male	alive	complete remission		76.0		76.0		C16.9					0.0	unknown		unknown	Stomach	DO38372	61
+MALY-DE		4139483	female	alive			64.0	64.0	66.0		C82.0	Ann Arbor Stage	IV,N		821.0	821.0	no		unknown	Blood	DO228382	5007
+EOPC-DE		EOPC-069	male	alive	stable		50.0	50.0	53.0		C61	DRE and ultrasound	T2a		1183.0	1183.0	no		unknown	Prostate	DO228389	1792
+STAD-US		TCGA-D7-6524	male	alive	complete remission		53.0		53.0		C16.3					21.0	unknown		unknown	Stomach	DO38368	119
+STAD-US		TCGA-D7-6522	male	alive	complete remission		58.0		58.0		C16.3					210.0	unknown		unknown	Stomach	DO38384	84
+MALY-DE		4167925	female	deceased			70.0	71.0	72.0		C83.3	Ann Arbor Stage	II,N		1090.0	1090.0	no		unknown	Blood	DO228394	20458
+MALY-DE		4156551	male	alive	complete remission		8.0	8.0	14.0		C83.7	Murphy Stage	II		2233.0	2233.0	no		unknown	Blood	DO228399	2451
+MALY-DE		4113140	male	alive	complete remission		43.0	43.0	45.0		C83.3	Ann Arbor Stage	III,N,S		991.0	991.0	no		unknown	Blood	DO228305	14130
+MALY-DE		4151028	female	alive	complete remission		62.0	62.0	69.0		C82.0	Ann Arbor Stage	IV,N		2671.0	2671.0	no		unknown	Blood	DO228316	16045
+STAD-US		TCGA-D7-6521	male	alive	complete remission		65.0		65.0		C16.2					249.0	unknown		unknown	Stomach	DO38747	93
+SKCM-US		TCGA-FS-A1YY	female	deceased			55.0		55.0		C76.2				6953.0		unknown		unknown	Skin	DO37415	261
+SKCM-US		TCGA-ER-A1A1	male	alive	complete remission		58.0		64.0		C44.4					2433.0	unknown		unknown	Skin	DO37413	288
+STAD-US		TCGA-BR-4256	male	alive			80.0		80.0		C16.3					0.0	unknown		unknown	Stomach	DO38743	1169
+SKCM-US		TCGA-D3-A1Q9	male	deceased			72.0		72.0		C77.9				961.0		unknown		unknown	Skin	DO37428	50
+STAD-US		TCGA-BR-6457	male	alive	complete remission		69.0		69.0		C16.2					41.0	unknown		unknown	Stomach	DO38759	141
+SKCM-US		TCGA-EE-A2MG	male	deceased			23.0		23.0		C77.3				3139.0		unknown		unknown	Skin	DO37421	265
+STAD-US		TCGA-CD-5798	male	alive	complete remission		82.0		82.0		C16.3					25.0	unknown		unknown	Stomach	DO38751	100
+STAD-US		TCGA-BR-6707	male	alive	complete remission		75.0		75.0		C16.2					30.0	unknown		unknown	Stomach	DO38739	80
+SKCM-US		TCGA-D3-A3CE	female	deceased			74.0		74.0		C77.9				1832.0		unknown		unknown	Skin	DO37405	56
+STAD-US		TCGA-BR-4201	female	alive			66.0		66.0		C16.0					0.0	unknown		unknown	Stomach	DO38707	1648
+STAD-US		TCGA-BR-6455	male	alive	complete remission		59.0		59.0		C16.2					43.0	unknown		unknown	Stomach	DO38703	114
+STAD-US		TCGA-CG-4455	male	alive	complete remission		72.0		73.0		C16.0					366.0	unknown		unknown	Stomach	DO38719	57
+STAD-US		TCGA-BR-4368	female	alive			78.0		78.0		C16.3					0.0	unknown		unknown	Stomach	DO38715	1641
+BOCA-FR		IC067	male	deceased		local recurrence	6.0	6.0	9.0	447.0	C40-C41		Non-metastatic stage		1147.0	1147.0				Bone	DO50472	84
+BOCA-FR		IC299	female	deceased			7.0	7.0	11.0	539.0	C40-C41		Metastatic stage		1429.0	1429.0				Bone	DO50474	208
+BOCA-FR		IC114	male	deceased			3.0	3.0	4.0		C40-C41		Non-metastatic stage		352.0	352.0				Bone	DO50476	113
+BOCA-FR		IC193	female	alive	complete remission		13.0	13.0	20.0		C40-C41		Metastatic stage		2359.0	2359.0				Bone	DO50470	204
+BOCA-FR		IC158	female	deceased			10.0	10.0	14.0	764.0	C40-C41		Non-metastatic stage		1554.0	1554.0				Bone	DO50468	367
+BOCA-FR		IC305	female	deceased			17.0	17.0	19.0	552.0	C40-C41		Metastatic stage		827.0	827.0				Bone	DO50460	224
+BOCA-FR		IC080	male	alive	complete remission		21.0	21.0	31.0		C40-C41		Metastatic stage		3754.0	3754.0				Bone	DO50461	636
+BOCA-FR		IC151	male	alive	complete remission		15.0	15.0	23.0		C40-C41		Non-metastatic stage		3083.0	3083.0				Bone	DO50462	252
+BOCA-FR		IC340	male	alive	complete remission		14.0	14.0	23.0		C40-C41		Metastatic stage		3155.0	3155.0				Bone	DO50463	16
+BOCA-FR		IC130	male	alive			13.0	13.0	21.0		C40-C41		Non-metastatic stage		2978.0	2978.0				Bone	DO50464	359
+BOCA-FR		IC165	female	alive	complete remission		14.0	14.0	20.0		C40-C41		Non-metastatic stage		2382.0	2382.0				Bone	DO50465	232
+BOCA-FR		IC271	male	alive	progression		42.0	42.0	50.0	2772.0	C40-C41		Non-metastatic stage		2920.0	2920.0				Bone	DO50466	653
+BOCA-FR		IC082	female	alive	complete remission		5.0	5.0	15.0		C40-C41		Non-metastatic stage		3754.0	3754.0				Bone	DO50459	196
+THCA-US		TCGA-EM-A3O6	female	alive	complete remission		54.0		54.0		C73					263.0	unknown		unknown	Head and neck	DO48115	21
+SKCM-US		TCGA-FS-A1Z7	male	deceased			19.0		19.0		C77.9				237.0		unknown		unknown	Skin	DO37454	226
+SKCM-US		TCGA-ER-A19N	male	deceased			47.0		47.0		C49.3				1341.0		unknown		unknown	Skin	DO37452	564
+STAD-US		TCGA-D7-6525	male	alive	progression		58.0		58.0		C16.0					181.0	unknown		unknown	Stomach	DO38783	186
+THCA-US		TCGA-EM-A3O3	female	alive	complete remission		83.0		83.0		C73					224.0	unknown		unknown	Head and neck	DO48109	38
+SKCM-US		TCGA-FS-A1Z4	male	deceased			62.0		62.0		C77.9				854.0		unknown		unknown	Skin	DO37462	54
+SKCM-US		TCGA-EB-A24C	male	alive	complete remission		56.0		56.0		C44.5					14.0	unknown		unknown	Skin	DO37438	36
+STAD-US		TCGA-CG-4300	male	deceased			79.0		79.0		C16.3				609.0		unknown		unknown	Stomach	DO38767	158
+SKCM-US		TCGA-FS-A1Z0	female	deceased			32.0		32.0		C44.9				6164.0		unknown		unknown	Skin	DO37431	311
+SKCM-US		TCGA-EE-A29R	female	alive	progression		48.0		49.0		C49.0					440.0	unknown		unknown	Skin	DO37448	845
+SKCM-US		TCGA-FS-A1ZQ	male	deceased			31.0		31.0		C34.9				4062.0		unknown		unknown	Skin	DO37442	612
+MALY-DE		4181037	female	alive	complete remission		70.0	70.0	71.0		C82.3	Ann Arbor Stage	III,N		719.0	719.0	no		unknown	Blood	DO228440	5933
+MALY-DE		4163741	male	alive	complete remission		3.0	3.0	9.0		C83.7	Murphy Stage	III		2196.0	2196.0	no		unknown	Blood	DO228458	1653
+MALY-DE		4135278	female	alive	relapse		43.0	43.0	44.0	345.0	C83.3	Ann Arbor Stage	III,N		520.0	520.0	no		unknown	Blood	DO228451	24602
+PRAD-UK		0131_CRUK_PC_0131	male	alive	stable		57.0	57.0	59.0		C61	TNM	T2cN0Mx		753.0	753.0	unknown		unknown	Prostate	DO228462	2315
+MALY-DE		4109142	female	alive	complete remission		74.0	74.0	74.0		C82.0	Ann Arbor Stage	III,N		135.0	135.0	yes		unknown	Blood	DO228486	4422
+MALY-DE		4133863	male	alive	complete remission		54.0	54.0	58.0		C82.0	Ann Arbor Stage	II,N		1487.0	1487.0	no		yes	Blood	DO228485	6553
+MALY-DE		4158769	male	alive	complete remission		6.0	6.0	11.0		C83.7	Murphy Stage	IV		1885.0	1885.0	no		unknown	Blood	DO228497	2179
+MALY-DE		4176325	female	alive	complete remission		80.0	80.0	81.0		C83.3	Ann Arbor Stage	I,N		727.0	727.0	no		unknown	Blood	DO228403	18180
+MALY-DE		4177639	female				77.0	77.0			C82.0	Ann Arbor Stage	IV,N,E				no		unknown	Blood	DO228400	7394
+MALY-DE		4178518	male	alive	complete remission		10.0	10.0	15.0		C83.7	Murphy Stage	B-ALL		2038.0	2038.0	no		unknown	Blood	DO228417	3163
+MALY-DE		4171810	female	alive	partial remission		52.0	52.0	65.0		C83.3	Ann Arbor Stage	IV,S,E		4845.0	4845.0	no		yes	Blood	DO228411	13028
+MALY-DE		4158933	male	alive	partial remission		67.0	67.0	69.0		C83.3	Ann Arbor Stage	II,N		886.0	886.0	no		unknown	Blood	DO228429	24736
+MALY-DE		4198519	female	alive	complete remission		67.0	67.0	68.0		C82.3	Ann Arbor Stage	IV,N,E		663.0	663.0	no		unknown	Blood	DO228435	5746
+STAD-US		TCGA-CG-4465	female	deceased			69.0		69.0		C16.3				274.0		unknown		unknown	Stomach	DO38627	753
+STAD-US		TCGA-CG-5720	male	deceased			71.0		71.0		C16.0				30.0		unknown		unknown	Stomach	DO38623	110
+UCEC-US		TCGA-AX-A0IU	female	alive	complete remission		79.0		81.0		C54.1					868.0	unknown		unknown	Uterus	DO40954	57
+STAD-US		TCGA-D7-5577	female	alive	complete remission		53.0		53.0		C16.0					263.0	unknown		unknown	Stomach	DO38631	134
+STAD-US		TCGA-CG-5728	female	alive	progression		88.0		90.0		C16.3					1980.0	unknown		unknown	Stomach	DO38619	1709
+STAD-US		TCGA-CG-4304	male	alive			84.0		86.0		C16.0					822.0	unknown		unknown	Stomach	DO38615	83
+STAD-US		TCGA-BR-4257	female	alive			79.0		79.0		C16.3					0.0	unknown		unknown	Stomach	DO38683	1273
+STAD-US		TCGA-CG-4466	female	alive	complete remission		81.0		82.0		C16.0					577.0	unknown		unknown	Stomach	DO38695	224
+STAD-US		TCGA-D7-6520	male	alive	complete remission		53.0		53.0		C16.3					293.0	unknown		unknown	Stomach	DO38643	74
+UCEC-US		TCGA-D1-A16Q	female	alive	complete remission		54.0		54.0		C54.1					221.0	unknown		unknown	Uterus	DO40960	35
+STAD-US		TCGA-BR-4369	male	alive			75.0		75.0		C16.0					0.0	unknown		unknown	Stomach	DO38659	199
+PRAD-UK		0184_CRUK_PC_0184	male	alive	stable		57.0	57.0	59.0		C61	TNM	T2aNxMx		959.0	959.0	unknown		yes	Prostate	DO228561	2174
+PRAD-UK		0188_CRUK_PC_0188	male	alive	stable		48.0	48.0	49.0		C61	TNM	T1cNxMx		837.0	837.0	unknown		unknown	Prostate	DO228573	2858
+PRAD-UK		0190_CRUK_PC_0190	male	alive	stable		69.0	69.0	72.0		C61	TNM	T1cNxMx		1670.0	1670.0	unknown		unknown	Prostate	DO228576	2996
+PRAD-UK		0195_CRUK_PC_0195	male	alive	progression		55.0	55.0	56.0	74.0	C61	TNM	T3N0Mx		628.0	628.0	unknown		no	Prostate	DO228599	5139
+PRAD-UK		0194_CRUK_PC_0194	male	alive	stable		53.0	54.0	56.0		C61	TNM	T2aNxMx		758.0	758.0	unknown		no	Prostate	DO228596	2826
+SKCM-US		TCGA-BF-A1PU	female	alive	complete remission		46.0		47.0		C44.9					387.0	unknown		unknown	Skin	DO50278	100
+MALY-DE		4113971	female	alive	complete remission		61.0	61.0	63.0		C82.3	Ann Arbor Stage	IV,S,E		835.0	835.0	no		unknown	Blood	DO228511	7438
+MALY-DE		4100636	male	alive	complete remission		43.0	43.0	46.0		C82.3	Ann Arbor Stage	III,N,S		1286.0	1286.0	no		unknown	Blood	DO228527	9326
+MALY-DE		4184437	female	alive	partial remission		65.0	65.0	69.0		C82.3	Ann Arbor Stage	III,N		1798.0	1798.0	no		unknown	Blood	DO228532	13580
+PRAD-UK		0183_CRUK_PC_0183	male	alive	stable		58.0	58.0	59.0		C61	TNM	T3aNxMx		709.0	709.0	unknown		yes	Prostate	DO228558	7815
+EOPC-DE		EOPC-078	male	alive	stable		47.0	47.0	49.0		C61	DRE and ultrasound	T1c		461.0	461.0	no		unknown	Prostate	DO228709	1788
+ESAD-UK		OCCAMS-AH-242	male	alive	no evidence of disease		65.0	69.0	71.0		C15.5		TNM		2314.0	2314.0	unknown		yes	Esophagus	DO228716	188
+ESAD-UK		OCCAMS-AH-238	male	alive	stable		75.0	75.0	77.0		C15.5	TNM7	T1N0M0	UICC:1a	1045.0	1045.0	unknown		no	Esophagus	DO228715	29318
+LGG-US		TCGA-FG-6688	female	alive	progression		59.0		59.0		C71.0					221.0	unknown		unknown	Brain	DO22592	96
+ESAD-UK		OCCAMS-AH-244	male	alive	relapse	local recurrence and distant metastasis	56.0	56.0	59.0	639.0	C15.5	TNM7	T3N3M		1120.0	1120.0	unknown		yes	Esophagus	DO228717	17349
+ESAD-UK		OCCAMS-AH-147	male	deceased	relapse	distant recurrence/metastasis	78.0	78.0	80.0	324.0	C15.5	TNM7	T3N2M0	UICC:3b	999.0	868.0	unknown		unknown	Esophagus	DO228688	14191
+EOPC-DE		EOPC-070	male	alive	stable		47.0	47.0	54.0		C61	DRE and ultrasound	T1c		2208.0	2208.0	no		no	Prostate	DO228683	1280
+MALY-DE		4103570	male	alive	complete remission		7.0	7.0	11.0		C83.7	Murphy Stage	III		1563.0	1563.0	no		unknown	Blood	DO228616	2986
+PRAD-UK		0164_CRUK_PC_0164	male	alive	progression	local recurrence	65.0	65.0	69.0	107.0	C61	TNM	T3aN0Mx		1612.0	1612.0	unknown		unknown	Prostate	DO228619	4040
+PRAD-UK		0139_CRUK_PC_0139	male	alive	stable		63.0	63.0	64.0		C61	TNM	T1cNxMx		457.0	457.0	unknown		unknown	Prostate	DO228622	4735
+PRAD-UK		0140_CRUK_PC_0140	male	alive	stable		68.0	68.0	69.0		C61	TNM	T2aNxMx		896.0	896.0	unknown		unknown	Prostate	DO228625	2908
+PRAD-UK		0172_CRUK_PC_0172	male	alive	stable		58.0	59.0	61.0		C61	TNM	T2cN1Mx		868.0	868.0	unknown		unknown	Prostate	DO228635	1757
+PBCA-DE		ICGC_MB142	male				2.0	2.0			C71	pM	unknown				unknown		unknown	Brain	DO35863	2833
+PRAD-UK		0145_CRUK_PC_0145	male	alive	stable		50.0	50.0	51.0		C61	TNM	T1cNxMx		362.0	362.0	unknown		unknown	Prostate	DO228647	3005
+PRAD-UK		0146_CRUK_PC_0146	male	alive	stable		67.0	67.0	68.0		C61	TNM	T1cNxMx		697.0	697.0	unknown		unknown	Prostate	DO228653	2261
+PBCA-DE		ICGC_MB130	female	alive	stable		7.0	7.0			C71	pM	unknown		183.0		unknown		unknown	Brain	DO35843	1896
+ESAD-UK		OCCAMS-AH-111	male	deceased	no evidence of disease		78.0	78.0	78.0		C15.5	TNM7	T3N0M0	UICC:2a	321.0	321.0	unknown		no	Esophagus	DO228666	15360
+PRAD-UK		0206_CRUK_PC_0206	male	alive	progression	local recurrence	65.0	65.0	67.0	417.0	C61	TNM	T2cN0Mx		1027.0	1027.0	unknown		unknown	Prostate	DO228668	5228
+ESAD-UK		OCCAMS-AH-121	male	alive	stable		55.0	55.0	59.0		C15.5	TNM7	T3N3M0	UICC:3c	1496.0	1496.0	unknown		yes	Esophagus	DO228669	16104
+ESAD-UK		OCCAMS-AH-075	male	deceased	no evidence of disease		45.0	45.0	46.0		C15.5	TNM7	T3N1M0	UICC:3a	606.0	606.0	unknown		no	Esophagus	DO228662	11344
+LGG-US		TCGA-DU-5847	female	alive	progression		34.0		35.0		C71.9					548.0	unknown		unknown	Brain	DO22506	49
+PRAD-UK		0150_CRUK_PC_0150	male	alive	stable		61.0	61.0	62.0		C61	TNM	T1cN0M0		212.0	212.0	unknown		no	Prostate	DO228670	3966
+PACA-AU		ICGC_0229	male	deceased	progression	distant recurrence/metastasis	73.0	73.0			C25.0	TNM			412.0	412.0	unknown		unknown	Pancreas	DO34496	107
+PBCA-DE		6EP6	male	alive			3.0		4.0		C71.7	WHO Grade I-III	III		426.0					Brain	DO228817	388
+MALY-DE		4120468	female	alive			80.0	80.0	87.0		C82.0	Ann Arbor Stage	III,N		2587.0	2587.0	no		unknown	Blood	DO228818	6630
+ESAD-UK		OCCAMS-AH-065	male	alive	stable		66.0	66.0	70.0		C15.5	TNM7	T3N1M0	UICC:3a	1706.0	1706.0	unknown		yes	Esophagus	DO227505	26198
+ORCA-IN		OSCC-GB_012801	male	deceased	relapse	distant recurrence/metastasis	49.0	49.0	50.0	99.0	C06.1	TNM	T4aN2a		143.0	143.0	unknown		no	Head and neck	DO227506	7902
+MALY-DE		4124432	female	alive	complete remission		64.0	64.0	66.0		C82.0	Ann Arbor Stage	IV,N,E		925.0	925.0	no		yes	Blood	DO228838	6830
+ESAD-UK		OCCAMS-AH-169	male	alive	stable		71.0	71.0	73.0		C15.5	TNM7	T1bN0M0		1042.0	1042.0	unknown		unknown	Esophagus	DO227471	13337
+ESAD-UK		OCCAMS-QE-081	male	deceased	no evidence of disease		69.0	69.0	70.0		C15.5	TNM6	T3N0M0	UICC:2a	478.0	478.0	unknown		unknown	Esophagus	DO227474	7754
+PACA-CA		PCSI_0237	male	alive	complete remission		50.0	50.0	54.0			TNM	T3N0M0		2065.0	2065.0				Pancreas	DO227485	5135
+ESAD-UK		OCCAMS-RS-045	male	alive	no evidence of disease		66.0	66.0	69.0		C15.5	TNM7	T3N1M		1127.0	1127.0	unknown		yes	Esophagus	DO227493	17668
+ESAD-UK		OCCAMS-RS-046	male	deceased							C15.5	TNM7	T3N3M		955.0	409.0	unknown		yes	Esophagus	DO227495	21717
+THCA-SA		PTC_301	female	alive	complete remission	local recurrence	36.0	36.0	36.0		Others/Mixed	AJCC	I				no			Head and neck	DO227497	26
+ESAD-UK		OCCAMS-RS-048	male	deceased	stable		55.0	55.0	56.0	205.0	C15.5	TNM7	T3N2M0	UICC:3b	527.0	409.0	unknown		yes	Esophagus	DO227498	20902
+ESAD-UK		OCCAMS-AH-248	male	alive	stable		65.0	65.0	67.0		C15.5	TNM7	T1N0M0	UICC:1a	1057.0	1057.0	unknown		unknown	Esophagus	DO228720	24114
+PRAD-UK		0210_CRUK_PC_0210	male	alive	stable		70.0	70.0	71.0		C61	TNM	TxNxMx		367.0	367.0	unknown		no	Prostate	DO228723	2994
+PBCA-DE		ICGC_MB122	male	alive			11.0	11.0			C71	pM	M0				unknown		unknown	Brain	DO35759	1928
+PRAD-UK		0215_CRUK_PC_0215	male	alive	stable		67.0	67.0	68.0		C61	TNM	TxNxMx		282.0	282.0	unknown		no	Prostate	DO228729	3711
+EOPC-DE		EOPC-089	male	alive	stable		48.0	48.0	53.0		C61	DRE and ultrasound	T1c		1869.0	1869.0	no		unknown	Prostate	DO227413	99
+PRAD-UK		0221_CRUK_PC_0221	male	alive	stable		63.0	63.0	65.0		C61	TNM	T2aNxMx		925.0	925.0	unknown		yes	Prostate	DO228746	3693
+EOPC-DE		EOPC-084	male	deceased	stable		44.0	45.0	48.0		C61	DRE and ultrasound	T1c		1096.0	1096.0	no		unknown	Prostate	DO228751	6430
+PRAD-UK		0227_CRUK_PC_0227	male	alive	stable		62.0	62.0	64.0		C61	TNM	T2bNxMx		784.0	784.0	unknown		yes	Prostate	DO228764	3636
+PRAD-UK		0229_CRUK_PC_0229	male	alive	stable		54.0	54.0	55.0		C61	TNM	T1cNxMx		494.0	494.0	unknown		yes	Prostate	DO228767	2796
+EOPC-DE		EOPC-194	male	alive			52.0	52.0	52.0		C61	DRE and ultrasound	T1c		462.0	462.0	no		unknown	Prostate	DO227444	1139
+EOPC-DE		EOPC-128	male	alive	stable		48.0	48.0	50.0		C61	DRE and ultrasound	T1c		1443.0	1443.0	no		unknown	Prostate	DO227448	1365
+ESAD-UK		OCCAMS-AH-069	male	deceased	stable		56.0	56.0	57.0		C15.5	TNM7	TxN0M0		845.0	633.0	unknown		unknown	Esophagus	DO227466	11712
+THCA-SA		PTC_287	female	alive	complete remission	local recurrence	27.0	27.0	28.0		FollicularVariant	AJCC	I		532.0	532.0	no			Head and neck	DO227468	11
+THCA-SA		PTC_288	female	alive	complete remission	local recurrence	55.0	55.0	55.0		ClassicalVariant	AJCC	III				no			Head and neck	DO227469	19
+THCA-SA		PTC_285	male	alive	progression	distant recurrence/metastasis	74.0	74.0	76.0	92.0	TallCellVariant	AJCC	IV		564.0	564.0	no			Head and neck	DO227463	392
+THCA-SA		PTC_386	male	alive	complete remission	local recurrence	34.0	34.0	35.0		FollicularVariant	AJCC	I		497.0	497.0	no			Head and neck	DO227600	37
+ESAD-UK		OCCAMS-ST-022	male	deceased	relapse	distant recurrence/metastasis	59.0	59.0	62.0	748.0	C15.5	TNM7	T3N1M0	UICC:3a	1289.0	1111.0	unknown		unknown	Esophagus	DO227601	24195
+ORCA-IN		OSCC-GB_014001	male	alive	complete remission		59.0	59.0	60.0		C06.1	TNM	T4aN2b			325.0	unknown		no	Head and neck	DO227603	7992
+THCA-SA		PTC_61	female	alive	complete remission	local recurrence	48.0	48.0	52.0		ClassicalVariant	AJCC	I		1429.0	1429.0	no			Head and neck	DO227606	13
+ESAD-UK		OCCAMS-SA-013	male	alive	stable		65.0	65.0	68.0		C15.5	TNM7	T2N0M0	UICC:1b	1379.0	1379.0	unknown		yes	Esophagus	DO227608	21133
+ESAD-UK		OCCAMS-ST-026	male	deceased	no evidence of disease		69.0	69.0	69.0		C15.5	TNM7	T3N1M0	UICC:3a	385.0	348.0	unknown		yes	Esophagus	DO227610	19220
+THCA-SA		PTC_72	female	alive	complete remission	local recurrence	42.0	42.0	46.0		ClassicalVariant	AJCC	I		1414.0	1414.0	no			Head and neck	DO227612	45
+ESAD-UK		OCCAMS-ST-034	female	alive	stable		36.0	36.0	39.0		C15.5	TNM7	T3N0M0	UICC:2a	1138.0	1138.0	unknown		yes	Esophagus	DO227613	5395
+THCA-SA		PTC_393	female	alive	complete remission	local recurrence	46.0	46.0	47.0		TallCellVariant	AJCC	III		337.0	337.0	no			Head and neck	DO227615	45
+PBCA-DE		ICGC_MB216	female														unknown		unknown	Brain	DO227616	325
+PBCA-DE		ICGC_MB217	female														unknown		unknown	Brain	DO227619	488
+ESAD-UK		OCCAMS-AH-271	male	alive	no evidence of disease		80.0	80.0	82.0		C15.5	TNM7	T3N2M0	UICC:3b	1012.0	1012.0	unknown		unknown	Esophagus	DO228954	25148
+PBCA-DE		ICGC_MB225	male				4.0	4.0									unknown		unknown	Brain	DO227622	1610
+ESAD-UK		OCCAMS-AH-266	female	alive			75.0	75.0	75.0		C15.5	TNM7	T3N0M0	UICC:2a	336.0	336.0	unknown		unknown	Esophagus	DO228953	21837
+ESAD-UK		OCCAMS-AH-277	female	alive	stable		80.0	80.0	82.0		C15.5	TNM7	T3N1M0	UICC:3a	941.0	941.0	unknown		yes	Esophagus	DO228956	17841
+PBCA-DE		ICGC_MB229	male				10.0	10.0									unknown		unknown	Brain	DO227627	891
+THCA-SA		PTC_102	female	alive	complete remission	local recurrence	51.0	51.0	54.0		ClassicalVariant	AJCC	III		1128.0	1128.0	no			Head and neck	DO227628	25
+PBCA-DE		ICGC_MB206	female				5.0	5.0									unknown		unknown	Brain	DO227598	1080
+ESAD-UK		OCCAMS-AH-045	male	alive	stable		77.0	77.0	82.0		C15.5	TNM6	T3NxMx		1940.0	1940.0	unknown		yes	Esophagus	DO227511	29589
+THCA-SA		PTC_19	female	alive	complete remission	local recurrence	53.0	53.0	57.0		FollicularVariant	AJCC	I		1507.0	1507.0	no			Head and neck	DO227512	24
+ESAD-UK		OCCAMS-AH-049	male	alive	stable		75.0	75.0	80.0		C15.5	TNM6	TxN1M0		1920.0	1920.0	unknown		no	Esophagus	DO227515	19828
+THCA-SA		PTC_316	female	alive	complete remission	local recurrence	38.0	38.0	38.0		ClassicalVariant	AJCC	I				no			Head and neck	DO227519	48
+PBCA-DE		ICGC_MB128	male				46.0	46.0									unknown		unknown	Brain	DO227524	12260
+THCA-SA		PTC_22	female	alive	complete remission	local recurrence	50.0	50.0	54.0		TallCellVariant	AJCC	III		1658.0	1658.0	no			Head and neck	DO227526	24
+PBCA-DE		ICGC_MB140	male				27.0	27.0									unknown		unknown	Brain	DO227533	3540
+MALY-DE		4167381	male	alive	complete remission		68.0	68.0	70.0		C83.3	Ann Arbor Stage	III,N,S		1024.0	1024.0	no		unknown	Blood	DO228865	7711
+MALY-DE		4128970	female	alive			61.0	61.0	62.0		C82.0	Ann Arbor Stage	I,N		456.0	456.0	yes		unknown	Blood	DO228869	8186
+PACA-AU		ICGC_0305	male	alive	stable		73.0	73.0			C25.0	TNM			493.0	493.0	unknown		unknown	Pancreas	DO34769	78
+THCA-SA		PTC_328	female	alive	complete remission	local recurrence	51.0	51.0	51.0		Others/Mixed	AJCC	II		467.0	467.0	no			Head and neck	DO227543	62
+PACA-CA		PCSI_0380	male	deceased			64.0					AJCC/UICC TNM	IV		1.0					Pancreas	DO227544	9821
+ORCA-IN		OSCC-GB_013301	male	alive	complete remission		34.0	34.0	36.0		C06.0	TNM	T4aN0			704.0	unknown		yes	Head and neck	DO227545	4303
+MALY-DE		4158483	male	alive	complete remission		46.0	46.0	48.0		C82.0	Ann Arbor Stage	IV,N,E		1023.0	1023.0	no		unknown	Blood	DO228876	5565
+PBCA-DE		ICGC_MB149	male														unknown		unknown	Brain	DO227546	4662
+THCA-SA		PTC_330	female	alive	complete remission	local recurrence	34.0	34.0	35.0		ClassicalVariant	AJCC	I		664.0	664.0	no			Head and neck	DO227547	74
+PBCA-DE		ICGC_MB159	male				7.0	7.0									unknown		unknown	Brain	DO227548	1473
+THCA-SA		PTC_27	female	alive	complete remission	local recurrence	29.0	29.0	33.0		ClassicalVariant	AJCC	I		1668.0	1668.0	no			Head and neck	DO227540	21
+MALY-DE		4120879	male	alive	partial remission		52.0	52.0	53.0		C82.0	Ann Arbor Stage	IV,N,S,E		473.0	473.0	no		unknown	Blood	DO228873	4659
+ESAD-UK		OCCAMS-AH-194	female	alive			73.0	73.0	76.0		C15.5		TNM		1328.0	1328.0	unknown		unknown	Esophagus	DO227542	11676
+PACA-CA		PCSI_0386	female	deceased			77.0					AJCC/UICC TNM	IV		1.0					Pancreas	DO227554	7166
+MALY-DE		4186613	male	alive	complete remission		45.0	47.0	61.0		C82.4	Ann Arbor Stage	I,N		5894.0	5894.0	no		unknown	Blood	DO228885	4169
+THCA-SA		PTC_340	male	alive	complete remission	local recurrence	24.0	24.0	25.0		ClassicalVariant	AJCC	I		544.0	544.0	no			Head and neck	DO227556	60
+ORCA-IN		OSCC-GB_013501	male	alive	complete remission		51.0	51.0	52.0		C06.0	TNM	T2N0			479.0	unknown		no	Head and neck	DO227557	14964
+MALY-DE		4162611	male	alive	complete remission		16.0	16.0	21.0		C83.7	Murphy Stage	III		2167.0	2167.0	no		unknown	Blood	DO228882	3258
+ESAD-UK		OCCAMS-AH-052	male	deceased	no evidence of disease		49.0	49.0	49.0		C15.5	TNM6	T4N1M0	UICC:3	241.0	241.0	unknown		unknown	Esophagus	DO227552	19430
+ORCA-IN		OSCC-GB_013601	male	deceased	relapse	local recurrence	63.0	63.0	63.0	48.0	C06.0	TNM	T4aN1		198.0	198.0	unknown		no	Head and neck	DO227567	11224
+THCA-SA		PTC_33	male	alive	complete remission	local recurrence	31.0	31.0	36.0		ClassicalVariant	AJCC	I		1971.0	1971.0	no			Head and neck	DO227568	24
+MALY-DE		4138059	female	alive	partial remission		72.0	72.0	73.0		C82.0	Ann Arbor Stage	I,N		399.0	399.0	no		yes	Blood	DO228891	15255
+THCA-SA		PTC_341	male	alive	complete remission	local recurrence	36.0	36.0	37.0		FollicularVariant	AJCC	I		649.0	649.0	no			Head and neck	DO227560	80
+BRCA-FR		PI019	female	alive			44.0	44.0	49.0		C50	TNM	T1N0M0			1829.0	no		no	Breast	DO227561	2735
+PBCA-DE		ICGC_MB193	female				70.0	70.0									unknown		unknown	Brain	DO227576	412
+ESAD-UK		OCCAMS-SA-029	male	alive			66.0	66.0			C15.5	TNM7	T3N1M0	UICC:3a			unknown		unknown	Esophagus	DO227571	24867
+THCA-SA		PTC_351	female	alive	complete remission	local recurrence	45.0	45.0	46.0		ClassicalVariant	AJCC	III		572.0	572.0	no			Head and neck	DO227589	69
+LGG-US		TCGA-HT-7481	male	alive	complete remission		39.0		43.0		C71.9					1800.0	unknown		unknown	Brain	DO22756	40
+PBCA-DE		ICGC_MB194	male				31.0	31.0									unknown		unknown	Brain	DO227584	2993
+BLCA-US		TCGA-BT-A3PK	male	alive	complete remission		80.0		80.0		C67.4					63.0	unknown		unknown	Bladder	DO44051	409
+ESAD-UK		OCCAMS-ED-031	female	deceased	no evidence of disease		51.0	51.0	53.0		C15.5	TNM7	T3N1M0	UICC:3a	930.0	918.0	unknown		no	Esophagus	DO227703	10428
+THCA-SA		PTC_169	female	alive	complete remission	local recurrence	58.0	58.0	58.0		ClassicalVariant	AJCC	III				no			Head and neck	DO227707	38
+PBCA-DE		ICGC_MB248	female				4.0	4.0									unknown		unknown	Brain	DO227710	2002
+THCA-SA		PTC_428	female	alive	complete remission	local recurrence	42.0	42.0	42.0		Others/Mixed	AJCC	I		412.0	412.0	no			Head and neck	DO227711	49
+ESAD-UK		OCCAMS-ST-016	male	alive	no evidence of disease		68.0	68.0	70.0		C15.5	TNM7	T3N1M0	UICC:3a	1065.0	1065.0	unknown		unknown	Esophagus	DO227723	16322
+PBCA-DE		ICGC_MB250	male				7.0	7.0									unknown		unknown	Brain	DO227725	1460
+THCA-SA		PTC_177	female	alive	complete remission	local recurrence	35.0	35.0	35.0		ClassicalVariant	AJCC	I				no			Head and neck	DO227726	42
+PACA-CA		PCSI_0645	male	alive	relapse	distant recurrence/metastasis	79.0	79.0	80.0	308.0	C25.2	AJCC/UICC TNM	IIA		384.0	384.0				Pancreas	DO227727	8658
+THCA-SA		PTC_441	female	alive	complete remission	local recurrence	38.0	38.0	38.0		ClassicalVariant	AJCC	I				no			Head and neck	DO227729	299
+ESAD-UK		OCCAMS-ST-014	male	deceased	relapse	distant recurrence/metastasis	65.0	65.0	66.0	266.0	C15.5	TNM7	T3N1M0	UICC:3a	475.0	446.0	unknown		unknown	Esophagus	DO227732	16282
+THCA-SA		PTC_446	female	alive	partial remission	local recurrence	36.0	36.0	36.0		FollicularVariant	AJCC	I		105.0	105.0	no			Head and neck	DO227733	57
+ESAD-UK		OCCAMS-ED-008	male	deceased	stable		62.0	62.0	62.0		C15.5	TNM7	T3N2M0	UICC:3b	332.0	320.0	unknown		unknown	Esophagus	DO227734	11828
+THCA-SA		PTC_179	female	alive	complete remission	local recurrence	20.0	20.0	21.0		ClassicalVariant	AJCC	I		436.0	436.0	no			Head and neck	DO227735	19
+PACA-CA		PCSI_0649	male	deceased	relapse	distant recurrence/metastasis	78.0	78.0	78.0	68.0	C25.0	AJCC/UICC TNM	IIA		158.0	158.0				Pancreas	DO227736	8898
+THCA-SA		PTC_193	male	alive	complete remission	local recurrence	36.0	36.0	39.0		ClassicalVariant	AJCC	I		967.0	967.0	no			Head and neck	DO227746	20
+PBCA-DE		ICGC_MB256	male														unknown		unknown	Brain	DO227740	3936
+BLCA-US		TCGA-BT-A2LB	female	alive	complete remission		73.0		73.0		C67.1					170.0	unknown		unknown	Bladder	DO44098	713
+BRCA-EU		CGP_donor_1478547	female	alive			50.0	50.0				AJCC	pT1C_N3a						yes	Breast	DO225051	1645
+BRCA-EU		CGP_donor_1502907	female				83.0	83.0			C50.5	TNM	pT3(m)N0M0							Breast	DO225059	3812
+BRCA-EU		CGP_donor_1503129	female	alive			49.0	49.0				AJCC	T2_N0(sn)							Breast	DO225074	1142
+BRCA-EU		CGP_donor_1503148	female				51.0	51.0				AJCC	pT2_N0_(sn)_with_multiple_foci_of_invasion						yes	Breast	DO225084	2958
+BRCA-EU		CGP_donor_1503144	female	alive			45.0	45.0				AJCC	T2_N1mi						yes	Breast	DO225082	1730
+PACA-CA		PCSI_0549	male	deceased	no evidence of disease		76.0	76.0	79.0		C25.0	AJCC/UICC TNM	IB		1074.0	1074.0				Pancreas	DO227633	8915
+PACA-CA		PCSI_0589	female	alive	relapse	local recurrence and distant metastasis	51.0	52.0	55.0	711.0	C25.0	AJCC/UICC TNM	IB		1148.0	1148.0				Pancreas	DO227636	4282
+PACA-AU		ICGC_0116	female	deceased	progression	distant recurrence/metastasis	67.0	67.0		365.0	C25.0	TNM			451.0	451.0	unknown		unknown	Pancreas	DO33336	4812
+ESAD-UK		OCCAMS-AH-338	female	alive	relapse	distant recurrence/metastasis	51.0	51.0	52.0	306.0	C15.5	TNM7	T3N1M0	UICC:3a	442.0	442.0	unknown		unknown	Esophagus	DO228973	12054
+ESAD-UK		OCCAMS-AH-094	male	alive	no evidence of disease		65.0	65.0	68.0		C15.5	TNM7	TxN1M0		1428.0	1428.0	unknown		yes	Esophagus	DO227644	647
+ESAD-UK		OCCAMS-ED-061	male	alive	no evidence of disease		67.0	67.0	69.0	351.0	C15.5	TNM7	T3N2M0	UICC:3b	856.0	856.0	unknown		no	Esophagus	DO228977	28028
+PACA-CA		PCSI_0610	female	deceased	no evidence of disease		62.0	62.0	63.0		C25.0	AJCC/UICC TNM	IB or IIB		311.0	311.0				Pancreas	DO227648	7421
+THCA-SA		PTC_405	male	alive	complete remission	local recurrence	48.0	48.0	48.0		ClassicalVariant	AJCC	III				no			Head and neck	DO227649	33
+ESAD-UK		OCCAMS-AH-334	male	deceased		distant recurrence/metastasis	59.0	59.0	60.0		C15.5	TNM7	T4aN1M0	UICC:3c	472.0	401.0	unknown		unknown	Esophagus	DO228970	22338
+PBCA-DE		ICGC_MB240	male				4.0	4.0									unknown		unknown	Brain	DO227641	2132
+BRCA-US		TCGA-BH-A0HB	female	alive	complete remission		55.0		57.0		C50.9					806.0	unknown		unknown	Breast	DO1354	34
+PACA-AU		ICGC_0191	male	deceased	progression	distant recurrence/metastasis	62.0	62.0			C25.0	TNM			356.0	356.0	unknown		unknown	Pancreas	DO34672	63
+THCA-SA		PTC_407	female	alive	complete remission	local recurrence	18.0	18.0	19.0		ClassicalVariant	AJCC	I		410.0	410.0	no			Head and neck	DO227653	50
+THCA-SA		PTC_127	female	alive	progression	distant recurrence/metastasis	38.0	38.0	57.0	308.0	TallCellVariant	AJCC	I		1204.0	1204.0	no			Head and neck	DO227654	39
+THCA-SA		PTC_135	female	alive	complete remission	local recurrence	32.0	32.0	36.0		ClassicalVariant	AJCC	I		1262.0	1262.0	no			Head and neck	DO227659	29
+ESAD-UK		OCCAMS-ED-089	male	deceased	no evidence of disease		80.0	80.0	81.0		C15.5	TNM7	T3N0M0	UICC:2a	402.0	365.0	unknown		unknown	Esophagus	DO228982	25296
+PBCA-DE		ICGC_MB242	male				7.0	7.0									unknown		unknown	Brain	DO227664	1405
+ESAD-UK		OCCAMS-AH-084	male	deceased	no evidence of disease		62.0	62.0	63.0		C15.5	TNM7	T3N1M0	UICC:3a	721.0	721.0	unknown		yes	Esophagus	DO227665	15480
+THCA-SA		PTC_136	female	alive	complete remission	local recurrence	34.0	34.0	36.0		ClassicalVariant	AJCC	I		1171.0	1171.0	no			Head and neck	DO227667	23
+THCA-SA		PTC_139	female	alive	complete remission	local recurrence	17.0	17.0	21.0		ClassicalVariant	AJCC	I		1267.0	1267.0	no			Head and neck	DO227669	27
+ESAD-UK		OCCAMS-ST-040	male	deceased	no evidence of disease		61.0	61.0	61.0		C15.5	TNM7	T3N1M0	UICC:3a	381.0	319.0	unknown		unknown	Esophagus	DO227660	21524
+ESAD-UK		OCCAMS-ED-132	male	deceased	stable		55.0	55.0	55.0		C15.5	TNM7	T3N2M0	UICC:3b	263.0	248.0	unknown		unknown	Esophagus	DO228994	25549
+THCA-SA		PTC_409	female	alive	complete remission	local recurrence	32.0	32.0	32.0		FollicularVariant	AJCC	I		383.0	383.0	no			Head and neck	DO227662	27
+ESAD-UK		OCCAMS-SH-093	male	deceased	relapse	distant recurrence/metastasis	70.0	70.0	71.0	462.0	C15.5	TNM7	T2N1M0	UICC:2b	642.0	571.0	unknown		unknown	Esophagus	DO227675	20478
+ESAD-UK		OCCAMS-ED-026	male	alive	no evidence of disease		65.0	65.0	67.0		C15.5	TNM7	T3N1M0	UICC:3a	938.0	938.0	unknown		yes	Esophagus	DO227679	26140
+BRCA-EU		CGP_donor_1472403	female	alive			58.0	58.0			C50	TNM	T2N2MX						yes	Breast	DO225019	6057
+PACA-CA		PCSI_0628	female	alive	relapse	local recurrence	79.0	79.0	80.0	483.0	C25.0	AJCC/UICC TNM	IA		556.0	556.0				Pancreas	DO227671	6637
+ESAD-UK		OCCAMS-ED-022	male	deceased	no evidence of disease		41.0	41.0	42.0		C15.5	TNM7	T3N2M0	UICC:3b	417.0	402.0	unknown		no	Esophagus	DO227672	7647
+PACA-AU		ICGC_0225	male	alive	stable		73.0	73.0			C25.0	TNM			260.0	260.0	unknown		unknown	Pancreas	DO34624	108
+BRCA-EU		CGP_donor_1472407	female	alive			47.0	47.0			C50	TNM	T2N1M0							Breast	DO225022	4473
+PBCA-DE		ICGC_MB244	male				3.0	3.0									unknown		unknown	Brain	DO227689	560
+THCA-SA		PTC_148	female	alive	complete remission	local recurrence	55.0	55.0	57.0		Others/Mixed	AJCC	II		1111.0	1111.0	no			Head and neck	DO227680	34
+BRCA-EU		CGP_donor_1472412	female	alive			75.0	75.0			C50	TNM	T2N0M0							Breast	DO225028	22247
+SKCA-BR		ML_35	male	deceased	progression	distant recurrence/metastasis	61.0	61.0	61.0	0.0	C43	AJCC/2009	4		157.0	2618.0	no		no	Skin	DO227681	19929
+THCA-SA		PTC_158	female	alive	progression	distant recurrence/metastasis	46.0	46.0	49.0	77.0	TallCellVariant	AJCC	IV		1183.0	1183.0	no			Head and neck	DO227694	37
+BRCA-EU		CGP_donor_1475197	female				51.0	51.0												Breast	DO225035	2989
+BRCA-EU		CGP_donor_1478544	female				65.0	65.0				AJCC	T2_pN0_Mx							Breast	DO225048	13106
+LGG-US		TCGA-DU-5852	female	deceased			61.0		61.0		C71.9				205.0		unknown		unknown	Brain	DO22171	94
+PBCA-DE		ICGC_MB269	female				9.0	9.0									unknown		unknown	Brain	DO227804	1034
+ESAD-UK		OCCAMS-ED-012	male	alive	no evidence of disease		66.0	66.0	69.0		C15.5	TNM7	T3N2M0	UICC:3b	1166.0	1166.0	unknown		unknown	Esophagus	DO227805	6060
+THCA-SA		PTC_505	female	alive	complete remission	local recurrence	32.0	32.0	40.0		ClassicalVariant	AJCC	I		2974.0	2974.0	no			Head and neck	DO227808	38
+ESAD-UK		OCCAMS-AH-236	male	alive			58.0	58.0	60.0		C15.5	TNM7	T1bN0M		1002.0	1002.0	unknown		unknown	Esophagus	DO227814	20783
+LGG-US		TCGA-FG-6690	male	alive	progression		70.0		70.0		C71.0					143.0	unknown		unknown	Brain	DO22141	43
+PACA-AU		ICGC_0290	male	alive	stable		76.0	76.0			C25.0	TNM			484.0	484.0	unknown		unknown	Pancreas	DO34128	19612
+ESAD-UK		OCCAMS-ED-014	male	alive			62.0	62.0			C15.5	TNM7	T3N1M0	UICC:3a			unknown		unknown	Esophagus	DO227818	19667
+ESAD-UK		OCCAMS-ED-009	male	deceased	no evidence of disease		72.0	72.0	72.0		C15.5	TNM7	T3N3M0	UICC:3c	51.0	51.0	unknown		unknown	Esophagus	DO227821	16522
+ESAD-UK		OCCAMS-SH-057	male	alive	no evidence of disease		66.0	66.0	68.0		C15.5	TNM7	T2N0M0	UICC:1b	1081.0	1081.0	unknown		yes	Esophagus	DO227831	23375
+PBCA-DE		ICGC_MB274	male				2.0	2.0									unknown		unknown	Brain	DO227832	631
+SKCM-US		TCGA-ER-A19A	male	alive	complete remission		79.0		85.0		C49.6					2365.0	unknown		unknown	Skin	DO47425	441
+ESAD-UK		OCCAMS-AH-126	male	alive	stable		58.0	58.0	61.0		C15.5	TNM7	T3N1M0	UICC:3a	1161.0	1161.0	unknown		unknown	Esophagus	DO227847	24992
+LGG-US		TCGA-HW-7489	male	alive	progression		38.0		38.0		C71.0					142.0	unknown		unknown	Brain	DO22107	31
+ESAD-UK		OCCAMS-AH-026	female	deceased	no evidence of disease		69.0	69.0	72.0		C15.5	TNM7	T3N1M0	UICC:3a	1160.0	1160.0	unknown		yes	Esophagus	DO227856	20691
+PBCA-DE		ICGC_MB280	female				14.0	14.0									unknown		unknown	Brain	DO227858	2117
+ESAD-UK		OCCAMS-AH-218	female	deceased	no evidence of disease		69.0	69.0	69.0		C15.5	TNM7	T1bN0M0		152.0	152.0	unknown		unknown	Esophagus	DO227859	20592
+BRCA-FR		PI064	female	alive			59.0	59.0	64.0		C50	TNM	T2N1M0			1895.0	no		no	Breast	DO227862	23453
+LGG-US		TCGA-FG-6689	male	alive	progression		30.0		30.0		C71.0					190.0	unknown		unknown	Brain	DO22119	32
+PBCA-DE		ICGC_MB282	male				9.0	9.0									unknown		unknown	Brain	DO227864	971
+ESAD-UK		OCCAMS-AH-117	male	alive	stable		72.0	72.0	75.0		C15.5	TNM7	T3N1M0	UICC:3a	1290.0	1290.0	unknown		yes	Esophagus	DO227869	25019
+BRCA-EU		CGP_donor_1686147	female	alive			48.0	48.0			C50.4	TNM	pT1cN1M0						yes	Breast	DO225207	1983
+SKCM-US		TCGA-ER-A19Q	female	deceased			37.0		37.0		C44.5				1548.0		unknown		unknown	Skin	DO47497	143
+BRCA-EU		CGP_donor_1606183	female	alive			69.0	69.0			C50.4	TNM	II						yes	Breast	DO225173	1884
+BRCA-EU		CGP_donor_1606182	female	alive			52.0	52.0			C50.4	TNM	I						yes	Breast	DO225172	2893
+BRCA-EU		CGP_donor_1606180	female	alive			79.0	79.0			C50.2	TNM	II						yes	Breast	DO225171	7230
+BRCA-EU		CGP_donor_1653984	female				44.0	44.0												Breast	DO225190	2563
+BRCA-EU		CGP_donor_1654393	female				66.0	66.0				TNM	pT2N1(mi)Mx							Breast	DO225198	2157
+PBCA-DE		ICGC_MB261	male				8.0	8.0									unknown		unknown	Brain	DO227756	966
+PBCA-DE		ICGC_MB262	male				45.0	45.0									unknown		unknown	Brain	DO227759	3343
+THCA-SA		PTC_194	female	alive	complete remission	local recurrence	28.0	28.0	31.0		Others/Mixed	AJCC	I		964.0	964.0	no			Head and neck	DO227751	12
+BRCA-EU		CGP_donor_1589418	female	alive			58.0	58.0				TNM	T3N2M0							Breast	DO225108	5800
+BRCA-EU		CGP_donor_1589429	female				52.0	52.0												Breast	DO225119	2176
+BRCA-EU		CGP_donor_1589426	female				32.0	32.0												Breast	DO225116	11149
+BRCA-EU		CGP_donor_1589425	female	alive			49.0	49.0				TNM	T2N1M0						yes	Breast	DO225115	3092
+BRCA-EU		CGP_donor_1589423	female	alive			49.0	49.0				TNM	T2N1M0							Breast	DO225113	1733
+THCA-SA		PTC_455	female	alive	complete remission	local recurrence	54.0	54.0	54.0		ClassicalVariant	AJCC	IV				no			Head and neck	DO227772	74
+BRCA-EU		CGP_donor_1599340	female				86.0	86.0			C50.2	TNM	pT2,pN2a,pMx						no	Breast	DO225122	2807
+BRCA-EU		CGP_donor_1589431	female				69.0	69.0												Breast	DO225121	7870
+BRCA-EU		CGP_donor_1589430	female				78.0	78.0												Breast	DO225120	5269
+BRCA-FR		PI044	female	alive			71.0	71.0	76.0		C50	TNM	T1N1M0			1702.0	no		yes	Breast	DO227787	2620
+THCA-SA		PTC_462	female	alive	complete remission	local recurrence	35.0	35.0	35.0		FollicularVariant	AJCC	I		220.0	220.0	no			Head and neck	DO227788	36
+THCA-SA		PTC_213	female	alive	complete remission	local recurrence	57.0	57.0	57.0		ClassicalVariant	AJCC	III				no			Head and neck	DO227789	40
+BRCA-EU		CGP_donor_1599347	female				71.0	71.0			C50.2	TNM	pT2,pN0,pMx							Breast	DO225126	2911
+THCA-SA		PTC_211	female	alive	complete remission	local recurrence	38.0	38.0	38.0		ClassicalVariant	AJCC	I				no			Head and neck	DO227781	18
+THCA-SA		PTC_459	female	alive	complete remission	local recurrence	35.0	35.0	35.0		FollicularVariant	AJCC	I		281.0	281.0	no			Head and neck	DO227782	33
+THCA-SA		PTC_212	female	alive	complete remission	local recurrence	70.0	70.0	70.0		ClassicalVariant	AJCC	III				no			Head and neck	DO227783	114
+THCA-SA		PTC_504	female	alive	complete remission	local recurrence	33.0	33.0	42.0		ClassicalVariant	AJCC	I		3403.0	3403.0	no			Head and neck	DO227798	26
+BRCA-EU		CGP_donor_1599379	female	alive			68.0	68.0			C50.2	TNM	pT3,pN2a,pMx						yes	Breast	DO225149	1379
+BRCA-EU		CGP_donor_1599373	female	alive			73.0	73.0			C50.2	TNM	pT2,pN1a,pMx						no	Breast	DO225145	2059
+BRCA-EU		CGP_donor_1599386	female	alive			61.0	61.0			C50.2	TNM	pT1c,pN1a,pMx						no	Breast	DO225155	2497
+BRCA-EU		CGP_donor_1599384	female	alive			76.0	76.0			C50.2	TNM	pT1c,pN0(sn),pMx						no	Breast	DO225153	2669
+BRCA-EU		CGP_donor_1606170	female	alive			68.0	68.0			C50.05	TNM	I						yes	Breast	DO225164	3501
+ESAD-UK		OCCAMS-RS-025	female	alive	no evidence of disease		62.0	62.0	64.0		C15.5	TNM7	T2N0M0	UICC:1b	1066.0	1066.0	unknown		yes	Esophagus	DO227911	29133
+PBCA-DE		ICGC_MB307	female														unknown		unknown	Brain	DO227927	661
+BRCA-FR		PI088	female	alive			76.0	77.0	79.0		C50	TNM	T3N1M0			812.0	no		yes	Breast	DO227939	3904
+BRCA-FR		PI090	female	alive			32.0	32.0	34.0		C50	TNM	T1N0M0			614.0	no		yes	Breast	DO227941	2402
+THCA-SA		PTC_218	female	alive	complete remission	local recurrence	33.0	33.0	33.0		ClassicalVariant	AJCC	I				no			Head and neck	DO227951	16
+THCA-SA		PTC_248	female	alive	complete remission	local recurrence	52.0	52.0	54.0		TallCellVariant	AJCC	III		809.0	809.0	no			Head and neck	DO227958	16
+SKCM-US		TCGA-D9-A148	male	alive	progression		40.0		52.0		C50.9					4511.0	unknown		unknown	Skin	DO37971	339
+THCA-SA		PTC_260	female	alive	complete remission	local recurrence	78.0	78.0	78.0		ClassicalVariant	AJCC	III				no			Head and neck	DO227961	23
+THCA-SA		PTC_273	female	alive	complete remission	local recurrence	39.0	39.0	41.0		ClassicalVariant	AJCC	I		848.0	848.0	no			Head and neck	DO227965	13
+THCA-SA		PTC_276	female	alive	complete remission	local recurrence	25.0	25.0	27.0		ClassicalVariant	AJCC	I		867.0	867.0	no			Head and neck	DO227966	17
+BRCA-EU		CGP_donor_1830029	male	alive			71.0	71.0			C50.1	TNM	pT2N2a(sn)						no	Breast	DO225305	4015
+BRCA-EU		CGP_donor_1830028	male	alive			55.0	55.0			C50.1	TNM	pT2N2						no	Breast	DO225304	3277
+BRCA-EU		CGP_donor_1830023	female	alive			75.0	75.0			C50.2/4	TNM	pT1cN1(mi)(sn)						no	Breast	DO225302	1935
+BRCA-EU		CGP_donor_1833596	female				54.0	54.0				TNM	II							Breast	DO225307	4811
+BRCA-EU		CGP_donor_1921025	female	alive			39.0	39.0				TNM	0							Breast	DO225316	1081
+BRCA-EU		CGP_donor_1833603	female				56.0	56.0				TNM	I							Breast	DO225310	1736
+SKCM-US		TCGA-DA-A1I7	male	alive	progression		62.0		66.0		C44.9					1495.0	unknown		unknown	Skin	DO37951	560
+BRCA-EU		CGP_donor_1952336	female	alive			52.0	52.0				TNM	II						yes	Breast	DO225323	6135
+BRCA-EU		CGP_donor_1952335	female	alive			46.0	46.0				TNM	II							Breast	DO225322	8660
+PACA-AU		ICGC_0285	female	deceased			75.0	75.0			C25.0	TNM			34.0	34.0	unknown		unknown	Pancreas	DO34088	6081
+PACA-AU		ICGC_0286	male	deceased	progression		71.0	71.0			C25.0	TNM			333.0	333.0	unknown		unknown	Pancreas	DO34096	109
+PACA-AU		ICGC_0283	female	alive	stable		69.0	69.0			C25.0	TNM			337.0	337.0	unknown		unknown	Pancreas	DO34072	5745
+SKCM-US		TCGA-ER-A193	male	deceased			62.0		62.0		C49.0				955.0		unknown		unknown	Skin	DO47368	2309
+BRCA-EU		CGP_donor_1686151	female	alive			73.0	73.0			C50.2	TNM	pT1cN0M0						no	Breast	DO225210	2938
+PBCA-DE		ICGC_MB286	female				7.0	7.0									unknown		unknown	Brain	DO227873	830
+ESAD-UK		OCCAMS-AH-115	male	deceased	relapse	distant recurrence/metastasis	65.0	65.0	67.0	855.0	C15.5	TNM7	T3N1M0	UICC:3a	1075.0	1047.0	unknown		no	Esophagus	DO227876	17087
+PBCA-DE		ICGC_MB287	female				2.0	2.0									unknown		unknown	Brain	DO227877	681
+SKCM-US		TCGA-EE-A29S	male	alive	progression		79.0		83.0		C77.3					1701.0	unknown		unknown	Skin	DO37936	1278
+BRCA-EU		CGP_donor_1698916	female				58.0	58.0												Breast	DO225219	4293
+PBCA-DE		ICGC_MB290	male				29.0	29.0									unknown		unknown	Brain	DO227885	5907
+PBCA-DE		ICGC_MB291	male				7.0	7.0									unknown		unknown	Brain	DO227887	3710
+ESAD-UK		OCCAMS-AH-015	male	alive	no evidence of disease		63.0	63.0	68.0		C15.5	TNM6	T3N0M0	UICC:2a	2073.0	2073.0	unknown		unknown	Esophagus	DO227888	12590
+PBCA-DE		ICGC_MB292	male				4.0	4.0									unknown		unknown	Brain	DO227889	824
+PBCA-DE		ICGC_MB289	male				8.0	8.0									unknown		unknown	Brain	DO227882	4469
+ESAD-UK		OCCAMS-ZZ-020	female	alive	relapse	distant recurrence/metastasis	55.0		55.0	117.0	C15.5	TNM6	T3N1M0	UICC:3	281.0	281.0	unknown		unknown	Esophagus	DO227883	8038
+PBCA-DE		ICGC_MB294	female				4.0	4.0									unknown		unknown	Brain	DO227896	965
+BRCA-EU		CGP_donor_1711730	female	alive			79.0	79.0			C50.2	TNM	I						yes	Breast	DO225238	2487
+BRCA-EU		CGP_donor_1711728	female	alive			60.0	60.0			C50.2	TNM	I						no	Breast	DO225236	2288
+PBCA-DE		ICGC_MB293	male				28.0	28.0									unknown		unknown	Brain	DO227891	1843
+ESAD-UK		OCCAMS-SH-033	male	deceased	relapse	distant recurrence/metastasis	78.0	78.0	79.0	319.0	C15.5	TNM7	T3N1M0	UICC:3a	543.0	476.0	unknown		yes	Esophagus	DO227893	16295
+BRCA-EU		CGP_donor_1711734	female	alive			63.0	63.0			C50.2	TNM	I						yes	Breast	DO225241	1798
+BRCA-EU		CGP_donor_1711733	female	alive			74.0	74.0			C50.2	TNM	II						yes	Breast	DO225240	1853
+BRCA-EU		CGP_donor_1711740	female	alive			47.0	47.0			C50.2	TNM	I						yes	Breast	DO225247	1492
+BRCA-EU		CGP_donor_1752924	female																	Breast	DO225261	4829
+SKCM-US		TCGA-D3-A2J6	male	deceased			65.0		65.0		C77.4				1321.0		unknown		unknown	Skin	DO37901	37
+BRCA-EU		CGP_donor_1815388	female				48.0	48.0												Breast	DO225286	5102
+BRCA-EU		CGP_donor_1815390	female				63.0	63.0												Breast	DO225288	3750
+PACA-AU		ICGC_0234	female	alive	progression	distant recurrence/metastasis	63.0	63.0			C25.0	TNM			715.0	715.0	unknown		unknown	Pancreas	DO34392	55
+PACA-AU		ICGC_0077	female	deceased	progression		63.0	63.0		213.0	C25.0	TNM			549.0	549.0	unknown		unknown	Pancreas	DO33063	8281
+PACA-AU		ICGC_0005	male	deceased	progression	distant recurrence/metastasis	63.0	63.0		371.0	C25.2	TNM			641.0	641.0	unknown		unknown	Pancreas	DO33037	14155
+LGG-US		TCGA-CS-4941	male	deceased			67.0		67.0		C71.9				234.0		unknown		unknown	Brain	DO22391	72
+PACA-AU		ICGC_0084	female	deceased	progression	distant recurrence/metastasis	60.0	60.0		182.0	C25.0	TNM			381.0	381.0	unknown		unknown	Pancreas	DO33043	17015
+PACA-AU		ICGC_0137	male	deceased	progression		61.0	61.0			C25.0	TNM			179.0	179.0	unknown		unknown	Pancreas	DO34376	9160
+PACA-AU		ICGC_0203	female	alive	progression	distant recurrence/metastasis	68.0	68.0		342.0	C25.0	TNM			749.0	749.0	unknown		unknown	Pancreas	DO34344	69
+LGG-US		TCGA-DU-7290	female	deceased			45.0		45.0		C71.0				315.0		unknown		unknown	Brain	DO22348	54
+SKCM-US		TCGA-ER-A194	male	deceased			77.0		77.0		C49.1				1354.0		unknown		unknown	Skin	DO47646	1619
+PACA-AU		ICGC_0228	male	deceased	progression		67.0	67.0			C25.0	TNM			468.0	468.0	unknown		unknown	Pancreas	DO34328	118
+SKCM-US		TCGA-D3-A3C8	female	alive	progression		58.0		60.0		C49.0					1038.0	unknown		unknown	Skin	DO47636	836
+LGG-US		TCGA-DB-5273	male	alive	complete remission		33.0		37.0		C71.0					1809.0	unknown		unknown	Brain	DO22327	30
+BRCA-EU		CGP_donor_1964515	female	alive			26.0	26.0				TNM	II							Breast	DO225339	6947
+BRCA-EU		CGP_donor_1964512	female	alive			32.0	32.0				TNM	III						yes	Breast	DO225336	8538
+PRAD-UK		0120_CRUK_PC_0120	male	alive	stable		52.0	52.0	57.0		C61	TNM	T1cN0M0		1657.0	1657.0	unknown		unknown	Prostate	DO224017	3661
+PRAD-UK		0115_CRUK_PC_0115	male	alive	stable		54.0	55.0	58.0		C61	TNM	T1cNxMx		1460.0	1460.0	unknown		no	Prostate	DO224012	2408
+LGG-US		TCGA-FG-6692	male	alive	progression		63.0		63.0		C71.0					126.0	unknown		unknown	Brain	DO22307	101
+BRCA-EU		CGP_donor_1981530	female	alive			63.0	63.0				TNM	II							Breast	DO225364	3774
+BRCA-EU		CGP_donor_1981532	female	alive			46.0	46.0				TNM	I						yes	Breast	DO225366	25754
+PBCA-DE		ICGC_MB99	male	alive	relapse	local recurrence	8.0	8.0		152.0	C71	pM	M3		548.0	548.0	unknown		unknown	Brain	DO35629	1939
+BRCA-EU		CGP_donor_1981531	female	alive			63.0	63.0				TNM	II						yes	Breast	DO225365	4945
+BRCA-EU		CGP_donor_1981540	female	alive			60.0	60.0				TNM	III							Breast	DO225371	9570
+BRCA-EU		CGP_donor_1988685	female	alive			50.0	50.0				TNM	II							Breast	DO225382	7037
+BRCA-EU		CGP_donor_1988683	female	alive			42.0	42.0				TNM	II							Breast	DO225380	1356
+BRCA-EU		CGP_donor_1988703	female	alive			63.0	63.0				TNM	I							Breast	DO225389	5070
+PBCA-DE		MB_Exm10	female	deceased	relapse	local recurrence	3.0	3.0		91.0	C71	pM	M3		152.0	152.0	unknown		unknown	Brain	DO35606	11
+BRCA-EU		CGP_donor_1988713	female	alive			41.0	41.0				TNM	II							Breast	DO225394	2024
+BRCA-EU		CGP_donor_1988710	female	alive			46.0	46.0				TNM	I							Breast	DO225393	2263
+BRCA-EU		CGP_donor_1988718	female				32.0	32.0				TNM	III							Breast	DO225398	6061
+PBCA-DE		MB_Exm599	male	alive			8.0	8.0			C71	pM	M0		2009.0		unknown		unknown	Brain	DO35593	22
+PBCA-DE		MB_Exm645	male	deceased	relapse	local recurrence	6.0	6.0		700.0	C71	pM	M2		1370.0	1370.0	unknown		unknown	Brain	DO35594	15
+LGG-US		TCGA-DU-6402	male	deceased			52.0		52.0		C71.0				214.0		unknown		unknown	Brain	DO22264	68
+LGG-US		TCGA-DU-5849	male	alive	complete remission		48.0		49.0		C71.9					443.0	unknown		unknown	Brain	DO22270	50
+PBCA-DE		LFS_MB2	male	deceased	relapse	local recurrence	14.0	14.0		304.0	C71	pM	M0		396.0	396.0	unknown		unknown	Brain	DO35587	4498
+PACA-AU		ICGC_0187	female	alive	stable		52.0	52.0			C25.0	TNM			685.0	685.0	unknown		unknown	Pancreas	DO34256	34
+LGG-US		TCGA-DH-5143	male	alive	progression		30.0		31.0		C71.0					438.0	unknown		unknown	Brain	DO22247	70
+LGG-US		TCGA-FG-6691	female	alive	complete remission		23.0		23.0		C71.0					103.0	unknown		unknown	Brain	DO22258	18
+LGG-US		TCGA-DU-7010	female	deceased			58.0		58.0		C71.0				456.0		unknown		unknown	Brain	DO22253	124
+PBCA-DE		ICGC_MB800	female	deceased	relapse	local recurrence	12.0	12.0		183.0	C71	pM	M3		244.0	244.0	unknown		unknown	Brain	DO35561	1870
+PACA-AU		ICGC_0174	female	alive	progression	distant recurrence/metastasis	72.0	72.0			C25.0	TNM			985.0	985.0	unknown		unknown	Pancreas	DO34200	159
+SKCM-US		TCGA-ER-A197	female	deceased			83.0		83.0		C51.9				424.0		unknown		unknown	Skin	DO47519	57
+LGG-US		TCGA-FG-7636	male	alive	complete remission		48.0		48.0		C71.0					124.0	unknown		unknown	Brain	DO22203	59
+PACA-AU		ICGC_0327	male	deceased													unknown		unknown	Pancreas	DO32817	6652
+UCEC-US		TCGA-AP-A0LJ	female	alive	complete remission		42.0		45.0		C54.1					1421.0	unknown		unknown	Uterus	DO42145	49
+UCEC-US		TCGA-B5-A0JS	female	alive	complete remission		54.0		57.0		C54.1					1241.0	unknown		unknown	Uterus	DO42121	38
+UCEC-US		TCGA-A5-A0VQ	female	alive	complete remission		62.0		62.0		C54.1					177.0	unknown		unknown	Uterus	DO42113	410
+UCEC-US		TCGA-B5-A0K9	female	alive	complete remission		88.0		88.0		C54.1					167.0	unknown		unknown	Uterus	DO42097	752
+UCEC-US		TCGA-BG-A0MG	female	alive	complete remission		73.0		75.0		C54.1					896.0	unknown		unknown	Uterus	DO42057	121
+BRCA-EU		CGP_donor_1199129	female				33.0	33.0				TNM	pT2N0M0							Breast	DO224593	10262
+UCEC-US		TCGA-A5-A0GN	female	alive	complete remission		65.0		69.0		C54.1					1477.0	unknown		unknown	Uterus	DO43706	60
+UCEC-US		TCGA-D1-A16E	female	alive	complete remission		73.0		75.0		C54.1					909.0	unknown		unknown	Uterus	DO41002	69
+PACA-AU		ICGC_0058	female	deceased	progression	distant recurrence/metastasis	59.0	59.0	60.0	228.0	C25.0	TNM			280.0	280.0	unknown		unknown	Pancreas	DO32996	82
+PACA-AU		ICGC_0046	male	deceased	progression	distant recurrence/metastasis	72.0	72.0		202.0	C25.1	TNM			234.0	234.0	unknown		unknown	Pancreas	DO32952	210
+CLLE-ES		91	female	alive	stable	progression (liquid tumours)	60.0	63.0	67.0	980.0	C91.1	BINET	A		2709.0	2709.0				Blood	DO6928	15
+UCEC-US		TCGA-D1-A17R	female	deceased			58.0		58.0		C54.1				339.0		unknown		unknown	Uterus	DO41062	180
+CLLE-ES		13	female	alive	progression	progression (liquid tumours)	53.0	59.0	69.0	2560.0	C91.1	BINET	A		5887.0	5887.0				Blood	DO6904	15
+UCEC-US		TCGA-BS-A0T9	female	deceased			39.0		39.0		C54.1				1428.0		unknown		unknown	Uterus	DO41026	64
+CLLE-ES		642	female	alive	complete remission	progression (liquid tumours)	51.0	54.0	63.0	2212.0	C91.1	BINET	A		4326.0	4326.0				Blood	DO6994	11
+PACA-CA		PCSI_0529	male	deceased	relapse	distant recurrence/metastasis	72.0	72.0	73.0	160.0	C25	TMN	T3N0Mx		472.0	472.0				Pancreas	DO224698	7232
+CLLE-ES		853	male	deceased	partial remission	progression (liquid tumours)	47.0	48.0	50.0	272.0	C91.1	BINET	A		1032.0	1032.0				Blood	DO223374	1619
+CLLE-ES		875	female	deceased	progression	progression (liquid tumours)	76.0	86.0	86.0	3555.0	C91.1	BINET	A		3612.0	3612.0				Blood	DO223381	3737
+CLLE-ES		1056	male	alive	stable		55.0	73.0	76.0		C91.1	BINET	A		7558.0	7558.0				Blood	DO223387	3388
+CLLE-ES		887	male	alive	progression	progression (liquid tumours)	66.0	68.0	68.0	616.0	C91.1	BINET	B		646.0	646.0				Blood	DO223386	1508
+PACA-AU		ICGC_0039	male	deceased	progression	distant recurrence/metastasis	67.0	67.0		249.0	C25.0	TNM			313.0	313.0	unknown		unknown	Pancreas	DO32924	51
+PACA-AU		ICGC_0035	female	alive	stable		77.0	77.0	78.0		C25.0	TNM			1478.0	1478.0	unknown		unknown	Pancreas	DO32908	7112
+PACA-AU		ICGC_0036	male	alive	stable		64.0	64.0	65.0	241.0	C25.0	TNM			1253.0	1253.0	unknown		unknown	Pancreas	DO32912	12484
+PACA-CA		PCSI_0339	male	deceased	relapse	distant recurrence/metastasis	72.0	72.0	74.0	517.0		TNM	T3N0Mx		561.0	561.0				Pancreas	DO224633	15656
+UCEC-US		TCGA-D1-A16D	female	alive	complete remission		49.0		51.0		C54.1					908.0	unknown		unknown	Uterus	DO42217	49
+PACA-AU		ICGC_0018	male	deceased	progression	distant recurrence/metastasis	64.0	64.0		315.0	C25.1	TNM			345.0	345.0	unknown		unknown	Pancreas	DO32855	64
+PACA-AU		ICGC_0004	female	deceased	progression	distant recurrence/metastasis	78.0	78.0	80.0		C25.0	TNM	T2N0MX		1874.0	1874.0	unknown		unknown	Pancreas	DO32829	4863
+PACA-AU		ICGC_0003	female	alive	stable		58.0	58.0	61.0		C25.0	TNM			1778.0	1778.0	unknown		unknown	Pancreas	DO32827	21
+PACA-AU		ICGC_0008	male	deceased	progression	distant recurrence/metastasis	72.0	72.0	74.0	725.0	C25.0	TNM			1209.0	1209.0	unknown		unknown	Pancreas	DO32835	5476
+UCEC-US		TCGA-A5-A0RA	female	alive	complete remission		68.0		69.0		C54.1					556.0	unknown		unknown	Uterus	DO42288	87
+UCEC-US		TCGA-D1-A168	female	alive	complete remission		67.0		69.0		C54.1					913.0	unknown		unknown	Uterus	DO43562	66
+UCEC-US		TCGA-A5-A0R7	female	alive	complete remission		55.0		55.0		C54.1					40.0	unknown		unknown	Uterus	DO42225	56
+BRCA-EU		CGP_donor_1347730	female				41.0	41.0				TNM	pT2pN0Mx							Breast	DO224765	10306
+CLLE-ES		1525	male	alive	complete remission		48.0	48.0	49.0		C91.1	BINET	B		266.0	266.0				Blood	DO223438	1692
+PACA-CA		PCSI_0623	female	alive	no evidence of disease		74.0	74.0	74.0		C25.7	AJCC/UICC TNM	IA		215.0	215.0				Pancreas	DO224770	10103
+PACA-CA		PCSI_0625	female	deceased	no evidence of disease		69.0	69.0	70.0		C25.0	AJCC/UICC TNM	IB		340.0	340.0				Pancreas	DO224779	4981
+PACA-CA		PCSI_0890	female	deceased	relapse	local recurrence and distant metastasis	72.0	72.0	74.0	299.0	C25.0	AJCC/UICC TNM	I - III		816.0	816.0				Pancreas	DO224784	6403
+UCEC-US		TCGA-BS-A0UM	female	alive	progression		64.0		70.0		C54.1					2191.0	unknown		unknown	Uterus	DO43065	381
+UCEC-US		TCGA-B5-A0JY	female	alive	complete remission		50.0		52.0		C54.1					809.0	unknown		unknown	Uterus	DO43041	11734
+UCEC-US		TCGA-D1-A16J	female	alive	complete remission		61.0		63.0		C54.1					742.0	unknown		unknown	Uterus	DO43033	239
+PACA-CA		PCSI_0530	female	deceased			59.0	59.0	60.0		C25	TMN	T3N1Mx		455.0	455.0				Pancreas	DO224705	4991
+PACA-CA		PCSI_0590	male	deceased	relapse	distant recurrence/metastasis	73.0	73.0	74.0	299.0	C25.1/C25.7	AJCC/UICC TNM	IB		437.0	437.0				Pancreas	DO224714	4779
+BRCA-EU		CGP_donor_1337227	female	alive			45.0	45.0			C50.3	TNM	T3N0M0							Breast	DO224728	1231
+PACA-CA		PCSI_0592	female	deceased	relapse	distant recurrence/metastasis	63.0	63.0	64.0	108.0	C25.0	AJCC/UICC TNM	IB		234.0	234.0				Pancreas	DO224724	7163
+CLLE-ES		1297	female	alive	complete remission	progression (liquid tumours)	57.0	57.0	59.0	249.0	C91.1	BINET	A		822.0	822.0				Blood	DO223402	1508
+BRCA-EU		CGP_donor_1337230	female	alive			41.0	41.0			C50.3	TNM	T1N0M0							Breast	DO224730	7740
+CLLE-ES		1339	male	alive	stable	progression (liquid tumours)	83.0	86.0	88.0	1424.0	C91.1	BINET	A		1921.0	1921.0				Blood	DO223407	3769
+CLLE-ES		1384	male	alive	complete remission	progression (liquid tumours)	65.0	68.0	70.0	248.0	C91.1	BINET	B		1883.0	1883.0				Blood	DO223414	4361
+CLLE-ES		1360	female	alive	stable	progression (liquid tumours)	80.0	80.0	82.0		C91.1	BINET	B		694.0	694.0				Blood	DO223412	3581
+CLLE-ES		1353	female	alive	complete remission	progression (liquid tumours)	70.0	70.0	78.0	9.0	C91.1	BINET	A		2912.0	2912.0				Blood	DO223410	4000
+PACA-CA		PCSI_0594	male	deceased	relapse	distant recurrence/metastasis	63.0	63.0	65.0	52.0	C25.7	AJCC/UICC TNM	IB		684.0	684.0				Pancreas	DO224740	12432
+CLLE-ES		1430	male	alive	complete remission	progression (liquid tumours)	53.0	54.0	55.0	188.0	C91.1	BINET	B		802.0	802.0				Blood	DO223421	1205
+PACA-CA		PCSI_0609	male	alive	no evidence of disease		67.0	67.0	68.0		C25.0	AJCC/UICC TNM	IB or IIB		418.0	418.0				Pancreas	DO224752	7655
+PACA-CA		PCSI_0611	male	alive	no evidence of disease		58.0	59.0	59.0		C25.0/C25.9	AJCC/UICC TNM	IIB		113.0	113.0				Pancreas	DO224758	3783
+PACA-AU		ICGC_0342	male	deceased	progression	local recurrence	68.0	68.0		168.0	C25.0	TNM			189.0	189.0	unknown		unknown	Pancreas	DO34945	4814
+PACA-AU		ICGC_0316	female	deceased			60.0	60.0			C25.0	TNM			82.0	82.0	unknown		unknown	Pancreas	DO33624	104
+CLLE-ES		1267	female	alive	stable		51.0	51.0	54.0		C91.1	BINET	A		996.0	996.0				Blood	DO223399	1973
+PACA-AU		ICGC_0098	female	deceased	progression	distant recurrence/metastasis	76.0	76.0		106.0	C25.0	TNM			164.0	164.0	unknown		unknown	Pancreas	DO33656	4114
+PACA-AU		ICGC_0339	male	deceased	progression	local recurrence	75.0	75.0		348.0	C25.0	TNM			579.0	579.0	unknown		unknown	Pancreas	DO34969	85
+CLLE-ES		373	female	alive	stable		63.0	70.0	74.0		C91.1	BINET	A		4119.0	4119.0				Blood	DO6700	3790
+CLLE-ES		1416	female	alive	stable		18.0	19.0	20.0		C91.1	BINET	A		479.0	479.0				Blood	DO223558	240
+CLLE-ES		1425	male	alive	stable		74.0	77.0	79.0		C91.1	BINET	A		1707.0	1707.0				Blood	DO223560	4374
+CLLE-ES		1427	female	alive	stable		61.0	62.0	63.0		C91.1	BINET	A		504.0	504.0				Blood	DO223563	1729
+CLLE-ES		1426	female	alive	stable		76.0	77.0	78.0		C91.1	BINET	A		724.0	724.0				Blood	DO223562	3163
+PACA-AU		ICGC_0165	male	deceased			61.0	61.0			C25.0	TNM					unknown		unknown	Pancreas	DO33592	43
+BRCA-EU		CGP_donor_1363963	female	alive			46.0	46.0			C50.9	TNM	ll							Breast	DO224852	8993
+BRCA-EU		CGP_donor_1363965	female	alive			36.0	36.0			C50.9	TNM	ll							Breast	DO224860	6822
+CLLE-ES		1464	male	alive	stable		51.0	51.0	52.0		C91.1	BINET	A		495.0	495.0				Blood	DO223540	1956
+ESAD-UK		OCCAMS-AH-019	male	deceased	no evidence of disease		59.0	59.0	61.0		C15.5	TNM6	T3N1M0	UICC:3	766.0	766.0	unknown		no	Esophagus	DO10856	28824
+ESAD-UK		OCCAMS-PS-011	female	deceased	relapse	distant recurrence/metastasis	75.0		77.0	97.0	C15.5	TNM6	T3N0M0	UICC:2a	822.0	781.0	unknown		unknown	Esophagus	DO10854	21010
+PACA-AU		ICGC_0310	male	deceased	progression	distant recurrence/metastasis	64.0	64.0			C25.0	TNM			456.0	456.0	unknown		unknown	Pancreas	DO34825	63
+ESAD-UK		OCCAMS-PS-010	male	deceased	relapse	distant recurrence/metastasis	58.0		59.0	358.0	C15.5	TNM6	T3N1M0	UICC:3	1048.0	596.0	unknown		yes	Esophagus	DO10852	12583
+ESAD-UK		OCCAMS-PS-009	male	deceased	no evidence of disease		75.0		77.0		C15.5	TNM6	TxN0M0		973.0	973.0	unknown		unknown	Esophagus	DO10851	17719
+ESAD-UK		OCCAMS-AH-013	male	alive	stable		53.0	53.0	58.0		C15.5	TNM6	T2N0Mx		2004.0	2004.0	unknown		no	Esophagus	DO10850	21258
+PACA-AU		ICGC_0323	female	deceased	progression	local recurrence	45.0	45.0		136.0	C25.0	TNM			363.0	363.0	unknown		unknown	Pancreas	DO34865	72
+MELA-AU		MELA-0004	female	alive			56.0	56.0	56.0		C43.7	AJCC 7th Edition 2010	IIC		25.0	25.0	unknown		unknown	Skin	DO222359	6269
+MELA-AU		MELA-0014	male	alive			76.0	76.0	76.0		C43.7	AJCC 7th Edition 2010	IIC		69.0	69.0	yes	C61, C74	unknown	Skin	DO222379	5483
+MELA-AU		MELA-0016	male	deceased			69.0	69.0	70.0		C43.5	AJCC 7th Edition 2010	IIIA		415.0	415.0	unknown		unknown	Skin	DO222382	23548
+CLLE-ES		110	female	alive	stable		66.0	73.0	78.0		C91.1	BINET	A		4592.0	4592.0				Blood	DO6444	12
+BRCA-EU		CGP_donor_1397256	female				45.0	45.0												Breast	DO224925	5512
+BRCA-EU		CGP_donor_1397258	female				59.0	59.0												Breast	DO224930	2348
+CLLE-ES		174	female	alive	stable		71.0	78.0	83.0		C91.1	BINET	A		4595.0	4595.0				Blood	DO6486	2281
+CLLE-ES		172	female	alive	stable		62.0	79.0	83.0		C91.1	BINET	A		7686.0	7686.0				Blood	DO6482	15
+CLLE-ES		159	male	alive	progression	progression (liquid tumours)	66.0	78.0	82.0	5124.0	C91.1	BINET	A		6112.0	6112.0				Blood	DO6472	27
+BRCA-EU		CGP_donor_1410193	female				56.0	56.0												Breast	DO224963	2151
+BRCA-EU		CGP_donor_1425253	female				60.0	60.0			C50.9	TNM	T4/N1/M0							Breast	DO224980	19150
+BRCA-EU		CGP_donor_1451416	female				63.0	63.0				AJCC	pT4b_pN2a(sn)						yes	Breast	DO224990	2114
+BRCA-EU		CGP_donor_1451418	female	alive			47.0	47.0				AJCC	T1c_N0_(sn)_w/_multiple_foci_of_invasion						yes	Breast	DO224992	1516
+BRCA-EU		CGP_donor_1451423	female	alive			58.0	58.0				AJCC	T2_pN1a_MX						no	Breast	DO224999	3790
+BRCA-EU		CGP_donor_1374629	female	alive			49.0	49.0												Breast	DO224910	3031
+UCEC-US		TCGA-BS-A0UT	female	alive	complete remission		62.0		63.0		C54.1					595.0	unknown		unknown	Uterus	DO43234	49
+MALY-DE		4158268	female	alive	complete remission		54.0	54.0	62.0		C82.0	Ann Arbor Stage	II,N,E		3103.0	3103.0	no		yes	Blood	DO221130	2624
+MALY-DE		4109956	female	alive	partial remission		54.0	54.0	55.0		C82.0	Ann Arbor Stage	IV,N,E		520.0	520.0	no		unknown	Blood	DO221131	4620
+MELA-AU		MELA-0065	female	alive			62.0	62.0	63.0		C20	AJCC 7th Edition 2010			157.0	157.0	yes	C54.1	unknown	Skin	DO222470	7907
+CLLE-ES		264	male	alive	partial remission	progression (liquid tumours)	71.0	73.0	77.0	1341.0	C91.1	BINET	A		2402.0	2402.0				Blood	DO6528	13
+MELA-AU		MELA-0068	female	deceased			58.0	61.0	62.0	1093.0	C43.7	AJCC 7th Edition 2010	IB		1505.0	1505.0	unknown		unknown	Skin	DO222475	4717
+MELA-AU		MELA-0071	female	alive			57.0	57.0	58.0	137.0	C52	AJCC 7th Edition 2010	IIC		309.0	309.0	unknown		unknown	Skin	DO222481	5559
+MELA-AU		MELA-0072	male	deceased			65.0	66.0	69.0	256.0	C43.7	AJCC 7th Edition 2010	IIIB		1334.0	1334.0	unknown		unknown	Skin	DO222484	6757
+CLLE-ES		189	female	alive	stable		71.0	75.0	80.0		C91.1	BINET	A		3343.0	3343.0				Blood	DO6507	18
+CLLE-ES		274	male	alive	complete remission	progression (liquid tumours)	64.0	72.0	77.0	3492.0	C91.1	BINET	A		4692.0	4692.0				Blood	DO6540	11
+MALY-DE		4140531	male	alive	complete remission		66.0	66.0	70.0		C83.3	Ann Arbor Stage	I,E		1594.0	1594.0	no		unknown	Blood	DO221118	12888
+MELA-AU		MELA-0058	female	alive			54.0	54.0	58.0	1016.0	C51.9	AJCC 7th Edition 2010	IIA		1484.0	1484.0	yes	C43	unknown	Skin	DO222457	4198
+MALY-DE		4110996	male	alive	complete remission		2.0	2.0	5.0		C83.7	Murphy Stage	unknown		1339.0	1339.0	no		unknown	Blood	DO221121	2385
+MELA-AU		MELA-0057	female	deceased			90.0	90.0	92.0	147.0	C43.7	AJCC 7th Edition 2010	IIIC		640.0	640.0	yes	C16.9	unknown	Skin	DO222453	3264
+MALY-DE		4187640	male	alive	complete remission		58.0	58.0	60.0		C82.4	Ann Arbor Stage	III,N,E		813.0	813.0	no		unknown	Blood	DO221128	20038
+PACA-AU		ICGC_0254	male	deceased	progression	distant recurrence/metastasis	48.0	48.0			C25.0	TNM			895.0	895.0	unknown		unknown	Pancreas	DO33784	15
+PACA-AU		ICGC_0251	female	deceased	progression	distant recurrence/metastasis	64.0	64.0			C25.0	TNM			648.0	648.0	unknown		unknown	Pancreas	DO33760	30
+THCA-US		TCGA-FY-A3R7	female	alive			50.0		50.0		C73					1.0	unknown		unknown	Head and neck	DO40438	18
+THCA-US		TCGA-BJ-A0Z9	female	alive	complete remission		57.0		57.0		C73					251.0	unknown		unknown	Head and neck	DO39441	25
+UCEC-US		TCGA-D1-A17D	female	alive	complete remission		58.0		58.0		C54.1					160.0	unknown		unknown	Uterus	DO41746	513
+UCEC-US		TCGA-A5-A0GX	female	alive	complete remission		53.0		55.0		C54.1					925.0	unknown		unknown	Uterus	DO41734	43
+UCEC-US		TCGA-D1-A16B	female	alive	complete remission		64.0		66.0		C54.1					744.0	unknown		unknown	Uterus	DO41722	58
+SKCM-US		TCGA-EE-A2A1	male	alive	complete remission		46.0		52.0		C77.3					2402.0	unknown		unknown	Skin	DO38045	480
+SKCM-US		TCGA-ER-A19O	male	deceased			56.0		56.0		C44.6				0.0		unknown		unknown	Skin	DO38063	220
+THCA-US		TCGA-DJ-A1QE	female	alive	complete remission		62.0		70.0		C73					3042.0	unknown		unknown	Head and neck	DO40369	22
+UCEC-US		TCGA-BG-A0MT	female	alive	complete remission		64.0		64.0		C54.1					240.0	unknown		unknown	Uterus	DO41698	58
+UCEC-US		TCGA-BG-A0M4	female	alive	complete remission		60.0		61.0		C54.1					480.0	unknown		unknown	Uterus	DO41686	477
+SKCM-US		TCGA-FS-A1ZF	female	deceased			78.0		78.0		C77.9				470.0		unknown		unknown	Skin	DO38039	242
+UCEC-US		TCGA-D1-A16I	female	deceased			62.0		62.0		C54.1				350.0		unknown		unknown	Uterus	DO42993	43
+SKCM-US		TCGA-EE-A2ME	male	deceased			51.0		51.0		C77.4				3141.0		unknown		unknown	Skin	DO38011	59
+SKCM-US		TCGA-EE-A2MJ	male	deceased			60.0		60.0		C77.3				2927.0		unknown		unknown	Skin	DO38099	2582
+UCEC-US		TCGA-BG-A0M2	female	alive	complete remission		62.0		62.0		C54.1					317.0	unknown		unknown	Uterus	DO41632	38
+PRAD-UK		0060_CRUK_PC_0060	male	deceased		local recurrence	72.0	88.0	88.0	102.0	C61	TNM	T3NxM0		6110.0	6110.0	unknown		yes	Prostate	DO223961	10921
+UCEC-US		TCGA-BS-A0TJ	female	alive	complete remission		59.0		63.0		C54.1					1514.0	unknown		unknown	Uterus	DO42953	663
+PRAD-UK		0023_CRUK_PC_0023	male	alive	progression	local recurrence	61.0	65.0	69.0	711.0	C61	TNM	T2bN0Mx		2822.0	2822.0	unknown		unknown	Prostate	DO223973	3038
+PRAD-UK		0040_CRUK_PC_0040	male	deceased			59.0	64.0	66.0		C61	TNM	T2cN0Mx		2416.0	2416.0	unknown		unknown	Prostate	DO223972	1037
+PRAD-UK		0024_CRUK_PC_0024	male	alive	stable		71.0	72.0	75.0		C61	TNM	TxNxMx		1673.0	1673.0	unknown		unknown	Prostate	DO223985	2847
+PRAD-UK		0028_CRUK_PC_0028	male	alive	progression	local recurrence	68.0	68.0	73.0	1108.0	C61	TNM	T1cN0Mx		1729.0	1729.0	unknown		unknown	Prostate	DO223981	3984
+UCEC-US		TCGA-AX-A0IW	female	alive	complete remission		67.0		70.0		C54.1					1149.0	unknown		unknown	Uterus	DO42945	55
+PRAD-UK		0081_CRUK_PC_0081	male	alive	stable		51.0	51.0	52.0		C61	TNM	T1cNxMx		541.0	541.0	unknown		unknown	Prostate	DO223999	2116
+PRAD-UK		0073_CRUK_PC_0073	male	alive	progression	local recurrence	60.0	60.0	63.0	642.0	C61	TNM	T1cNxMx		1103.0	1103.0	unknown		unknown	Prostate	DO223998	2350
+UCEC-US		TCGA-BS-A0TI	female	alive	complete remission		64.0		67.0		C54.1					1443.0	unknown		unknown	Uterus	DO41608	93
+MELA-AU		MELA-0204	female	deceased			84.0	84.0	85.0		C51.9	AJCC 7th Edition 2010	IIB		660.0	660.0	unknown		unknown	Skin	DO222691	5984
+CLLE-ES		22	female	alive	partial remission	progression (liquid tumours)	65.0	65.0	74.0	138.0	C91.1	BINET	A		3183.0	3183.0				Blood	DO6380	11
+UCEC-US		TCGA-A5-A0R9	female	alive	complete remission		51.0		51.0		C54.1					294.0	unknown		unknown	Uterus	DO41548	48
+UCEC-US		TCGA-BG-A0LX	female	alive	complete remission		57.0		57.0		C54.1					253.0	unknown		unknown	Uterus	DO41919	489
+UCEC-US		TCGA-D1-A17Q	female	alive	complete remission		54.0		54.0		C54.1					54.0	unknown		unknown	Uterus	DO41903	6792
+ESAD-UK		OCCAMS-ZZ-017	male	deceased	no evidence of disease		40.0		42.0		C15.5	TNM6	T3N0M0	UICC:2a	734.0	734.0	unknown		unknown	Esophagus	DO219120	9712
+ESAD-UK		OCCAMS-ZZ-014	male	deceased	no evidence of disease		60.0		62.0		C15.5	TNM6	T3N0M0	UICC:2a	859.0	859.0	unknown			Esophagus	DO219119	25075
+ESAD-UK		OCCAMS-ZZ-007	male	alive	stable		62.0		62.0		C15.5	TNM6	TN1M0		196.0	196.0	unknown		unknown	Esophagus	DO219118	14253
+ESAD-UK		OCCAMS-UC-005	female	alive	no evidence of disease		58.0	58.0	59.0		C15.5	TNM7	T4N1M0		483.0	483.0	unknown		unknown	Esophagus	DO219116	9070
+ESAD-UK		OCCAMS-SH-006	female	alive	no evidence of disease		63.0	63.0	67.0		C15.5	TNM7	T2N0M0	UICC:1b	1745.0	1745.0	unknown		no	Esophagus	DO219113	11476
+CLLE-ES		753	female	alive	partial remission	progression (liquid tumours)	83.0	85.0	88.0	1786.0	C91.1	BINET	A		2030.0	2030.0				Blood	DO7334	2797
+STAD-US		TCGA-D7-6817	male	alive	complete remission		63.0		63.0		C16.2					24.0	unknown		unknown	Stomach	DO38352	101
+UCEC-US		TCGA-BG-A187	female	alive			65.0		65.0		C54.1					231.0	unknown		unknown	Uterus	DO41983	109
+STAD-US		TCGA-BR-4184	male	alive			70.0		70.0		C16.3					0.0	unknown		unknown	Stomach	DO38328	4616
+STAD-US		TCGA-CG-5730	female	alive	complete remission		80.0		80.0		C16.0					122.0	unknown		unknown	Stomach	DO38324	195
+STAD-US		TCGA-CG-4436	male	alive	progression		57.0		57.0		C16.9					243.0	unknown		unknown	Stomach	DO38320	206
+STAD-US		TCGA-CG-5718	female	alive	complete remission		78.0		78.0		C16.2					31.0	unknown		unknown	Stomach	DO38340	100
+STAD-US		TCGA-BR-6802	male	alive	complete remission		65.0		65.0		C16.2					23.0	unknown		unknown	Stomach	DO38332	583
+STAD-US		TCGA-CG-4444	male	alive	complete remission		76.0		79.0		C16.2					1431.0	unknown		unknown	Stomach	DO38300	201
+STAD-US		TCGA-BR-4267	male	alive			51.0		51.0		C16.2					0.0	unknown		unknown	Stomach	DO38316	103
+STAD-US		TCGA-BR-4188	female	alive			53.0		53.0		C16.0					0.0	unknown		unknown	Stomach	DO38312	85
+STAD-US		TCGA-BR-6458	female	alive	complete remission		57.0		57.0		C16.2					41.0	unknown		unknown	Stomach	DO38296	344
+STAD-US		TCGA-CG-4462	female	deceased			72.0		72.0		C16.9				0.0		unknown		unknown	Stomach	DO38292	85
+STAD-US		TCGA-CG-5734	male	deceased			68.0		68.0		C16.2				243.0		unknown		unknown	Stomach	DO38265	120
+SKCM-US		TCGA-BF-A1PX	male	deceased			56.0		56.0		C44.9				282.0		unknown		unknown	Skin	DO51236	451
+STAD-US		TCGA-CG-4476	male	alive	complete remission		69.0		69.0		C16.2					0.0	unknown		unknown	Stomach	DO38276	139
+STAD-US		TCGA-CG-4441	male	deceased			83.0		83.0		C16.2				426.0		unknown		unknown	Stomach	DO38250	137
+THCA-US		TCGA-BJ-A0Z3	female	alive	complete remission		33.0		33.0		C73					182.0	unknown		unknown	Head and neck	DO40574	18
+STAD-US		TCGA-D7-6818	male	alive	complete remission		53.0		53.0		C16.2					124.0	unknown		unknown	Stomach	DO38262	175
+STAD-US		TCGA-CD-5813	male	alive	complete remission		60.0		60.0		C16.2					12.0	unknown		unknown	Stomach	DO38259	199
+STAD-US		TCGA-BR-6801	male	alive	complete remission		70.0		70.0		C16.2					35.0	unknown		unknown	Stomach	DO38253	58
+UCEC-US		TCGA-D1-A17U	female	alive	complete remission		53.0		54.0		C54.1					396.0	unknown		unknown	Uterus	DO41887	364
+STAD-US		TCGA-BR-6803	female	alive	complete remission		54.0		54.0		C16.2					20.0	unknown		unknown	Stomach	DO38220	20
+STAD-US		TCGA-BR-4357	male	alive			58.0		58.0		C16.2					0.0	unknown		unknown	Stomach	DO38241	282
+THCA-US		TCGA-H2-A3RI	female	alive	complete remission		29.0		29.0		C73					91.0	unknown		unknown	Head and neck	DO40532	13
+STAD-US		TCGA-BR-6852	female	alive	complete remission		64.0		64.0		C16.0					8.0	unknown		unknown	Stomach	DO38202	1375
+STAD-US		TCGA-F1-6874	male	alive	complete remission		79.0		79.0		C16.0					62.0	unknown		unknown	Stomach	DO38201	1117
+MELA-AU		MELA-0258	female	alive			21.0		37.0		C43.6	AJCC 7th Edition 2010			5649.0	5649.0	unknown		unknown	Skin	DO222898	27411
+STAD-US		TCGA-BR-6566	female	alive	complete remission		64.0		64.0		C16.2					19.0	unknown		unknown	Stomach	DO38217	1174
+UCEC-US		TCGA-BG-A0MS	female	alive	complete remission		53.0		54.0		C54.1					553.0	unknown		unknown	Uterus	DO41855	53
+STAD-US		TCGA-BR-6706	male	alive	complete remission		63.0		63.0		C16.0					66.0	unknown		unknown	Stomach	DO38211	255
+UCEC-US		TCGA-D1-A16R	female	alive	complete remission		39.0		39.0		C54.1					21.0	unknown		unknown	Uterus	DO41831	45
+UCEC-US		TCGA-B5-A0K1	female	alive	complete remission		69.0		71.0		C54.1					746.0	unknown		unknown	Uterus	DO41839	60
+CLLE-ES		1183	male	alive	partial remission	progression (liquid tumours)	71.0	72.0	74.0	138.0	C91.1	BINET	B		1049.0	1049.0				Blood	DO7472	982
+STAD-US		TCGA-BR-4294	male	alive			65.0		65.0		C16.2					0.0	unknown		unknown	Stomach	DO38194	34
+STAD-US		TCGA-CG-4477	female	alive	progression		58.0		58.0		C16.0					31.0	unknown		unknown	Stomach	DO38193	146
+STAD-US		TCGA-CG-5721	male	alive	complete remission		58.0		58.0		C16.3					183.0	unknown		unknown	Stomach	DO38192	5057
+STAD-US		TCGA-BR-4187	male	alive			56.0		56.0		C16.3					0.0	unknown		unknown	Stomach	DO38187	37
+SKCM-US		TCGA-D3-A3CC	female	alive	progression		69.0		74.0		C49.9					2168.0	unknown		unknown	Skin	DO38171	46
+THCA-US		TCGA-EM-A1YE	female	alive	complete remission		47.0		48.0		C73					650.0	unknown		unknown	Head and neck	DO40490	13
+STAD-US		TCGA-CD-5803	female	alive	complete remission		78.0		78.0		C16.3					2.0	unknown		unknown	Stomach	DO38186	44
+MELA-AU		MELA-0242	male	deceased			69.0	69.0	70.0		C43.7	AJCC 7th Edition 2010	IV		124.0	124.0	unknown		unknown	Skin	DO222818	22347
+MELA-AU		MELA-0243	male	deceased			58.0	58.0	60.0	310.0	C43.7	AJCC 7th Edition 2010	IIIC		650.0	650.0	unknown		unknown	Skin	DO222820	5011
+UCEC-US		TCGA-D1-A16X	female	alive	complete remission		54.0		54.0		C54.1					111.0	unknown		unknown	Uterus	DO41799	2313
+MELA-AU		MELA-0245	female	alive			60.0	60.0	65.0	1551.0	C43.5	AJCC 7th Edition 2010	IIIC		1623.0	1623.0	unknown		unknown	Skin	DO222832	2764
+SKCM-US		TCGA-EE-A29D	male	deceased			87.0		87.0		C77.0				425.0		unknown		unknown	Skin	DO38123	4609
+UCEC-US		TCGA-BG-A0M3	female	alive	complete remission		74.0		76.0		C54.1					742.0	unknown		unknown	Uterus	DO41777	81
+SKCM-US		TCGA-FS-A1ZY	male	deceased			71.0		71.0		C44.9				824.0		unknown		unknown	Skin	DO38135	45
+UCEC-US		TCGA-A5-A0VP	female	alive	complete remission		74.0		76.0		C54.1					928.0	unknown		unknown	Uterus	DO42600	1645
+UCEC-US		TCGA-BG-A0MU	female	alive	complete remission		78.0		78.0		C54.1					232.0	unknown		unknown	Uterus	DO43915	75
+BLCA-US		TCGA-CF-A3MI	male	alive			62.0		62.0		C67.9					0.0	unknown		unknown	Bladder	DO492	85
+BLCA-US		TCGA-FD-A3SN	male	alive	progression		79.0		79.0		C67.0					208.0	unknown		unknown	Bladder	DO490	449
+MELA-AU		MELA-0261	male	alive			35.0	35.0	38.0		C43.5	AJCC 7th Edition 2010	IIC		1138.0	1138.0	unknown		unknown	Skin	DO222904	25923
+BLCA-US		TCGA-GV-A3JW	male	alive	complete remission		74.0		74.0		C67.9					195.0	unknown		unknown	Bladder	DO482	113
+BLCA-US		TCGA-K4-A3WS	male	alive	complete remission		66.0		66.0		C67.9					266.0	unknown		unknown	Bladder	DO480	327
+BLCA-US		TCGA-CF-A1HS	female	alive	complete remission		75.0		75.0		C67.9					13.0	unknown		unknown	Bladder	DO486	363
+BLCA-US		TCGA-CU-A0YN	male	deceased			60.0		60.0		C67.9				393.0		unknown		unknown	Bladder	DO488	173
+MELA-AU		MELA-0264		alive			62.0	62.0	65.0		C43.5	AJCC 7th Edition 2010	IIA		848.0	848.0	unknown		unknown	Skin	DO222914	6856
+MELA-AU		MELA-0263	male	deceased			45.0	45.0	45.0		C43.5	AJCC 7th Edition 2010	IIIC		104.0	104.0	unknown		unknown	Skin	DO222911	19574
+BLCA-US		TCGA-GV-A3QF	male	alive	complete remission		79.0		79.0		C67.3					232.0	unknown		unknown	Bladder	DO471	160
+BLCA-US		TCGA-E7-A3X6	male	alive	complete remission		70.0		70.0		C67.2					0.0	unknown		unknown	Bladder	DO475	141
+BLCA-US		TCGA-DK-A2HX	female	alive	complete remission		80.0		80.0		C67.9					55.0	unknown		unknown	Bladder	DO473	142
+BLCA-US		TCGA-BT-A20O	male	deceased			75.0		75.0		C67.2				370.0		unknown		unknown	Bladder	DO460	211
+BLCA-US		TCGA-GV-A3QH	male	alive	complete remission		67.0		67.0		C67.0					237.0	unknown		unknown	Bladder	DO464	222
+BLCA-US		TCGA-FD-A3SQ	male	deceased			62.0		62.0		C67.2				1423.0		unknown		unknown	Bladder	DO462	97
+BLCA-US		TCGA-CF-A3MG	male	alive	complete remission		48.0		48.0		C67.9					0.0	unknown		unknown	Bladder	DO468	173
+BLCA-US		TCGA-CU-A0YO	male	deceased			84.0		84.0		C67.9				149.0		unknown		unknown	Bladder	DO466	125
+BLCA-US		TCGA-CF-A1HR	male	alive	complete remission		62.0		62.0		C67.9					14.0	unknown		unknown	Bladder	DO469	376
+BLCA-US		TCGA-BL-A13I	female	deceased			57.0		57.0		C67.9				223.0		unknown		unknown	Bladder	DO452	115
+BLCA-US		TCGA-DK-A3IK	male	alive	complete remission		87.0		87.0		C67.2					67.0	unknown		unknown	Bladder	DO454	245
+BLCA-US		TCGA-DK-A3IN	male	deceased			72.0		72.0		C67.2				250.0		unknown		unknown	Bladder	DO455	458
+BLCA-US		TCGA-FD-A3B6	male	alive	complete remission		75.0		75.0		C67.4					209.0	unknown		unknown	Bladder	DO458	310
+BLCA-US		TCGA-DK-A1AD	male	alive	complete remission		69.0		77.0		C67.9					3056.0	unknown		unknown	Bladder	DO459	277
+BLCA-US		TCGA-DK-A3IQ	male	alive	progression		74.0		74.0		C67.4					319.0	unknown		unknown	Bladder	DO445	236
+BLCA-US		TCGA-GC-A3BM	male	alive			70.0		70.0		C67.1					88.0	unknown		unknown	Bladder	DO446	148
+BLCA-US		TCGA-DK-A2I1	female	alive	complete remission		73.0		73.0		C67.9					322.0	unknown		unknown	Bladder	DO444	278
+BLCA-US		TCGA-CU-A0YR	male	alive	progression		83.0		83.0		C67.9					219.0	unknown		unknown	Bladder	DO449	167
+BLCA-US		TCGA-DK-A3X1	female	alive	complete remission		78.0		81.0		C67.1					1248.0	unknown		unknown	Bladder	DO447	1031
+BLCA-US		TCGA-GV-A3JX	male	alive	complete remission		59.0		59.0		C67.9					187.0	unknown		unknown	Bladder	DO448	354
+UCEC-US		TCGA-D1-A177	female	alive	complete remission		70.0		70.0		C54.1					347.0	unknown		unknown	Uterus	DO42528	797
+UCEC-US		TCGA-B5-A0K7	female	alive	complete remission		64.0		65.0		C54.1					372.0	unknown		unknown	Uterus	DO41295	57
+UCEC-US		TCGA-A5-A0R8	female	alive	complete remission		81.0		81.0		C54.1					126.0	unknown		unknown	Uterus	DO42584	92
+UCEC-US		TCGA-BG-A0MQ	female	alive	progression		71.0		73.0		C54.1					761.0	unknown		unknown	Uterus	DO41127	620
+UCEC-US		TCGA-D1-A169	female	alive	progression		63.0		65.0		C54.1					905.0	unknown		unknown	Uterus	DO42456	55
+UCEC-US		TCGA-B5-A0K0	female	alive	complete remission		48.0		49.0		C54.1					679.0	unknown		unknown	Uterus	DO42440	24
+BLCA-US		TCGA-G2-A3VY	male	alive	progression		66.0		66.0		C67.9					26.0	unknown		unknown	Bladder	DO590	839
+UCEC-US		TCGA-A5-A0GW	female	alive	complete remission		46.0		47.0		C54.1					385.0	unknown		unknown	Uterus	DO41103	323
+BLCA-US		TCGA-FD-A3SP	male	alive	complete remission		60.0		60.0		C67.4					139.0	unknown		unknown	Bladder	DO594	141
+BLCA-US		TCGA-GD-A3OS	female	alive			54.0		54.0		C67.9					177.0	unknown		unknown	Bladder	DO598	113
+BLCA-US		TCGA-CU-A3QU	male	alive	complete remission		58.0		58.0		C67.9					158.0	unknown		unknown	Bladder	DO587	116
+BLCA-US		TCGA-FD-A3B7	male	deceased			66.0		66.0		C67.2				122.0		unknown		unknown	Bladder	DO572	89
+BLCA-US		TCGA-BT-A2LD	female	alive	complete remission		78.0		78.0		C67.0					111.0	unknown		unknown	Bladder	DO578	126
+UCEC-US		TCGA-BG-A0M9	female	alive	complete remission		73.0		75.0		C54.1					765.0	unknown		unknown	Uterus	DO42416	63
+BLCA-US		TCGA-FD-A3SO	male	deceased			68.0		68.0		C67.2				168.0		unknown		unknown	Bladder	DO569	426
+BLCA-US		TCGA-BL-A0C8	male	alive			73.0		74.0		C67.1					389.0	unknown		unknown	Bladder	DO552	173
+UCEC-US		TCGA-AP-A05P	female	alive	complete remission		54.0		54.0		C54.1					260.0	unknown		unknown	Uterus	DO43722	41
+BLCA-US		TCGA-BT-A20N	male	deceased			72.0		72.0		C67.0				795.0		unknown		unknown	Bladder	DO550	326
+BLCA-US		TCGA-G2-A2EJ	female	alive	complete remission		56.0		58.0		C67.9					806.0	unknown		unknown	Bladder	DO554	364
+BLCA-US		TCGA-DK-A1A3	male	alive	progression		60.0		60.0		C67.9					77.0	unknown		unknown	Bladder	DO558	732
+BLCA-US		TCGA-HQ-A2OE	male	alive			69.0		72.0		C67.9					1174.0	unknown		unknown	Bladder	DO540	187
+BLCA-US		TCGA-DK-A3WY	female	alive	complete remission		67.0		77.0		C67.1					3989.0	unknown		unknown	Bladder	DO544	18
+BLCA-US		TCGA-G2-A2EK	male	alive	progression		57.0		57.0		C67.9					173.0	unknown		unknown	Bladder	DO546	83
+BLCA-US		TCGA-BL-A3JM	male	deceased			62.0		62.0		C67.9				205.0		unknown		unknown	Bladder	DO532	239
+BLCA-US		TCGA-BT-A20U	female	deceased			70.0		70.0		C67.0				455.0		unknown		unknown	Bladder	DO538	98
+BLCA-US		TCGA-C4-A0F0	male	alive	complete remission		60.0		60.0		C67.9					59.0	unknown		unknown	Bladder	DO520	114
+BLCA-US		TCGA-E7-A3Y1	male	alive	complete remission		57.0		57.0		C67.9					3.0	unknown		unknown	Bladder	DO528	186
+BLCA-US		TCGA-G2-A3IB	male	alive	progression		66.0		66.0		C67.9					214.0	unknown		unknown	Bladder	DO512	116
+BLCA-US		TCGA-GC-A3RD	female	alive	complete remission		83.0		83.0		C67.0					35.0	unknown		unknown	Bladder	DO510	115
+BLCA-US		TCGA-BT-A0YX	female	alive	progression		70.0		70.0		C67.9					363.0	unknown		unknown	Bladder	DO516	748
+BLCA-US		TCGA-DK-A1AC	male	alive	complete remission		72.0		81.0		C67.9					3617.0	unknown		unknown	Bladder	DO514	1764
+BLCA-US		TCGA-GC-A3OO	male	alive	complete remission		79.0		79.0		C67.9					40.0	unknown		unknown	Bladder	DO518	133
+BLCA-US		TCGA-BT-A0S7	male	deceased			75.0		75.0		C67.9				200.0		unknown		unknown	Bladder	DO504	53
+BLCA-US		TCGA-GD-A3OQ	male	alive			48.0		48.0		C67.9					95.0	unknown		unknown	Bladder	DO506	127
+UCEC-US		TCGA-BG-A0M8	female	alive	complete remission		50.0		51.0		C54.1					690.0	unknown		unknown	Uterus	DO42488	69
+UCEC-US		TCGA-A5-A0R6	female	alive	complete remission		64.0		65.0		C54.1					369.0	unknown		unknown	Uterus	DO41145	42
+UCEC-US		TCGA-D1-A16Y	female	alive	complete remission		56.0		57.0		C54.1					532.0	unknown		unknown	Uterus	DO41524	1264
+UCEC-US		TCGA-D1-A17C	female	alive	complete remission		78.0		78.0		C54.1					1.0	unknown		unknown	Uterus	DO42841	61
+UCEC-US		TCGA-BG-A18A	female	alive	complete remission		74.0		74.0		C54.1					252.0	unknown		unknown	Uterus	DO42809	76
+UCEC-US		TCGA-BS-A0UF	female	alive	complete remission		65.0		70.0		C54.1					1843.0	unknown		unknown	Uterus	DO41488	9494
+UCEC-US		TCGA-BS-A0U7	female	deceased			63.0		63.0		C54.1				935.0		unknown		unknown	Uterus	DO41482	172
+UCEC-US		TCGA-BG-A0MC	female	alive	complete remission		74.0		76.0		C54.1					827.0	unknown		unknown	Uterus	DO41470	63
+THCA-US		TCGA-EM-A1YB	female	alive	complete remission		73.0		73.0		C73					284.0	unknown		unknown	Head and neck	DO39143	45
+UCEC-US		TCGA-BS-A0UV	female	alive	complete remission		55.0		55.0		C54.1					149.0	unknown		unknown	Uterus	DO42793	10359
+BLCA-US		TCGA-DK-A3WX	female	deceased			67.0		67.0		C67.2				321.0		unknown		unknown	Bladder	DO696	46
+BLCA-US		TCGA-K4-A3WV	female	alive	complete remission		77.0		77.0		C67.9					142.0	unknown		unknown	Bladder	DO683	82
+BLCA-US		TCGA-FD-A3SJ	male	deceased			59.0		59.0		C67.2				739.0		unknown		unknown	Bladder	DO681	270
+UCEC-US		TCGA-A5-A0GB	female	alive	complete remission		65.0		65.0		C54.1					275.0	unknown		unknown	Uterus	DO41434	725
+UCEC-US		TCGA-D1-A17N	female	alive	complete remission		46.0		46.0		C54.1					46.0	unknown		unknown	Uterus	DO41410	33
+UCEC-US		TCGA-BS-A0UJ	female	alive	complete remission		68.0		68.0		C54.1					27.0	unknown		unknown	Uterus	DO42745	2031
+BLCA-US		TCGA-CU-A3KJ	male	alive	progression		75.0		75.0		C67.9					166.0	unknown		unknown	Bladder	DO663	267
+THCA-US		TCGA-DJ-A1QF	female	alive	complete remission		61.0		62.0		C73					563.0	unknown		unknown	Head and neck	DO39104	17
+BLCA-US		TCGA-G2-A2EC	female	alive	complete remission		58.0		59.0		C67.9					418.0	unknown		unknown	Bladder	DO651	212
+BLCA-US		TCGA-BT-A20W	male	deceased			71.0		71.0		C67.2				254.0		unknown		unknown	Bladder	DO657	111
+BLCA-US		TCGA-BT-A20R	female	deceased			79.0		79.0		C67.0				154.0		unknown		unknown	Bladder	DO622	345
+BLCA-US		TCGA-DK-A3IU	male	alive	complete remission		58.0		58.0		C67.4					352.0	unknown		unknown	Bladder	DO612	521
+BLCA-US		TCGA-FD-A3NA	male	alive	complete remission		60.0		62.0		C67.4					974.0	unknown		unknown	Bladder	DO602	199
+BLCA-US		TCGA-FD-A3B8	male	alive	complete remission		56.0		56.0		C67.2					336.0	unknown		unknown	Bladder	DO607	75
+THCA-US		TCGA-ET-A25J	female	alive	complete remission		40.0		42.0		C73					903.0	unknown		unknown	Head and neck	DO40161	11
+UCEC-US		TCGA-BG-A0MO	female	alive	complete remission		63.0		65.0		C54.1					1021.0	unknown		unknown	Uterus	DO42721	50
+ESAD-UK		OCCAMS-ST-101	male	deceased	no evidence of disease		71.0	71.0	72.0		C15.5	TNM7	T3N2M0	UICC:3b	465.0	465.0	unknown		yes	Esophagus	DO229023	19246
+UCEC-US		TCGA-BK-A0CB	female	alive	complete remission		60.0		60.0		C54.1					189.0	unknown		unknown	Uterus	DO42729	79
+PRAD-FR		PA12003	male	alive	complete remission	local recurrence	66.0	67.0	76.0	2155.0	C61	TNM	T1cN0M0		3703.0	3703.0	unknown		no	Prostate	DO229066	7972
+PRAD-FR		PA12008	male	alive	complete remission		68.0	68.0	72.0		C61	TNM	T2N0M0		1542.0	1542.0	unknown		yes	Prostate	DO229071	3178
+PRAD-FR		PA12011	male	alive	complete remission	local recurrence	55.0	56.0	62.0		C61	TNM	T2bN0M0		2421.0	2421.0	unknown		yes	Prostate	DO229078	4095
+PRAD-FR		PA12010	male	alive	complete remission		64.0	64.0	66.0		C61	TNM	T2bN0M0		716.0	716.0	unknown		no	Prostate	DO229077	3528
+PRAD-FR		PA12019	male	alive	relapse	local recurrence	67.0	68.0	73.0	2107.0	C61	TNM	T2N0M0		2107.0	2107.0	unknown		yes	Prostate	DO229081	12308
+UTCA-FR		PA16004	female	alive	complete remission		62.0				C54	TNM				462.0	no		yes	Uterus	DO229086	8758
+UTCA-FR		PA16005	female	alive	complete remission		68.0				C54	TNM				911.0	no		no	Uterus	DO229091	4680
+UTCA-FR		PA16006	female	deceased	relapse	distant recurrence/metastasis	55.0			621.0	C54	TNM			621.0	621.0	no		no	Uterus	DO229094	2553
+UTCA-FR		PA16007	female	alive	progression	distant recurrence/metastasis	65.0			386.0	C54	TNM				386.0	no		no	Uterus	DO229096	8981
+UCEC-US		TCGA-BG-A186	female	alive	complete remission		61.0		61.0		C54.1					230.0	unknown		unknown	Uterus	DO41367	39
+THCA-US		TCGA-FE-A232	female	alive	complete remission		44.0		47.0		C73					1346.0	unknown		unknown	Head and neck	DO39036	12
+THCA-US		TCGA-FE-A3PC	female	alive	complete remission		37.0		42.0		C73					1868.0	unknown		unknown	Head and neck	DO40021	41
+UCEC-US		TCGA-AP-A0LT	female	alive	complete remission		57.0		60.0		C54.1					1185.0	unknown		unknown	Uterus	DO42681	682
+CLLE-ES		288	male	alive	stable		36.0	38.0	42.0		C91.1	BINET	A		1978.0	1978.0				Blood	DO7048	1816
+THCA-US		TCGA-DJ-A1QH	female	alive	progression		58.0		58.0		C73					243.0	unknown		unknown	Head and neck	DO39000	27
+UCEC-US		TCGA-B5-A0JV	female	alive	complete remission		63.0		66.0		C54.1					1125.0	unknown		unknown	Uterus	DO43979	294
+BLCA-US		TCGA-CF-A3MH	male	alive			75.0		75.0		C67.9					0.0	unknown		unknown	Bladder	DO791	60
+BLCA-US		TCGA-DK-A2I6	male	alive	complete remission		81.0		87.0		C67.0					2292.0	unknown		unknown	Bladder	DO798	336
+ESAD-UK		OCCAMS-GS-016	male	deceased	stable		40.0	40.0	42.0	718.0	C15.5		TNM		938.0	902.0	unknown		yes	Esophagus	DO229001	16857
+BLCA-US		TCGA-G2-A2ES	male	alive	complete remission		85.0		86.0		C67.9					525.0	unknown		unknown	Bladder	DO785	536
+UCEC-US		TCGA-AP-A0LQ	female	alive	complete remission		59.0		64.0		C54.1					1906.0	unknown		unknown	Uterus	DO42625	57
+BLCA-US		TCGA-GV-A3JZ	male	alive	complete remission		55.0		55.0		C67.9					173.0	unknown		unknown	Bladder	DO773	575
+BLCA-US		TCGA-DK-A3IT	male	alive	complete remission		62.0		62.0		C67.2					168.0	unknown		unknown	Bladder	DO779	467
+BLCA-US		TCGA-GD-A3OP	female	alive			84.0		84.0		C67.9					64.0	unknown		unknown	Bladder	DO761	437
+BLCA-US		TCGA-GC-A3WC	female	alive	complete remission		80.0		80.0		C67.9					77.0	unknown		unknown	Bladder	DO755	167
+BLCA-US		TCGA-GV-A3JV	male	alive	complete remission		66.0		66.0		C67.9					134.0	unknown		unknown	Bladder	DO743	144
+BLCA-US		TCGA-FD-A3B3	female	alive	complete remission		74.0		74.0		C67.0					268.0	unknown		unknown	Bladder	DO749	217
+BLCA-US		TCGA-FD-A3SL	male	alive	progression		60.0		60.0		C67.4					334.0	unknown		unknown	Bladder	DO732	249
+BLCA-US		TCGA-FD-A3SS	male	alive	progression		66.0		66.0		C67.0					60.0	unknown		unknown	Bladder	DO737	525
+BLCA-US		TCGA-G2-A2EF	male	alive	complete remission		50.0		54.0		C67.9					1518.0	unknown		unknown	Bladder	DO726	312
+THCA-US		TCGA-DJ-A1QG	male	alive	complete remission		62.0		62.0		C73					212.0	unknown		unknown	Head and neck	DO39064	23
+UCEC-US		TCGA-BS-A0U8	female	alive	complete remission		55.0		62.0		C54.1					2606.0	unknown		unknown	Uterus	DO41380	415
+THCA-US		TCGA-E8-A242	female	alive	complete remission		56.0		56.0		C73					35.0	unknown		unknown	Head and neck	DO40051	26
+BLCA-US		TCGA-FD-A3B5	male	deceased			86.0		86.0		C67.4				272.0		unknown		unknown	Bladder	DO714	169
+THCA-US		TCGA-DJ-A13X	female	alive	complete remission		51.0		51.0		C73					243.0	unknown		unknown	Head and neck	DO39076	22
+BLCA-US		TCGA-E5-A2PC	female	alive	complete remission		61.0		64.0		C67.2					1108.0	unknown		unknown	Bladder	DO702	263
+BLCA-US		TCGA-DK-A2I2	female	deceased			63.0		63.0		C67.9				237.0		unknown		unknown	Bladder	DO708	138

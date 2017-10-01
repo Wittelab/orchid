@@ -167,6 +167,7 @@ process importMutations {
 }
 import_flags.last().set{ mutations_populated } // Flag for when import has finished
 
+
 // =============================
 // Add gene pathway information from KEGG (preprocessed or generated on-the-fly)
 // ---------
@@ -180,6 +181,7 @@ process populateKegg {
     when:
     params.use_kegg
 
+    shell:
     '''
     # Try to import kegg tables from a pregenerated mysql dump before populating these tables
     # This will save many hours requerying kegg directly
@@ -194,7 +196,9 @@ process populateKegg {
 }
 
 
-// ======= The Kegg Feature ===========
+// =============================
+// Add is_cancer_gene from kegg
+// ---------
 // Make an 'is_cancer_gene' column in the consequence table based on kegg info 
 // May take some time with memSQL, but runs independently of other processes 
 process finishKEGG {
@@ -237,4 +241,44 @@ process finishKEGG {
     "
     '''
 }
+
+
+// =============================
+// Convert wig files
+// ---------
+def ext(file) {
+  file = new File(file)
+  name = file.name
+  ext = name.drop(name.lastIndexOf('.'))
+  return ext
+}
+if (params.to_convert!=[]){
+    process convert2bed {
+        echo true
+
+        input: 
+        each feature from params.to_convert
+
+        """
+        if [ ! -f ${feature['new_file']} ]
+        then
+            convert2bed --input=${ext(feature['old_file'])[1..-1]} --output=bed < ${feature['old_file']} > ${feature['new_file']}
+        fi
+        """
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

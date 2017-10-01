@@ -31,3 +31,4 @@ X	153289510	targetscans|MECP2:miR-7/7ab:2              	A	T	.	.	.	.
 10	23583331	dnase|662                                  	A	G	.	.	.	.
 14	12582321	frequency|2                                	A	G	.	.	.	DONOR_ID=DOFREQ1;
 1	16166000	cnv|-0.001                                 	T	A	.	.	.	DONOR_ID=DO10004;
+11	00000022	wig|0.184000                                T	A	.	.	.	.

@@ -56,16 +56,19 @@ process getSNPEff {
     [ -f snpEff/data/GRCh37.68/snpEffectPredictor.bin ] && echo "snpEFF already installed" && exit 0
     rm -rf snpEff
     echo "Installing SnpEff"
-    wget -t 10 -Nc https://sourceforge.net/projects/snpeff/files/snpEff_v3_6_core.zip
-    unzip snpEff_v3_6_core.zip
-    rm snpEff_v3_6_core.zip
+    wget -t 10 -Nc https://sourceforge.net/projects/snpeff/files/snpEff_v4_3i_core.zip
+    unzip snpEff_v4_3i_core.zip
+    rm snpEff_v4_3i_core.zip
     cd snpEff
-    # Change the data directory to the new location
-    sed -i -e "s|./data/|$CODE_DIR/external/snpEff/data|" snpEff.config
-    rm -f snpEff.config-e
+    # Change the data directory to the new location (deprecated)
+    #sed -i -e "s|./data/|$DATA_DIR/external/snpEff/data|" snpEff.config
+    #rm -f snpEff.config-e
     # Download the GRCh37 annotation database for snpEff
-    wget http://downloads.sourceforge.net/project/snpeff/databases/v3_6/snpEff_v3_6_GRCh37.68.zip
-    unzip snpEff_v3_6_GRCh37.68.zip
+    #mkdir -p $DATA_DIR/external
+    #mkdir -p $DATA_DIR/external/snpEff
+    wget http://downloads.sourceforge.net/project/snpeff/databases/v4_3/snpEff_v4_3_GRCh37.75.zip
+    unzip snpEff_v4_3_GRCh37.75.zip
+    rm snpEff_v4_3_GRCh37.75.zip
     echo "SnpEff installed"
     '''
 }

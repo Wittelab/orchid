@@ -59,7 +59,7 @@ class MutationMatrix(pd.DataFrame):
     feature_categories = None
     features           = None
     feature_transforms = {}
-    quiet              = True
+    quiet              = False
     mutations_loaded   = False    # Whether mutation data has been loaded
     features_loaded    = False    # Whether features have been loaded
     encoded            = False    # Whether features have been encoded
@@ -99,7 +99,7 @@ class MutationMatrix(pd.DataFrame):
     def __init__(self, *args, **kwargs):
         """ initialize the MutationMatrix """
         self.db_uri   = kwargs.pop('db_uri', None)
-        self.quiet    = kwargs.pop('quiet', True)
+        self.quiet    = kwargs.pop('quiet', False)
         super(MutationMatrix, self).__init__(*args, **kwargs)
 
     def __finalize__(self, other, method=None, **kwargs):
@@ -312,7 +312,7 @@ class MutationMatrix(pd.DataFrame):
             syntax = "SELECT * FROM %s WHERE is_simulated=0" % self.mutation_table
             if ids:
                 syntax += " AND %s IN ('%s')" % (by, "', '".join([str(a) for a in ids]))
-                if not quiet: print "Getting [%s] real mutations for the requested %s ids..." % (str(number_real), by)
+                if not quiet: print "Getting [%s] real mutations for the requested %ss..." % (str(number_real), by)
                 sys.stdout.flush()
             else:
                 if not quiet: print "Getting [all] real mutations..." 
@@ -410,9 +410,9 @@ class MutationMatrix(pd.DataFrame):
             for i, item in enumerate(item_list):
                 item_mutations = pd.DataFrame(self[self[by]==item])
                 if not quiet: print "[%d mutations]" % item_mutations.shape[0]
-
                 # Add mutations features to final dataframe
-                loaded_features = pd.concat([loaded_features, self._load_feature_data(item_mutations, quiet=quiet, feature_categories=feature_categories)])
+                by_line = "%s %s [%d/%d]" % (by, str(item), i+1, len(item_list))
+                loaded_features = pd.concat([loaded_features, self._load_feature_data(item_mutations, quiet=quiet, feature_categories=feature_categories, by_line=by_line)])
         else:
             mutations = pd.DataFrame(self)
             # Add encoded mutations to final dataframe
@@ -520,8 +520,10 @@ class MutationMatrix(pd.DataFrame):
 
 
     def load_and_encode(self, *args, **kwargs):
+        '''Combines the load_mutations(), load_features(), and encode() functions, please see individual help docstrings for more information.'''
         self.load_mutations(*args, **kwargs)
-        self.load_features(*args, **kwargs)
+        kwargs.pop('by') # Faster NOT to load by in most cases
+        self.load_features(*args,  **kwargs)
         self.encode(*args, **kwargs)
 
 
@@ -592,7 +594,7 @@ class MutationMatrix(pd.DataFrame):
         return
 
 
-    def select_features(self, model=None, n_splits=50, quiet=None):
+    def select_features(self, model=None, n_splits=10, quiet=None):
         """
         Uses a provided model (defaults to a random forest) to perform feature selection with a leave-one-out approach, repeating a desired number of times with data subsets to build a consensus of feature importance. 
 
@@ -831,6 +833,7 @@ class MutationMatrix(pd.DataFrame):
             model_parameters['n_estimators'] = 40
         self.make_model(optimize_parameters, cross_validate, sanity_check, cv, test_size, model_type='rf', **model_parameters)
     def rf(self, optimize_parameters=False, cross_validate=True, sanity_check=False, cv=10, test_size=0.0, **model_parameters):
+        '''see help(MutationMatrix.random_forest)'''
         self.random_forest(optimize_parameters, cross_validate, sanity_check, cv, test_size, **model_parameters)
 
 
@@ -864,6 +867,7 @@ class MutationMatrix(pd.DataFrame):
             model_parameters['class_weight'] = 'balanced'
         self.make_model(optimize_parameters, cross_validate, sanity_check, cv, test_size, model_type='svm', **model_parameters)
     def svm(self, optimize_parameters=False, cross_validate=True, sanity_check=False, cv=10, test_size=0.0, **model_parameters):
+        '''see help(MutationMatrix.support_vector_machine)'''
         self.support_vector_machine(optimize_parameters, cross_validate, sanity_check, cv, test_size, **model_parameters)
 
 
@@ -1201,13 +1205,15 @@ class MutationMatrix(pd.DataFrame):
         plt.xlabel('')
         plt.ylabel('Probability Distribution')
         plt.title(title)
-        plt.legend(bbox_to_anchor=(0.25, 0.98), loc="bottom", borderaxespad=0.)
+        plt.legend(bbox_to_anchor=(0.25, 0.98), loc="upper left", borderaxespad=0.)
 
 
     def show_roc_curves(self, *args, **kwargs):
+        '''see help(MutationMatrix.show_curves)'''
         kwargs['metric']='ROC'
         self.show_curves(*args, **kwargs)
     def show_pr_curves(self, *args, **kwargs):
+        '''see help(MutationMatrix.show_curves)'''
         kwargs['metric']='PR'
         self.show_curves(*args, **kwargs)
 
@@ -1503,7 +1509,7 @@ class MutationMatrix(pd.DataFrame):
         return colors
 
 
-    def _load_feature_data(self, mutations, quiet=None, feature_categories=None, *args, **kwargs):
+    def _load_feature_data(self, mutations, quiet=None, feature_categories=None, by_line=None, *args, **kwargs):
         quiet = self.quiet if quiet==None else quiet
         if feature_categories==None:
             print "You must specify a list of feature categories (feature tables) to load feature data from if calling _load_feature_data manually."
@@ -1516,7 +1522,9 @@ class MutationMatrix(pd.DataFrame):
                     clear_output(wait=True)
                 except:
                     pass
-                print "%2d/%2d [%3.1f%% complete]  Loading feature '%s'   %s \r" % (i+1, len(feature_categories), 100*((i+1)/float(len(feature_categories))), tbl, " "*100)
+                if by_line:
+                    print by_line
+                print "%2d/%2d [%-3.1f%% complete]  Loading feature '%s'  %s \r" % (i+1, len(feature_categories), 100*((i+1)/float(len(feature_categories))), tbl, " "*100)
                 sys.stdout.flush()
             # To temporarily store chunked mutations 
             chunk_mutations = None
