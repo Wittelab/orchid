@@ -522,7 +522,7 @@ class MutationMatrix(pd.DataFrame):
     def load_and_encode(self, *args, **kwargs):
         '''Combines the load_mutations(), load_features(), and encode() functions, please see individual help docstrings for more information.'''
         self.load_mutations(*args, **kwargs)
-        kwargs.pop('by') # Faster NOT to load by in most cases
+        kwargs.pop('by', None) # Faster NOT to load by in most cases
         self.load_features(*args,  **kwargs)
         self.encode(*args, **kwargs)
 
