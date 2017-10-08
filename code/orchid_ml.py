@@ -1710,6 +1710,7 @@ class MutationMatrix(pd.DataFrame):
         predictions.index   = self.X_test.index
         predictions.columns = ["Predicted"]
         predictions.sort_index(inplace=True)
+        return (probabilities, predictions)
 
 
     def _prepare_model(self, model_type, **model_parameters):
