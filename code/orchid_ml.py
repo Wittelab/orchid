@@ -792,9 +792,7 @@ class MutationMatrix(pd.DataFrame):
             self.model.fit(self.X_train, self.Y_train)
             ## Should update Y_test
             self.Y_probabilities = self.model.predict_proba(self.X_test)
-            # Get training class labels and get test class predictions
-            labels = self.le.inverse_transform(sorted(set(self.Y_train)))
-            self.Y_predictions = map(lambda k: labels[k], self.Y_probabilities.argmax(axis=1))
+            self.Y_predictions = self.le.inverse_transform(self.Y_probabilities.argmax(axis=1))
 
         if sanity_check:
             print "Running sanity check by modeling with shuffled labels."
@@ -1636,7 +1634,7 @@ class MutationMatrix(pd.DataFrame):
             print "You should train a model before attempting a sanity check of it"
             return
         model = deepcopy(self.model)
-        new_labels = deepcopy(self.Y_train)
+        new_labels = list(deepcopy(self.Y_train))
         if not self.quiet: print "... Shuffling labels"
         shuffle(new_labels)
 
