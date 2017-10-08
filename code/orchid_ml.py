@@ -1698,13 +1698,15 @@ class MutationMatrix(pd.DataFrame):
     def _split_model(self):
         self.model.fit(self.X_train, self.Y_train)
         encoded_labels = sorted(set(self.le.transform(self.Y_train)))
-        probabilities  = pd.DataFrame(self.model.predict_proba(self.X_test))
-        predictions    = self.le.inverse_transform(self.Y_probabilities.argmax(axis=1))
+        probabilities  = self.model.predict_proba(self.X_test)
+        predictions    = self.le.inverse_transform(probabilities.argmax(axis=1))
         # Clean up the probability dataframe
+        probabilities         = pd.DataFrame(probabilities)
         probabilities.index   = self.X_test.index
         probabilities.columns = self.le.inverse_transform(encoded_labels)
         probabilities.sort_index(inplace=True)
         # Clean up predictions dataframe 
+        predictions         = pd.DataFrame(predictions)
         predictions.index   = self.X_test.index
         predictions.columns = ["Predicted"]
         predictions.sort_index(inplace=True)
