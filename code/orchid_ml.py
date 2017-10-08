@@ -788,10 +788,11 @@ class MutationMatrix(pd.DataFrame):
         else:
             print "Building a %s model using %0.2f%% of the data" % (model_type, (1.0-test_size)*100)
             if not self.quiet: print "...", model_parameters
-            self.model.fit(self.X_train, self.Y_train)
-            ## Should update Y_test
-            self.Y_probabilities = self.model.predict_proba(self.X_test)
-            self.Y_predictions = self.le.inverse_transform(self.Y_probabilities.argmax(axis=1))
+            sys.stdout.flush()
+            probs, preds = self._split_model()
+            self.Y_probabilities = probs
+            self.Y_predictions = preds
+            self.cv_used = False
 
         if sanity_check:
             print "Running sanity check by modeling with shuffled labels."
@@ -1692,6 +1693,19 @@ class MutationMatrix(pd.DataFrame):
         print "... Accuracy: %0.2f (+/- %0.2f)" % (scores.mean(), scores.std() * 2)
         print "... Expected by chance: %.2f" % (1./len(set(self.Y_train)))
         return (probabilities, predictions)
+
+
+    def _split_model(self):
+        self.model.fit(self.X_train, self.Y_train)
+        encoded_labels = sorted(set(self.le.transform(self.Y_train)))
+        probabilities = pd.DataFrame(self.model.predict_proba(self.X_test), index=self.X_test.index, columns=)
+        predictions = self.le.inverse_transform(self.Y_probabilities.argmax(axis=1))
+        # Clean up the probability dataframe
+        probabilities.columns = self.le.inverse_transform(encoded_labels)
+        probabilities.sort_index(inplace=True)
+        # Clean up predictions dataframe 
+        predictions.columns = ["Predicted"]
+        predictions.sort_index(inplace=True)
 
 
     def _prepare_model(self, model_type, **model_parameters):
