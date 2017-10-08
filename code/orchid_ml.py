@@ -777,7 +777,6 @@ class MutationMatrix(pd.DataFrame):
             sys.stdout.flush()
             self.model = OneVsRestClassifier(self.model)
 
-        probabilities = None
         if cross_validate == True:
             print "Building a %s using %d-fold cross validation." % (model_type, cv)
             if not self.quiet: print "...", model_parameters
