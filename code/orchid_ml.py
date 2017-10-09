@@ -166,8 +166,9 @@ class MutationMatrix(pd.DataFrame):
             self.features = pd.Index(list(feature_list))
         else:
             self.features = pd.Index(set(self.columns) - set(self.annotation_columns) - set([self.label_column]))
+            drop_others = False
         if drop_others:
-            to_keep = pd.Index(list(self.annotation_columns) + list(self.features) + list([self.label_column]))
+            to_keep = pd.Index(list(self.annotation_columns) + list(self.features) + list([self.label_column])).dropna()
             self = self[to_keep]
 
 
