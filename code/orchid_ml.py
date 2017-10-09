@@ -154,26 +154,21 @@ class MutationMatrix(pd.DataFrame):
         return
 
 
-    def set_features(self, feature_list=None):
+    def set_features(self, feature_list=None, drop_others=True):
         """
         Set the features of this MutationMatrix (stored as a Pandas Index). These features will be used to predict the label classes when modeling.
 
         Arguments:
         feature_list (optional): A list of column names in the MutationMatrix to designate as model features.
+        drop_others (optional): Whether to drop other features
         """
         if type(feature_list)!=type(None):
             self.features = pd.Index(list(feature_list))
         else:
             self.features = pd.Index(set(self.columns) - set(self.annotation_columns) - set([self.label_column]))
-        #else:
-        #    features = []
-        #    for tbl in self.features:
-        #        subfeatures = self.db_metadata['features'][tbl]
-        #        if type(subfeatures) != list:
-        #            subfeatures = [subfeatures]
-        #        for subfeature in subfeatures:
-        #            features.append(subfeature['column'].lower())
-        #    self.features = features
+        if drop_others:
+            to_keep = pd.Index(list(self.annotation_columns) + list(self.features) + list([self.label_column]))
+            self = self[to_keep]
 
 
     def add_labels(self, mapping):
