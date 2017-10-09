@@ -172,10 +172,42 @@ class MutationMatrix(pd.DataFrame):
             self = self[to_keep]
 
 
+    def add_meta(self, meta):
+        """
+        Adds metadata columns to the MutationMatrix. 
+
+        Arguments:
+        meta (required): a dataframe with one or more metadata columns and a column or index that match the MutationMatrix index or column for merging.
+        """
+        meta_index = False
+        mm_index   = False
+        if self.index.name in meta.index.name:
+            mm_index = True
+            meta_index = True
+        elif self.index.name in meta.columns:
+            mm_index = True
+        elif meta.index.name in self.columns:
+            meta_index = True
+        else:
+            if not any(meta.columns.isin(self.columns)):
+                print "You must provide a common column to merge on the metadata to the MutationMatrix."
+                return
+        if mm_index and meta_index:
+            self._data = pd.DataFrame(self.merge(meta, how='left', left_index=True, right_index=True))._data
+        elif mm_index:
+            self._data = pd.DataFrame(self.merge(meta, how='left', left_index=True, right_on=self.index.name))._data
+        elif meta_index:
+            self._data = pd.DataFrame(self.merge(meta, how='left', left_on=meta.index.name, right_index=True))._data
+        else:
+            common_column = meta.columns[meta.columns.isin(self.columns)]
+            self._data = pd.DataFrame(self.merge(meta, how='left', left_on=common_column, right_on=common_column))._data
+
+
     def add_labels(self, mapping):
         """
         Adds a label column to the MutationMatrix. Labels are the classes used for supervised learning.
 
+        Arguments:
         mapping (required): a dataframe with two columns: 1) column label and values that match the MutationMatrix, and 2) A column of values to merge into the MutationMatrix.
         """
         mapping_columns = set(pd.DataFrame(mapping).columns)
