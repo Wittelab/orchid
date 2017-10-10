@@ -127,11 +127,11 @@ class MutationMatrix(pd.DataFrame):
         return result
 
 
-
     def set_backing_database(self, db_uri):
         """ set the backing database for which the MutationMatrix loads data """
         self.db_uri = db_uri
         self.load_metadata()
+
 
     def load_metadata(self):
         """ load metadata (features, table names, etc) provided by orchid_db into the MutationMatrix """
@@ -162,14 +162,14 @@ class MutationMatrix(pd.DataFrame):
         feature_list (optional): A list of column names in the MutationMatrix to designate as model features.
         drop_others (optional): Whether to drop other features
         """
-        if type(feature_list)!=type(None):
+        if feature_list!=None:
             self.features = pd.Index(list(feature_list))
         else:
             self.features = pd.Index(set(self.columns) - set(self.annotation_columns) - set([self.label_column]))
             drop_others = False
         if drop_others:
             to_keep = pd.Index(list(self.annotation_columns) + list(self.features) + list([self.label_column])).dropna()
-            self = self[to_keep]
+            self._data = self[to_keep]._data
 
 
     def add_meta(self, meta):
@@ -179,28 +179,19 @@ class MutationMatrix(pd.DataFrame):
         Arguments:
         meta (required): a dataframe with one or more metadata columns and a column or index that match the MutationMatrix index or column for merging.
         """
-        meta_index = False
-        mm_index   = False
-        if self.index.name in meta.index.name:
-            mm_index = True
-            meta_index = True
-        elif self.index.name in meta.columns:
-            mm_index = True
-        elif meta.index.name in self.columns:
-            meta_index = True
+        index       = self.index.name
+        meta        = meta.reset_index()
+        mutations   = self.reset_index()
+        cols_to_use = meta.columns.difference(mutations.columns)
+        if not any(meta.columns.isin(mutations.columns)):
+            print "You must provide a common column to merge on the metadata to the MutationMatrix."
+            return
         else:
-            if not any(meta.columns.isin(self.columns)):
-                print "You must provide a common column to merge on the metadata to the MutationMatrix."
-                return
-        if mm_index and meta_index:
-            self._data = pd.DataFrame(self.merge(meta, how='left', left_index=True, right_index=True))._data
-        elif mm_index:
-            self._data = pd.DataFrame(self.merge(meta, how='left', left_index=True, right_on=self.index.name))._data
-        elif meta_index:
-            self._data = pd.DataFrame(self.merge(meta, how='left', left_on=meta.index.name, right_index=True))._data
-        else:
-            common_column = meta.columns[meta.columns.isin(self.columns)]
-            self._data = pd.DataFrame(self.merge(meta, how='left', left_on=common_column, right_on=common_column))._data
+            common = meta.columns.intersection(mutations.columns)[0]
+            mutations  = mutations.merge(meta, how='left', left_on=common, right_on=common)
+            if 'index' in mutations.columns:
+                mutations = mutations.drop('index', axis=1)
+            self._data   = mutations.set_index(index)._data
 
 
     def add_labels(self, mapping):
