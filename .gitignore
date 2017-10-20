@@ -10,7 +10,7 @@ workflow/*timeline*
 workflow/*trace*
 code/external/*
 data/features/*
-data/hg19/*
+data/hg19
 data/simulator/*
 *.pyc
 *.csv

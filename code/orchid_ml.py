@@ -509,13 +509,13 @@ class MutationMatrix(pd.DataFrame):
                             new_cols =  ["%s|%s" % (column, a.replace(' ','_').lower()) for a in new_cols]
                             encoded.columns = new_cols
                             if drop_undefined:
-                                encoded = encoded.drop("%s|undefined" % (column), axis=1)
+                                encoded = encoded.drop("%s|undefined" % (column), axis=1, errors='ignore')
                         elif strat == 'binary':
                             encoder = ce.BinaryEncoder()
                             encoded = encoder.fit_transform(list(final_encoded[column].fillna('undefined')))
                             encoded.columns = [a.replace('0_',column+'|bit',1) for a in encoded.columns]
                             if drop_undefined:
-                                encoded = encoded.drop("%s|undefined" % (column), axis=1)
+                                encoded = encoded.drop("%s|undefined" % (column), axis=1, errors='ignore')
                         encoded.index = final_encoded.index
                     # Otherwise default to scikit-learn encoders
                     else:
