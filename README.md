@@ -3,11 +3,13 @@
 # orchid
 A management, annotation, and machine learning system for analyzing cancer mutations.  
 <br/>  
-  
+
+** NOTE: This code is still in beta and is being actively developed. Please report any issues using the 'Issues' tab and they will be fixed as soon as possible. **
+
 # Introduction
 
 Please refer to the following publication for a detailed description of this software:  
-xxxx
+Bioinformatics, btx709, (https://doi.org/10.1093/bioinformatics/btx709)[https://doi.org/10.1093/bioinformatics/btx709)
 
 or, for a quick and dirty explanation:  
   
