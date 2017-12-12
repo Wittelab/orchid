@@ -1,3 +1,5 @@
+**NOTE: The hosted multi25 database is currently being migrated as part of IT infrastructure improvements at UCSF. There may be periodic downtime during the next week.**
+
 <img src="http://wittelab.ucsf.edu/images/orchid.png" alt="Orchid" height=150px; align="right">
 
 # orchid
