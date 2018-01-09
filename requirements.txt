@@ -1,0 +1,15 @@
+ipython==5.4.1
+jupyter==1.0.0
+numpy==1.11.3
+pandas==0.20.3
+seaborn==0.8
+matplotlib==2.1.0
+scikit-learn==0.19.0
+scipy==0.19.1
+dill==0.2.6
+category-encoders==1.2.3
+python-snappy==0.5.1
+mysql-connector-python==2.2.2
+MySQL-python==1.2.5
+memsql==2.15.0
+restkit==4.2.2

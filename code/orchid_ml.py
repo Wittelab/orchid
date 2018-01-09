@@ -1278,8 +1278,19 @@ class MutationMatrix(pd.DataFrame):
             print "ERROR: Actual and predicted probability sample indices do not match"
             return
         
-        classes = y_probs.columns
-        y_bin = pd.DataFrame(label_binarize(y_act, classes=classes), columns=classes, index=y_act.index)
+
+        classes  = y_probs.columns
+        classes_ = classes
+        if len(classes==2):
+            if 'True' in classes or True in classes:
+                classes_ = ['True']
+            else:
+                classes_ = classes[1]
+        y_bin = pd.DataFrame(label_binarize(y_act, classes=classes), columns=classes_, index=y_act.index)
+        if len(classes==2):
+            y_bin  = pd.concat([abs(y_bin-1), y_bin], axis=1)
+            y_bin.columns = ['False', 'True']
+
 
         if class_order:
             if len(set(class_order).difference(set(classes)))!=0:

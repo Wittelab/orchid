@@ -1,0 +1,77 @@
+Project Code	Project Name	Primary Site	Country	Donors (DCC)	Donors (All)	SSM	CNSM	STSM	SGV	METH-A	METH-S	EXP-A	EXP-S	PEXP	miRNA-S	JCN
+BRCA-US	Breast Cancer - TCGA, US	Breast	United States	1045	1099	955	1045	0	0	1013	0	529	1041	298	1026	0
+GBM-US	Brain Glioblastoma Multiforme - TCGA, US	Brain	United States	589	596	276	581	0	0	404	0	568	159	211	0	0
+OV-US	Ovarian Serous Cystadenocarcinoma - TCGA, US	Ovary	United States	582	586	118	571	0	0	581	0	567	262	0	482	0
+BRCA-EU	Breast ER+ and HER2- Cancer - EU/UK	Breast	European Union, United Kingdom	569	569	569	344	544	0	0	0	0	0	0	0	0
+CLLE-ES	Chronic Lymphocytic Leukemia - ES	Blood	Spain	549	549	219	395	92	0	159	3	487	304	0	0	0
+PBCA-DE	Pediatric Brain Cancer - DE	Brain	Germany	541	554	499	4	84	0	115	42	0	0	0	0	0
+KIRC-US	Kidney Renal Clear Cell Carcinoma - TCGA, US	Kidney	United States	525	537	408	522	0	0	513	0	26	518	454	495	0
+UCEC-US	Uterine Corpus Endometrial Carcinoma- TCGA, US	Uterus	United States	513	548	250	513	0	0	513	0	54	508	200	505	0
+THCA-US	Head and Neck Thyroid Carcinoma - TCGA, US	Head and neck	United States	503	507	402	501	0	0	502	0	0	500	369	501	0
+HNSC-US	Head and Neck Squamous Cell Carcinoma - TCGA, US	Head and neck	United States	494	528	44	492	0	0	494	0	0	481	212	492	0
+LUAD-US	Lung Adenocarcinoma - TCGA, US	Lung	United States	485	522	38	484	0	0	481	0	29	478	0	474	0
+COAD-US	Colon Adenocarcinoma - TCGA, US	Colorectal	United States	452	459	254	433	0	0	424	0	144	428	290	435	0
+NBL-US	Neuroblastoma - TARGET, US	Nervous System	United States	448	606	108	318	0	0	0	0	249	0	0	0	0
+STAD-US	Gastric Adenocarcinoma - TCGA, US	Stomach	United States	443	443	289	443	0	0	443	0	0	418	357	436	0
+LGG-US	Brain Lower Grade Glioma - TCGA, US	Brain	United States	441	515	283	439	0	0	438	0	27	439	258	438	0
+SKCM-US	Skin Cutaneous melanoma - TCGA, US	Skin	United States	433	471	335	433	0	0	430	0	0	430	0	412	0
+LUSC-US	Lung Squamous Cell Carcinoma - TCGA, US	Lung	United States	431	504	194	431	0	0	427	0	154	428	195	404	0
+PACA-AU	Pancreatic Cancer - AU	Pancreas	Australia	430	461	391	199	159	0	264	0	269	91	0	0	0
+PRAD-US	Prostate Adenocarcinoma - TCGA, US	Prostate	United States	384	500	256	382	0	0	358	0	0	375	159	378	0
+LIHC-US	Liver Hepatocellular carcinoma - TCGA, US	Liver	United States	318	377	189	314	0	0	243	0	0	294	0	313	0
+LICA-CN	Liver Cancer - CN	Liver	China	315	316	315	0	0	0	0	0	0	0	0	0	0
+PACA-CA	Pancreatic Cancer - CA	Pancreas	Canada	308	308	260	207	200	255	0	0	0	46	0	0	43
+BLCA-US	Bladder Urothelial Cancer - TCGA, US	Bladder	United States	299	412	133	278	0	0	273	0	0	295	127	297	0
+LICA-FR	Liver Cancer - FR	Liver	France	286	316	249	158	0	0	0	0	0	0	0	0	0
+CESC-US	Cervical Squamous Cell Carcinoma - TCGA, US	Cervix	United States	261	308	194	256	0	0	243	0	0	259	0	261	0
+LIRI-JP	Liver Cancer - RIKEN, JP	Liver	Japan	260	260	258	0	243	0	0	0	0	232	0	0	0
+ESAD-UK	Esophageal Adenocarcinoma - UK	Esophagus	United Kingdom	253	253	253	253	0	0	0	0	0	0	0	0	0
+MALY-DE	Malignant Lymphoma - DE	Blood	Germany	252	274	241	0	26	10	0	26	0	105	0	52	0
+LINC-JP	Liver Cancer - NCC, JP	Liver	Japan	244	244	244	0	0	0	0	0	0	0	0	0	0
+BTCA-JP	Biliary Tract Cancer - JP	Gall Bladder	Japan	239	239	239	0	0	0	0	0	0	0	0	0	0
+ESCA-CN	Esophageal Cancer - CN	Esophagus	China	228	468	228	0	0	0	0	0	0	0	0	0	0
+KIRP-US	Kidney Renal Papillary Cell Carcinoma - TCGA, US	Kidney	United States	223	291	165	222	0	0	216	0	6	222	0	223	0
+ALL-US	Acute Lymphoblastic Leukemia - TARGET, US	Blood	United States	220	1002	27	0	0	0	0	0	207	0	0	0	0
+PRAD-UK	Prostate Adenocarcinoma - UK	Prostate	United Kingdom	215	216	215	13	13	0	0	0	0	0	0	0	0
+COCA-CN	Colorectal Cancer - CN	Colorectal	China	208	291	208	47	0	0	0	0	0	0	0	0	0
+EOPC-DE	Early Onset Prostate Cancer - DE	Prostate	Germany	202	211	202	11	11	0	0	0	0	0	0	0	0
+LAML-US	Acute Myeloid Leukemia - TCGA, US	Blood	United States	200	200	0	198	0	0	194	0	197	173	0	188	0
+MELA-AU	Skin Cancer - AU	Skin	Australia	183	183	183	0	183	0	0	0	0	0	0	0	0
+READ-US	Rectum Adenocarcinoma - TCGA, US	Colorectal	United States	169	171	94	156	0	0	153	0	57	154	111	160	0
+LAML-KR	Acute Myeloid Leukemia - KR	Blood	South Korea	165	172	125	0	0	156	0	0	0	0	0	0	0
+AML-US	Acute Myeloid Leukemia - TARGET, US	Blood	United States	161	322	161	0	0	0	0	0	0	0	0	0	0
+BRCA-UK	Breast Triple Negative/Lobular Cancer - UK	Breast	United Kingdom	150	151	141	112	30	0	0	0	0	0	0	0	0
+PAAD-US	Pancreatic Cancer - TCGA, US	Pancreas	United States	148	185	0	148	0	0	124	0	0	142	0	142	0
+CMDI-UK	Chronic Myeloid Disorders - UK	Blood	United Kingdom	136	138	136	0	0	0	0	0	0	0	0	0	0
+BOCA-UK	Bone Cancer - UK	Bone	United Kingdom	133	145	130	36	20	0	0	0	0	0	0	0	0
+ORCA-IN	Oral Cancer - IN	Head and neck	India	131	131	131	0	0	0	0	0	0	0	0	0	0
+THCA-SA	Thyroid Cancer - SA	Head and neck	Saudi Arabia	129	129	129	0	0	0	0	0	0	0	0	0	0
+WT-US	Wilms Tumor - TARGET, US	Kidney	United States	126	126	0	124	0	0	0	0	123	0	0	0	0
+PRAD-CA	Prostate Adenocarcinoma - CA	Prostate	Canada	125	125	124	125	123	123	102	0	0	0	0	0	0
+GACA-CN	Gastric Cancer - CN	Stomach	China	123	145	123	0	0	0	0	0	0	0	0	0	0
+RECA-EU	Renal Cell Cancer - EU/FR	Kidney	European Union, France	122	122	95	0	0	0	0	0	0	91	0	0	0
+BRCA-FR	Breast Cancer - FR	Breast	France	107	107	72	72	72	72	0	0	99	0	0	0	0
+BLCA-CN	Bladder Cancer - CN	Bladder	China	103	103	103	0	0	0	0	0	0	0	0	0	0
+BOCA-FR	Soft Tissue cancer - Ewing sarcoma - FR	Bone	France	99	100	98	97	97	0	0	86	0	0	0	0	0
+OV-AU	Ovarian Cancer - AU	Ovary	Australia	93	93	93	93	93	0	93	0	0	93	0	93	0
+SKCA-BR	Skin Adenocarcinoma - BR	Skin	Brazil	80	80	80	80	73	0	0	0	0	0	0	0	0
+GBM-CN	Brain Cancer - CN	Brain	China	78	80	78	0	0	0	0	0	0	0	0	0	0
+LMS-FR	Soft tissue cancer - Leiomyosarcoma	Mesenchymal	France	67	67	67	0	0	0	0	0	0	0	0	0	0
+LUSC-KR	Lung Cancer - KR	Lung	South Korea	66	66	66	0	0	66	0	0	0	0	0	0	0
+PAEN-AU	Pancreatic Cancer Endocrine neoplasms - AU	Pancreas	Australia	66	67	52	54	51	0	46	0	34	32	0	0	0
+LAML-CN	Leukemia - CN	Blood	China	63	100	63	0	0	0	0	0	0	0	0	0	0
+BRCA-KR	Breast Cancer - KR	Breast	South Korea	50	50	50	0	0	50	0	0	0	50	0	0	0
+THCA-CN	Thyroid Cancer - CN	Head and neck	China	50	50	50	0	0	0	0	0	0	0	0	0	0
+KICH-US	Kidney Chromophobe - TCGA, US	Kidney	United States	45	113	45	0	0	0	0	0	0	0	0	0	0
+PAEN-IT	Pancreatic Endocrine Neoplasms - IT	Pancreas	Italy	37	37	37	35	37	0	0	0	0	0	0	0	0
+SARC-US	Sarcoma - TCGA, US	Mesenchymal	United States	34	261	34	0	0	0	0	0	0	0	0	0	0
+LIAD-FR	Benign Liver Tumour - FR	Liver	France	32	32	32	0	0	0	0	0	0	0	0	0	0
+PRAD-FR	Prostate Cancer - Adenocarcinoma	Prostate	France	25	25	25	25	25	25	0	0	0	0	0	0	0
+NKTL-SG	Blood Cancer - T-cell and NK-cell lymphoma - SG	Blood	Singapore	23	23	23	0	0	0	0	0	0	0	0	0	0
+CCSK-US	Clear Cell Sarcomas of the Kidney - TARGET, US	Kidney	United States	13	13	0	10	0	0	0	0	13	0	0	0	0
+BTCA-SG	Biliary Tract Cancer - SG	Gall Bladder	Singapore	12	12	12	0	0	0	0	0	0	0	0	0	0
+LUSC-CN	Lung Cancer - CN	Lung	China	10	10	10	0	0	0	0	0	0	0	0	0	0
+RECA-CN	Renal Cancer - CN	Kidney	China	10	10	10	0	0	0	0	0	0	0	0	0	0
+UTCA-FR	Uterine Cancer - Carcinosarcoma	Uterus	France	7	7	7	7	7	7	0	0	0	0	0	0	0
+DLBC-US	Lymphoid Neoplasm Diffuse Large B-cell Lymphoma - TCGA, US	Blood	United States	7	48	7	0	0	0	0	0	0	0	0	0	0
+LIHM-FR	Liver Cancer - Hepatocellular macronodules	Liver	France	4	4	4	1	0	0	0	0	0	0	0	0	0
