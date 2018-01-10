@@ -12,3 +12,4 @@ https://cdn.mysql.com/Downloads/Connector-Python/mysql-connector-python-2.0.4.zi
 MySQL-python==1.2.5
 memsql==2.15.0
 restkit==4.2.2
+SQLAlchemy==1.2.0
