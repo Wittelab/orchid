@@ -24,7 +24,7 @@ process pythonPackages {
     '''
     echo "Installing python modules"
     pip install --upgrade pip
-    pip install -r requirements.txt --user
+    pip install -r \$ROOT/requirements.txt --user
     echo "Python modules installed"
     '''
 }
