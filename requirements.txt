@@ -8,8 +8,7 @@ scikit-learn==0.19.0
 scipy==0.19.1
 dill==0.2.6
 category-encoders==1.2.3
-python-snappy==0.5.1
-mysql-connector-python==2.2.2
+https://cdn.mysql.com/Downloads/Connector-Python/mysql-connector-python-2.0.4.zip#md5=3df394d89300db95163f17c843ef49df
 MySQL-python==1.2.5
 memsql==2.15.0
 restkit==4.2.2

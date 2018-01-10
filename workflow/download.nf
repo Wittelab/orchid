@@ -15,28 +15,16 @@
 // Anaconda2 v4.4.0 2017 © Continuum Analytics, Inc. All Rights Reserved.
 // https://www.continuum.io/downloads
 // Anaconda is BSD licensed which gives you permission to use Anaconda commercially and for redistribution.
+// NOTE: Switched to using just pip for python package installation 
 process pythonPackages {
     echo true
     tag { "This can take a while..." }
 
 
     '''
-    set -x
-    if ! [ -x "$(command -v conda)" ]; then
-        echo "Installing Anaconda"
-        wget https://repo.continuum.io/archive/Anaconda2-4.4.0-Linux-x86_64.sh
-        bash Anaconda2-4.4.0-Linux-x86_64.sh -b -p $HOME/anaconda2
-        echo \'PATH=$PATH:$HOME/anaconda2/bin\' >> ~/.bash_profile
-        source ~/.bash_profile
-    fi
     echo "Installing python modules"
-    conda clean --index-cache
-    conda config --add channels conda-forge
-    conda install -y IPython numpy  pandas  seaborn  matplotlib scikit-learn scipy
-    conda install -y dill category_encoders python-snappy mysql-connector-python
-    pip install mysql-python
-    pip install memsql
-    pip install restkit
+    pip install --upgrade pip
+    pip install -r requirements.txt --user
     echo "Python modules installed"
     '''
 }
