@@ -162,7 +162,7 @@ class MutationMatrix(pd.DataFrame):
         feature_list (optional): A list of column names in the MutationMatrix to designate as model features.
         drop_others (optional): Whether to drop other features
         """
-        if feature_list!=None:
+        if type(feature_list)!=type(None):
             self.features = pd.Index(list(feature_list))
         else:
             self.features = pd.Index(set(self.columns) - set(self.annotation_columns) - set([self.label_column]))
@@ -609,6 +609,7 @@ class MutationMatrix(pd.DataFrame):
 
         self._data = collapsed_mutations._data
         self.collapsed = True
+        self.annotation_columns = pd.Index([])
         if not quiet: print "Done"
         return
 
@@ -1278,16 +1279,16 @@ class MutationMatrix(pd.DataFrame):
             print "ERROR: Actual and predicted probability sample indices do not match"
             return
         
-
         classes  = y_probs.columns
         classes_ = classes
-        if len(classes==2):
+        if len(classes)==2:
             if 'True' in classes or True in classes:
                 classes_ = ['True']
             else:
                 classes_ = classes[1]
+
         y_bin = pd.DataFrame(label_binarize(y_act, classes=classes), columns=classes_, index=y_act.index)
-        if len(classes==2):
+        if len(classes)==2:
             y_bin  = pd.concat([abs(y_bin-1), y_bin], axis=1)
             y_bin.columns = ['False', 'True']
 
