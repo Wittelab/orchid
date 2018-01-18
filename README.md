@@ -1,4 +1,4 @@
-**NOTE: The hosted multi25 database is currently being migrated as part of IT infrastructure improvements at UCSF. There may be periodic downtime during the next week.**
+_Installation and usage instructions can be found in the [wiki](https://github.com/Wittelab/orchid/wiki)._
 
 <img src="http://wittelab.ucsf.edu/images/orchid.png" alt="Orchid" height=150px; align="right">
 
