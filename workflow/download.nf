@@ -16,6 +16,8 @@
 // https://www.continuum.io/downloads
 // Anaconda is BSD licensed which gives you permission to use Anaconda commercially and for redistribution.
 // NOTE: Switched to using just pip for python package installation 
+// NOTE: Done as part of the orchid-ml setup
+/*
 process pythonPackages {
     echo true
     tag { "This can take a while..." }
@@ -28,6 +30,7 @@ process pythonPackages {
     echo "Python modules installed"
     '''
 }
+*/
 
 // SnpEff v3.6 © Pablo Cingolani
 // SnpEff is open source, released as "LGPLv3". 
