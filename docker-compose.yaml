@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+   db:
+     image: mysql:5.7
+     volumes:
+       - db_data:/var/lib/mysql
+     restart: always
+     environment:
+       MYSQL_ROOT_PASSWORD: 
+       MYSQL_USER: orchid
+       MYSQL_PASSWORD: orchid_flower
+
+   orchid:
+     privileged: true
+     depends_on:
+       - db
+     image: ludidv01d/orchid:v1.0
+     ports:
+       - "8400:8400"
+     restart: always
+     environment:
+       ORCHID_DB_USED: 'true'
+       ORCHID_DB_HOST: db:3306
+       ORCHID_DB_USER: orchid
+       ORCHID_DB_PASS: orchid_flower
+volumes:
+    db_data:
