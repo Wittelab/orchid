@@ -11,7 +11,7 @@
  */
 
 
-cmd           = "mysql --user='$MYSQL_USER' --password='$MYSQL_PWD' --host=$MYSQL_IP -port=$MYSQL_PORT --database='$MYSQL_DB' -NB -e 'SHOW TABLE STATUS LIKE \"${params.mutation_table_name}\"' | cut -f5"
+cmd           = "mysql --user='$MYSQL_USER' --password='$MYSQL_PWD' --host=$MYSQL_IP --port=$MYSQL_PORT --database='$MYSQL_DB' -NB -e 'SHOW TABLE STATUS LIKE \"${params.mutation_table_name}\"' | cut -f5"
 num_mutations = [ '/bin/sh', '-c', cmd ].execute().text.trim()
 chunk_num     = Math.ceil((num_mutations.toInteger()/params.chunk_size)).toInteger()
 
@@ -40,7 +40,7 @@ process updateMetadata{
 
     shell:
     '''
-    mysql --user='$MYSQL_USER' --password='$MYSQL_PWD' --host=$MYSQL_IP -port=$MYSQL_PORT --database='$MYSQL_DB' -NB -e "
+    mysql --user='$MYSQL_USER' --password='$MYSQL_PWD' --host=$MYSQL_IP --port=$MYSQL_PORT --database='$MYSQL_DB' -NB -e "
         INSERT INTO metadata (metakey, metavalue)
         VALUES (\'params\',\'!{params.meta_params}\');
         INSERT INTO metadata (metakey, metavalue)
@@ -63,7 +63,7 @@ process makeTabixes {
 
     shell:
     '''
-    mysql --user='$MYSQL_USER' --password='$MYSQL_PWD' --host=$MYSQL_IP -port=$MYSQL_PORT --database='$MYSQL_DB' -NB -e "SELECT chromosome, start, end, reference_genome_allele, mutated_to_allele, !{params.mutation_table_name}_id, '' FROM !{params.mutation_table_name}" > variants.tabix
+    mysql --user='$MYSQL_USER' --password='$MYSQL_PWD' --host=$MYSQL_IP --port=$MYSQL_PORT --database='$MYSQL_DB' -NB -e "SELECT chromosome, start, end, reference_genome_allele, mutated_to_allele, !{params.mutation_table_name}_id, '' FROM !{params.mutation_table_name}" > variants.tabix
     sort -k1,1 -k2,2 -n -o sorted_variants.tabix variants.tabix
     '''
 }
@@ -78,7 +78,7 @@ process makeBeds {
 
     shell:
     '''
-    mysql --user='$MYSQL_USER' --password='$MYSQL_PWD' --host=$MYSQL_IP -port=$MYSQL_PORT --database='$MYSQL_DB' -NB -e "SELECT CONCAT('chr',chromosome), start-1, end, !{params.mutation_table_name}_id, '' FROM !{params.mutation_table_name}" > variants.bed
+    mysql --user='$MYSQL_USER' --password='$MYSQL_PWD' --host=$MYSQL_IP --port=$MYSQL_PORT --database='$MYSQL_DB' -NB -e "SELECT CONCAT('chr',chromosome), start-1, end, !{params.mutation_table_name}_id, '' FROM !{params.mutation_table_name}" > variants.bed
     sort-bed variants.bed > sorted_variants.bed
     '''
 }
@@ -213,7 +213,7 @@ if (params.annotation['database']){
         '''
         # Create a feature table from another table and column already in the database
         #### NOTE: A bug is preventing the enum values from populating a derived table directly, so created a temporary view
-        mysql --user='$MYSQL_USER' --password='$MYSQL_PWD' --host=$MYSQL_IP -port=$MYSQL_PORT --database='$MYSQL_DB' -NB -e "
+        mysql --user='$MYSQL_USER' --password='$MYSQL_PWD' --host=$MYSQL_IP --port=$MYSQL_PORT --database='$MYSQL_DB' -NB -e "
             CREATE VIEW !{feature['table']}_temp AS
             SELECT m.!{params.mutation_table_name}_id, c.!{feature['source_column']} AS !{feature['column']}
             FROM !{params.mutation_table_name} AS m
@@ -257,7 +257,7 @@ if (params.annotation['cnv']){
             FROM !{params.mutation_table_name} 
             WHERE !{params.mutation_table_name}_id IN(${IDS})
         ";
-        echo $QUERY | mysql --user='$MYSQL_USER' --password='$MYSQL_PWD' --host=$MYSQL_IP -port=$MYSQL_PORT --database='$MYSQL_DB' -NB | sort -n -k1,1 - > query_results.tsv
+        echo $QUERY | mysql --user='$MYSQL_USER' --password='$MYSQL_PWD' --host=$MYSQL_IP --port=$MYSQL_PORT --database='$MYSQL_DB' -NB | sort -n -k1,1 - > query_results.tsv
         cut -f2 query_results.tsv > donors.tsv
         # Create a donor-chromosome to lookup in the correspondingly formatted CNV file
         paste -d_ donors.tsv variants.tsv | sort-bed - > lookup.bed
@@ -321,7 +321,7 @@ if (params.annotation['kegg-cancer']){
         
         shell:
         '''
-        mysql --user='$MYSQL_USER' --password='$MYSQL_PWD' --host=$MYSQL_IP -port=$MYSQL_PORT --database='$MYSQL_DB' -NB -e "
+        mysql --user='$MYSQL_USER' --password='$MYSQL_PWD' --host=$MYSQL_IP --port=$MYSQL_PORT --database='$MYSQL_DB' -NB -e "
             SELECT !{params.consequence_table_name}_id, t.cancer 
             FROM !{params.consequence_table_name}
             JOIN (
@@ -348,7 +348,7 @@ if (params.annotation['frequency']){
 
         shell:
         '''
-        mysql --user='$MYSQL_USER' --password='$MYSQL_PWD' --host=$MYSQL_IP -port=$MYSQL_PORT --database='$MYSQL_DB' -NB -e "
+        mysql --user='$MYSQL_USER' --password='$MYSQL_PWD' --host=$MYSQL_IP --port=$MYSQL_PORT --database='$MYSQL_DB' -NB -e "
             SELECT s.!{params.mutation_table_name}_id, t.frequency
             FROM !{params.mutation_table_name} as s
             JOIN
