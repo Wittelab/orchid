@@ -92,7 +92,6 @@ process getHg19 {
     echo true
 
     '''
-    echo "Downloading hg19";
     mkdir -p $HG19_DIR
     cd $HG19_DIR
     [ -f reference_genome.fa ] && echo "hg19 reference sequences already installed" && exit 0
@@ -100,7 +99,7 @@ process getHg19 {
     wget -t 10 -Nc -r -nd --no-parent hgdownload.cse.ucsc.edu:goldenPath/hg19/chromosomes
     # Prepare reference genome file:
     wget -t 10 -nc ftp://ftp.ensembl.org/pub/release-68/fasta/homo_sapiens/dna/Homo_sapiens.GRCh37.68.dna.toplevel.fa.gz
-    gunzip Homo_sapiens.GRCh37.68.dna.toplevel.fa.gz || true
+    gunzip Homo_sapiens.GRCh37.68.dna.toplevel.fa.gz
     # Creating reference genome
     ln -sf Homo_sapiens.GRCh37.68.dna.toplevel.fa reference_genome.fa
     echo "Indexing reference genome"

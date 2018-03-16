@@ -23,11 +23,12 @@ process resetDB {
     # Create the orchid user on a MemSQL database
     mysql --user='root' --password='' --host=$MYSQL_IP --port=$MYSQL_PORT -e "GRANT ALL ON $MYSQL_DB.* TO '$MYSQL_USER'@'%' IDENTIFIED BY '$MYSQL_PWD';" || echo "No DB root access, attempting to continue..."
     # Other database tweaks, may have to be done by hand if the root password is set
+    mysql --user=$MYSQL_USER --password=$MYSQL_PWD --host=$MYSQL_IP --port=$MYSQL_PORT -e "SET GLOBAL sql_mode='NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION';" || echo "No DB root access, can not unset STRICT..."
     mysql --user=$MYSQL_USER --password=$MYSQL_PWD --host=$MYSQL_IP --port=$MYSQL_PORT -e "SET GLOBAL connect_timeout = 600;" || echo "No DB root access, can not set connect_timeout..."
     mysql --user=$MYSQL_USER --password=$MYSQL_PWD --host=$MYSQL_IP --port=$MYSQL_PORT -e "SET GLOBAL lock_wait_timeout = 600;" || echo "No DB root access, can not set lock_wait_timeout..."
     mysql --user=$MYSQL_USER --password=$MYSQL_PWD --host=$MYSQL_IP --port=$MYSQL_PORT -e "SET GLOBAL multistatement_transactions = off;" || echo "Skipping memsql multistatement_transactions..."
     mysql --user=$MYSQL_USER --password=$MYSQL_PWD --host=$MYSQL_IP --port=$MYSQL_PORT -e "SET GLOBAL max_allowed_packet = 500000000;" || echo "No DB root access, can not set max_allowed_packet..."
-    mysql --user=$MYSQL_USER --password=$MYSQL_PWD --host=$MYSQL_IP --port=$MYSQL_PORT -e "trigger full gc flush;" || echo "Skipping memsql flush..." || echo "Skipping db flush..."
+    mysql --user=$MYSQL_USER --password=$MYSQL_PWD --host=$MYSQL_IP --port=$MYSQL_PORT -e "trigger full gc flush;" || echo "Skipping memsql flush..."
     # Create the database
     mysql --user=$MYSQL_USER --password=$MYSQL_PWD --host=$MYSQL_IP --port=$MYSQL_PORT -e "DROP DATABASE IF EXISTS $MYSQL_DB; CREATE DATABASE $MYSQL_DB;"
     '''
