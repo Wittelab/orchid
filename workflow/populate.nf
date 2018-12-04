@@ -157,88 +157,23 @@ process importMutations {
     input: 
     set val(type), file('annotated_split') from annotated_splits
     
-    output:
-    val "" into import_flags // Flag for when import has finished
 
     shell:
     '''
     python $CODE_DIR/orchid_db.py populate -i annotated_split -c !{params.consequence_table_name} -m !{params.mutation_table_name} !{type=='real'? '':'--simulated'} -A '!{acceptable_consequences}'
     '''
 }
-import_flags.last().set{ mutations_populated } // Flag for when import has finished
 
 
 // =============================
 // Add gene pathway information from KEGG (preprocessed or generated on-the-fly)
 // ---------
-process populateKegg {
-    
-    output:
-    val "" into kegg_populated
-
+process populatePanther {
     echo true
 
-    when:
-    params.use_kegg
-
-    shell:
     '''
-    # Try to import kegg tables from a pregenerated mysql dump before populating these tables
-    # This will save many hours requerying kegg directly
-    if [ -f $DATA_DIR/kegg/memsql_kegg_tables.sql ]; then
-        mysql --user=$MYSQL_USER --password=$MYSQL_PWD --host=$MYSQL_IP --port=$MYSQL_PORT --database=$MYSQL_DB < $DATA_DIR/kegg/memsql_kegg_tables.sql && exit 0;
-    else
-        echo "Kegg tables not found, querying Kegg (this will take a while)..."
-        python $CODE_DIR/kegg_populator.py
-        mysqldump --user=$MYSQL_USER --password=$MYSQL_PWD --host=$MYSQL_IP --port=$MYSQL_PORT --database=$MYSQL_DB kegg_gene kegg_gene_alias kegg_gene_pathway kegg_pathway > $DATA_DIR/kegg/memsql_kegg_tables.sql
-    fi
-    '''
-}
-
-
-// =============================
-// Add is_cancer_gene from kegg
-// ---------
-// Make an 'is_cancer_gene' column in the consequence table based on kegg info 
-// May take some time with memSQL, but runs independently of other processes 
-process finishKEGG {
-    
-    input: 
-    val ok1 from kegg_populated
-    val ok2 from mutations_populated
-    
-    when:
-    params.use_kegg
-    
-    shell:
-    '''
-    mysql --user=$MYSQL_USER --password=$MYSQL_PWD --host=$MYSQL_IP --port=$MYSQL_PORT --database=$MYSQL_DB -e "DROP TABLE IF EXISTS kegg_cancer_gene_pathway;" && \
-    mysql --user=$MYSQL_USER --password=$MYSQL_PWD --host=$MYSQL_IP --port=$MYSQL_PORT --database=$MYSQL_DB -e "
-        CREATE TABLE kegg_cancer_gene_pathway (
-          kegg_cancer_gene_pathway_id         INT unsigned NOT NULL AUTO_INCREMENT,
-          mutation_id                         CHAR(32) DEFAULT NULL, 
-          gene_id                             CHAR(64) NOT NULL,
-          kegg_pathway_id                     CHAR(16) DEFAULT NULL,
-          pathway_name                        CHAR(128) DEFAULT NULL,
-          PRIMARY KEY                         (kegg_cancer_gene_pathway_id),
-          KEY                                 (mutation_id),
-          KEY                                 (gene_id),
-          KEY                                 (kegg_pathway_id),
-          KEY                                 (pathway_name)
-        );" && \
-    mysql --user=$MYSQL_USER --password=$MYSQL_PWD --host=$MYSQL_IP --port=$MYSQL_PORT --database=$MYSQL_DB -e "
-        INSERT INTO kegg_cancer_gene_pathway (mutation_id, gene_id, kegg_pathway_id, pathway_name) 
-        SELECT g.mutation_id, g.gene_id, k.kegg_pathway_id, n.pathway_name
-        FROM 
-        (
-            SELECT DISTINCT mutation_id, gene_id
-            FROM !{params.consequence_table_name}
-        ) g
-        LEFT JOIN kegg_gene_pathway AS k ON g.gene_id = k.ensembl_id
-        LEFT JOIN kegg_pathway AS n ON k.kegg_pathway_id = n.kegg_pathway_id
-        WHERE g.gene_id IS NOT NULL
-        AND k.is_cancer=1
-    "
+    # Import panther biological processes to ensemblID mapping table
+    mysql -u$MYSQL_USER -p$MYSQL_PWD -h$MYSQL_IP -P$MYSQL_PORT $MYSQL_DB < $DATA_DIR/features/panther.sql && exit 0;
     '''
 }
 

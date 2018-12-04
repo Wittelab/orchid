@@ -304,34 +304,37 @@ if (params.annotation['context']) {
 }
 
 
-// =============================
-// Process the KEGG Cancer Data ('kegg-cancer')
-// ---------
-// Make an 'is_cancer_gene' column in the consequence table based on kegg info 
-// May take some time with memSQL, but runs independently of other processes 
-if (params.annotation['kegg-cancer']){
-    process annotateKEGG {
-        tag { "${feature['column']}" }
-        
-        input: 
-        each feature from params.annotation['kegg-cancer']
-        
-        when:
-        params.use_kegg
-        
-        shell:
-        '''
-        mysql --user=$MYSQL_USER --password=$MYSQL_PWD --host=$MYSQL_IP --port=$MYSQL_PORT --database=$MYSQL_DB -NB -e "
-            SELECT !{params.consequence_table_name}_id, t.cancer 
-            FROM !{params.consequence_table_name}
-            JOIN (
-                SELECT gene_id, '1' AS cancer 
-                FROM  kegg_cancer_gene_pathway 
-                GROUP BY gene_id) AS t 
-            USING(gene_id);" > cancer_gene.results && \
-        python $CODE_DIR/orchid_db.py annotate -i cancer_gene.results -d !{feature['table']} -c !{feature['column']} -j '!{feature['params']}'
-        '''
-    }
+// ======= The Panther Feature ===========
+process annotatePanther {
+    tag { "panther biological processes" }
+    
+    input: 
+    each feature from params.annotation['panther']
+    
+    shell:
+    '''
+    mysql -u$MYSQL_USER -h$MYSQL_IP -P$MYSQL_PORT -D$MYSQL_DB -e "DROP TABLE IF EXISTS process_gene;" && \
+    mysql -u$MYSQL_USER -h$MYSQL_IP -P$MYSQL_PORT -D$MYSQL_DB -e "
+        CREATE TABLE process_gene (
+          process_gene_id         INT unsigned NOT NULL AUTO_INCREMENT,
+          mutation_id             VARCHAR(32) DEFAULT NULL, 
+          ensembl_id              VARCHAR(16) NOT NULL,
+          hgnc_id                 VARCHAR(16) DEFAULT NULL,
+          process                 VARCHAR(16) DEFAULT NULL,
+          PRIMARY KEY             (process_gene_id),
+          KEY                     (mutation_id),
+          KEY                     (ensembl_id),
+          KEY                     (hgnc_id)
+        );" && \
+    mysql -u$MYSQL_USER -h$MYSQL_IP -P$MYSQL_PORT -D$MYSQL_DB -e "
+        INSERT INTO process_gene (mutation_id, ensembl_id, hgnc_id, process) 
+        SELECT c.mutation_id, c.gene_id, p.hgnc_id, p.process
+        FROM process AS p
+        LEFT JOIN !{params.consequence_table_name} AS c
+        ON c.gene_id=p.ensembl_id
+        WHERE c.gene_id IS NOT NULL;
+        " && exit 0;
+    '''
 }
 
 
