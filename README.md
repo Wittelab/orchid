@@ -20,20 +20,20 @@ or, for a quick and dirty explanation:
 
 _What is orchid?_ 
   
-The purpose of orchid is to facilitate machine learning of tumor genetic data. For example, you might be interested in sub-typing aggressive vs. non aggressive prostate cancer based on tumor mutational profiles derived from tumor sequence data.
+The purpose of orchid is to facilitate machine learning on tumor genetic data to gain biological or clinical insight. For example, you might be interested in sub-typing aggressive vs. non aggressive prostate cancer based on tumor mutational profiles derived from tumor sequence data, or maybe in trying to figure out which tumor tissue a cell-free DNA molecule is derived.
   
 <br />  
 
 _What is a 'tumor mutational profile'?_
   
-A mutational profile is the annotated set of mutations within a tumor. A typical tumor might contain thousands of mutations, but most are likely irrelevant to disease and arise simply due to an important hallmark of cancer-- an unstable genome. However, some of these mutations (be it one, ten, or even a hundred) may play important roles in carcinogenesis and/or be useful for identifying tumor characteristics, like aggressiveness. There is a growing body of research that concerns itself with finding and focusing only on biologically important mutations, but orchid takes the approach of analyzing all mutations in aggregate with machine learning algorithms to try to tease apart subtle patterns. Afterall, it has been demonstrated that even irrelevant mutations may encode important information about the underlying biology of the tumor (e.g., [trinucleotide signatures](https://goo.gl/6tHS7Q)).
+A _tumor mutational profile_ is the annotated set of mutations within a tumor. A typical tumor might contain thousands of mutations, but most are assumed to be irrelevant to disease because they arise due to an important hallmark of cancer-- an unstable genome. These are called _passenger mutations_. However, some mutations (one to hundreds) may play important roles in carcinogenesis and/or be useful in identifying tumor characteristics, like aggressiveness. These are called _driver mutations_. Many cancer researchers focus only on driver mutations because of thier outsized role in cancer, but orchid takes the approach of analyzing all mutations in aggregate with machine learning algorithms to try to tease apart more subtle patterns. This approach makes sense since even mutations that have been deemed irrelevant have been associated with particular tumor types and may encode important information about (or even regulate processes involved in) the underlying biology of a tumor (e.g., [trinucleotide signatures](https://goo.gl/6tHS7Q)).
 
 <br />  
 
 
 _What is meant by an 'annotated set of mutations'?_
   
-An annotation is simply a numeric or ordinal value that can be associated with a particular mutation. For example, 'mutation A' may change the amino acid sequence of a protein, so we can annotate it as a 'non-synonymous single nucleotide polymorphism' or 'nsSNP'. On the other hand, 'mutation B' may not change the amino acid sequence, so we annotate it as a 'synonymous SNP'. In machine learning parlance, an annotation is called a _feature_. If we gather many mutations across a tumor (or tumors) and annotate each mutation across many features, we end up with a set of annotated mutations, or _tumor mutational profile_.
+An annotation is simply a numeric or ordinal value that can be associated with a particular mutation. For example, 'mutation A' may change the amino acid sequence of a protein, so we can annotate it as a 'non-synonymous single nucleotide polymorphism' or 'nsSNP'. On the other hand, 'mutation B' may not change the amino acid sequence, so we annotate it as a 'synonymous SNP'. Biologically speaking, a non-synonymous SNP is more likely to change the effect of a protein than a synonymous one. In machine learning parlance, an annotation is called a _feature_. If we gather many mutations across a tumor (or tumors) and annotate each mutation with many features, we end up with a set of annotated mutations, or _tumor mutational profile_.
 
 At this time, many regulatory and coding features of the human genome have been extensively cataloged, resulting in a wealth of data to mine. If we gather enough biological data, we can increase our understanding of each individual mutation and its possible role in cancer, or at least begin to see if patterns emerge from the data. A list of features used in our publication and available in our public database can be found here: [http://wittelab.ucsf.edu/orchid](http://wittelab.ucsf.edu/orchid).
 
