@@ -1,6 +1,6 @@
 _Installation and usage instructions can be found in the [wiki](https://github.com/Wittelab/orchid/wiki)._
 
-<img src="http://wittelab.ucsf.edu/images/orchid.png" alt="Orchid" height=150px; align="right">
+<img src="images/orchid.png" alt="Orchid" height=150px; align="right">
 
 # orchid
 A management, annotation, and machine learning system for analyzing cancer mutations.  
@@ -38,7 +38,7 @@ An annotation is simply a numeric or ordinal value that can be associated with a
 At this time, many regulatory and coding features of the human genome have been extensively cataloged, resulting in a wealth of data to mine. If we gather enough biological data, we can increase our understanding of each individual mutation and its possible role in cancer, or at least begin to see if patterns emerge from the data. A list of features used in our publication and available in our public database can be found here: [http://wittelab.ucsf.edu/orchid](http://wittelab.ucsf.edu/orchid).
 
 Here's an example. If we arrange a set of mutations from a tumor in rows and corresponding feature values in columns, a mutational profile can be created and visualized:  
-![Mutational Profile](http://wittelab.ucsf.edu/images/mutational_profiles.png)  
+![Mutational Profile](images/mutational_profiles.png)  
 
 Here large feature values (or more 'severe' categories) are shown as more orange, while smaller (less 'severe') feature values are whiter. There is also a final column of sample labels, which is ultimately what we're interested in learning. In other words, this column's values are used to train supervised machine learning algorithms for the purpose of future sample classification. 
 
