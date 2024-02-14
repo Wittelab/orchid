@@ -33,10 +33,10 @@ Annotations are numeric or categorical values that are associated with a particu
 
 To-date, many regulatory and coding features of the human genome have been cataloged. If we gather enough biological data to annotate mutations found in a tumor genome, we may be able to understand the mutatinal process in cancer. For development and publication of this sofware, we used quite a few public biological databases ([see here](https://web.archive.org/web/20190109010853/http://wittelab.ucsf.edu/orchid); **Note:** This page is now archived). In practice, any can be used.
 
-Here's an example. If we arrange a set of mutations from a tumor in rows and corresponding feature values in columns, a mutational profile can be created and visualized:  
+Here's an example of a mutational profile: 
 ![Mutational Profile](images/mutational_profiles.png)
     
-The values here are normalized and colored white to orange (low to high). There is also a final column of sample labels, which is ultimately what we're interested in predicting. **NOTE:** You may notice a lot of correlated feature vectors. Before training a ML model, its important to remove any feature correlation. 
+Mutations are arranged in rows and corresponding feature values in columns. The values here are normalized and colored white to orange (low to high). There is also a final column of sample labels, which is ultimately used for training and validation. **NOTE:** You may notice a lot of correlated feature vectors. Before training a ML model, its important to remove any feature correlation. 
 
 
 # Getting Started
