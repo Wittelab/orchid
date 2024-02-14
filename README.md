@@ -6,27 +6,23 @@ _Installation and usage instructions can be found in the [wiki](https://github.c
 A management, annotation, and machine learning system for analyzing cancer mutations.  
 <br/>  
 
->NOTE: This code is still an early release and is being actively developed. Please report any issues using the [Issues](https://github.com/Wittelab/orchid/issues) tab and they will be fixed as soon as possible.
-
 # Introduction
 
-Please refer to the following publication for a detailed description of this software:  
+Please refer to the following publication for a detailed description of the software:  
 Bioinformatics, btx709, [https://doi.org/10.1093/bioinformatics/btx709](https://doi.org/10.1093/bioinformatics/btx709)
-
-or, for a quick and dirty explanation:  
   
 <br />  
 
 
 _What is orchid?_ 
-  
-The purpose of orchid is to facilitate machine learning on tumor genetic data to gain biological or clinical insight. For example, you might be interested in sub-typing aggressive vs. non aggressive prostate cancer based on tumor mutational profiles derived from tumor sequence data, or maybe in trying to figure out which tumor tissue a cell-free DNA molecule is derived.
+
+The objective of orchid is to enable meaningful biological and clinical insights from tumor genetic data though the use of machine learning. For example, orchid could be used to classify aggressive vs. non-aggressive prostate cancer or determine the tissue-of-origin from the cell-free DNA molecules of a patient with cancer.
   
 <br />  
 
 _What is a 'tumor mutational profile'?_
-  
-A _tumor mutational profile_ is the annotated set of mutations within a tumor. A typical tumor might contain thousands of mutations, but most are assumed to be irrelevant to disease because they arise due to an important hallmark of cancer-- an unstable genome. These are called _passenger mutations_. However, some mutations (one to hundreds) may play important roles in carcinogenesis and/or be useful in identifying tumor characteristics, like aggressiveness. These are called _driver mutations_. Many cancer researchers focus only on driver mutations because of thier outsized role in cancer, but orchid takes the approach of analyzing all mutations in aggregate with machine learning algorithms to try to tease apart more subtle patterns. This approach makes sense since even mutations that have been deemed irrelevant have been associated with particular tumor types and may encode important information about (or even regulate processes involved in) the underlying biology of a tumor (e.g., [trinucleotide signatures](https://goo.gl/6tHS7Q)).
+
+In the orchid framework, we define a _tumor mutational profile_ as the annotated set of mutations within a tumor. A typical tumor might contain thousands of mutations. Most are presumed to be irrelevant to disease because they arise due to an important hallmark of cancer-- an unstable genome. However, a crucial subset of these mutations is considered fundamental to carcinogenesis, or at least significantly involved, making them potential biomarkers for clinical classification (e.g. tumor aggressiveness). Orchid adopts a comprehensive approach to variant analysis, employing machine learning algorithms to collectively analyze all mutations. This methodology exposes nuanced mutational patterns and helps tease apart biological complexity.
 
 <br />  
 
@@ -38,9 +34,10 @@ An annotation is simply a numeric or ordinal value that can be associated with a
 At this time, many regulatory and coding features of the human genome have been extensively cataloged, resulting in a wealth of data to mine. If we gather enough biological data, we can increase our understanding of each individual mutation and its possible role in cancer, or at least begin to see if patterns emerge from the data. A list of features used in our publication and available in our public database can be found here (**Note:** This page is now archived: [web.archive.org](web.archive.org)): [http://wittelab.ucsf.edu/orchid](https://web.archive.org/web/20190109010853/http://wittelab.ucsf.edu/orchid).
 
 Here's an example. If we arrange a set of mutations from a tumor in rows and corresponding feature values in columns, a mutational profile can be created and visualized:  
+**NOTE:** You'll immediately see a lot of correlated feature vectors. Before training, its crucial to remove them.  
 ![Mutational Profile](images/mutational_profiles.png)  
 
-Here large feature values (or more 'severe' categories) are shown as more orange, while smaller (less 'severe') feature values are whiter. There is also a final column of sample labels, which is ultimately what we're interested in learning. In other words, this column's values are used to train supervised machine learning algorithms for the purpose of future sample classification. 
+The scale here is white to orange, depending on feature value. There is also a final column of sample labels, which is ultimately what we're interested in learning. 
 
 
 # Getting Started
