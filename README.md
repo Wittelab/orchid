@@ -27,17 +27,16 @@ In the orchid framework, we define a _tumor mutational profile_ as the annotated
 <br />  
 
 
-_What is meant by an 'annotated set of mutations'?_
+_What is an 'annotated set of mutations'?_
   
-An annotation is simply a numeric or ordinal value that can be associated with a particular mutation. For example, 'mutation A' may change the amino acid sequence of a protein, so we can annotate it as a 'non-synonymous single nucleotide polymorphism' or 'nsSNP'. On the other hand, 'mutation B' may not change the amino acid sequence, so we annotate it as a 'synonymous SNP'. Biologically speaking, a non-synonymous SNP is more likely to change the effect of a protein than a synonymous one. In machine learning parlance, an annotation is called a _feature_. If we gather many mutations across a tumor (or tumors) and annotate each mutation with many features, we end up with a set of annotated mutations, or _tumor mutational profile_.
+Annotations are numeric or categorical values that are associated with a particular mutation. For example, mutation 'A' may change the amino acid sequence of a protein, so we can annotate it with one category of amino acid consequences: a 'non-synonymous single nucleotide polymorphism' or 'nsSNP'. On the other hand, mutation 'B' may change a codon, but not the corresponding amino acid, so we would annotate it with another amino acid consequence category: a 'synonymous SNP'. Biologically speaking, a nsSNPs are more likely to change the effect of a protein than a synonymous one. In the machine learning world, annotations like these are called _features_. If we gather many mutations across a tumor (or tumors) and annotate each mutation with many features, we end up with a set of annotated mutations, which we call a _tumor mutational profile_.
 
-At this time, many regulatory and coding features of the human genome have been extensively cataloged, resulting in a wealth of data to mine. If we gather enough biological data, we can increase our understanding of each individual mutation and its possible role in cancer, or at least begin to see if patterns emerge from the data. A list of features used in our publication and available in our public database can be found here (**Note:** This page is now archived: [web.archive.org](web.archive.org)): [http://wittelab.ucsf.edu/orchid](https://web.archive.org/web/20190109010853/http://wittelab.ucsf.edu/orchid).
+To-date, many regulatory and coding features of the human genome have been cataloged. If we gather enough biological data to annotate mutations found in a tumor genome, we may be able to understand the mutatinal process in cancer. For development and publication of this sofware, we used quite a few public biological databases ([see here](https://web.archive.org/web/20190109010853/http://wittelab.ucsf.edu/orchid); **Note:** This page is now archived). In practice, any can be used.
 
 Here's an example. If we arrange a set of mutations from a tumor in rows and corresponding feature values in columns, a mutational profile can be created and visualized:  
-**NOTE:** You'll immediately see a lot of correlated feature vectors. Before training, its crucial to remove them.  
-![Mutational Profile](images/mutational_profiles.png)  
-
-The scale here is white to orange, depending on feature value. There is also a final column of sample labels, which is ultimately what we're interested in learning. 
+![Mutational Profile](images/mutational_profiles.png)
+    
+The values here are normalized and colored white to orange (low to high). There is also a final column of sample labels, which is ultimately what we're interested in predicting. **NOTE:** You may notice a lot of correlated feature vectors. Before training a ML model, its important to remove any feature correlation. 
 
 
 # Getting Started
