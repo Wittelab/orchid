@@ -3,7 +3,7 @@ _Installation and usage instructions can be found in the [wiki](https://github.c
 <img src="images/orchid.png" alt="Orchid" height=150px; align="right">
 
 # orchid
-A management, annotation, and machine learning system for analyzing cancer mutations.  
+A framework for cancer variant annotation and analysis
 <br/>  
 
 # Introduction
