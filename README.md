@@ -36,7 +36,7 @@ To-date, many regulatory and coding features of the human genome have been catal
 Here's an example of a mutational profile: 
 ![Mutational Profile](images/mutational_profiles.png)
     
-Mutations are arranged in rows and corresponding feature values in columns. The values here are normalized and colored white to orange (low to high). There is also a final column of sample labels, which is ultimately used for training and validation. **NOTE:** You may notice a lot of correlated feature vectors. Before training a ML model, its important to remove any feature correlation. 
+Mutations are arranged in rows and corresponding feature values in columns. The values here are normalized and colored white to orange (low to high). There is also a final column of sample labels, which is ultimately used for training and validation. **NOTE:** You may notice a lot of correlated feature vectors. Before training a ML model, its important to reduce feature correlation as much as possible! 
 
 
 # Getting Started
