@@ -3,7 +3,7 @@ _Installation and usage instructions can be found in the [wiki](https://github.c
 <img src="images/orchid.png" alt="Orchid" height=150px; align="right">
 
 # orchid
-A framework for cancer variant annotation and analysis
+A framework for cancer variant annotation, classification, analysis
 <br/>  
 
 # Introduction
@@ -16,7 +16,7 @@ Bioinformatics, btx709, [https://doi.org/10.1093/bioinformatics/btx709](https://
 
 _What is orchid?_ 
 
-The objective of orchid is to enable meaningful biological and clinical insights from tumor genetic data though the use of machine learning. For example, orchid could be used to classify aggressive vs. non-aggressive prostate cancer or determine the tissue-of-origin from the cell-free DNA molecules of a patient with cancer.
+The objective of orchid is to facilitate meaningful biological and clinical interpretation of tumor genetic data though the use of machine learning. For example, orchid could be used to classify aggressive vs. non-aggressive prostate cancer or determine the tissue-of-origin from the cell-free DNA molecules of a patient with cancer.
   
 <br />  
 
