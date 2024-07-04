@@ -35,7 +35,8 @@ process pythonPackages {
 // SnpEff v3.6 © Pablo Cingolani
 // SnpEff is open source, released as "LGPLv3". 
 // http://snpeff.sourceforge.net/download.html
-// NOTE: version 3.3 was used to call ICGC mutations, but this version does not currently have the ensembl GRCh37 database, so version 3.6 is used here instead.
+// NOTE: version 3.3 was used to call ICGC mutations, but this version does not currently have the ensembl GRCh37 database, 
+//       so version 3.6 is used here instead.
 // NOTE: The data directory is changed to a custom location. 
 process getSNPEff {
     echo true
@@ -68,7 +69,9 @@ process getSNPEff {
 // The CADD mutation simulator © University of Washington and Hudson-Alpha Institute for Biotechnology
 // This software is released under a MIT license (license text available from the ZIP-archive)
 // http://cadd.gs.washington.edu/simulator
-// NOTE: This is referenced in the publication Kircher, Martin et al. 2014 "A General Framework for estimating the Relative Pathogenicity of Human Genetic Variants." Nature genetics 46(3): 310-15.
+// NOTE: This is referenced in the publication:
+//       Kircher, Martin et al. 2014 "A General Framework for estimating the Relative Pathogenicity of Human Genetic Variants."
+//       Nature genetics 46(3): 310-15.
 process getSimulator {
     echo true
 

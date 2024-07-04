@@ -33,7 +33,7 @@ db_info    = urlparse(db_uri)
 
 # Define the connection interface
 def get_connection(host=db_info.hostname, port=db_info.port, user=db_info.username, password=db_info.password, db=db_info.path.strip('/'), verbose=options.verbose):
-  for attempt in xrange(1,21):
+  for attempt in range(1,21):
     try:
       return database.connect(host=host, port=port, user=user, password=password, database=db)
     except:
@@ -42,7 +42,7 @@ def get_connection(host=db_info.hostname, port=db_info.port, user=db_info.userna
       continue
 
 def run_sql(sql, verbose=options.verbose):
-    for attempt in xrange(0,21):
+    for attempt in range(0,21):
         try:
             with get_connection() as db:
                 return db.execute(syntax)
@@ -52,7 +52,7 @@ def run_sql(sql, verbose=options.verbose):
           continue
 
 def try_api(url, api, verbose=options.verbose):
-    for attempt in xrange(0,21):
+    for attempt in range(0,21):
         try:
             with get_connection() as db:
                 return api.get(url).body_string()

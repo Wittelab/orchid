@@ -656,30 +656,30 @@ if __name__ == "__main__":
 
   #### The annotate command
   # Input file options
-  annotate = subparsers.add_parser('annotate',                                                                   help='Populate the database with feature information.')
-  annotate.add_argument('-i',   '--source-file',                 action='store',      dest='src_file',           help='The name of the source file used to annotate the destination table.')
-  annotate.add_argument('-t',   '--source-type',                 action='store',      dest='src_type',           help='The source file type: \'flatfile\' or \'fasta\'.', choices=['fasta', 'flatfile'])
-  annotate.add_argument('-sic', '--source-id-column',            action='store',      dest='src_id_col',         help='The column in the source file that corresponds to the mutation id. 0-indexed, defaults to 0.')
-  annotate.add_argument('-svc', '--source-value-column',         action='store',      dest='src_val_col',        help='The column in the source data file that corresponds to the value to insert. 0-indexed, defaults to 1.')
-  annotate.add_argument('-D',   '--delimiter',                   action='store',      dest='delimiter',          help='The field delimiter for the source file. Defaults to tab.')
+  annotate = subparsers.add_parser('annotate',                                                             help='Populate the database with feature information.')
+  annotate.add_argument('-i',   '--source-file',                 action='store',      dest='src_file',     help='The name of the source file used to annotate the destination table.')
+  annotate.add_argument('-t',   '--source-type',                 action='store',      dest='src_type',     help='The source file type: \'flatfile\' or \'fasta\'.', choices=['fasta', 'flatfile'])
+  annotate.add_argument('-sic', '--source-id-column',            action='store',      dest='src_id_col',   help='The column in the source file that corresponds to the mutation id. 0-indexed, defaults to 0.')
+  annotate.add_argument('-svc', '--source-value-column',         action='store',      dest='src_val_col',  help='The column in the source data file that corresponds to the value to insert. 0-indexed, defaults to 1.')
+  annotate.add_argument('-D',   '--delimiter',                   action='store',      dest='delimiter',    help='The field delimiter for the source file. Defaults to tab.')
   # Database table options
-  annotate.add_argument('-x',   '--connection',                  action='store',      dest='connection',         help='A database URI connection string (e.g. mysql://user:pass@host:port/DB) if $DATABASE is not defined.')
-  annotate.add_argument('-d',   '--destination-table',           action='store',      dest='dst_tbl',            help='The name of the destination table. Defaults to \'ssm\'.')
-  annotate.add_argument('-dic', '--destination-id-column',       action='store',      dest='dst_id_col',         help='The primary key column name of [destination-table]. Defaults to [destination-table]_id.')
-  annotate.add_argument('-dis', '--destination-id-sql',          action='store',      dest='dst_id_sql',         help='The SQL type of id (primary key). Defaults to \'BIGINT\'.')
-  annotate.add_argument('-c',   '--destination-value-column',    action='store',      dest='dst_val_col',        help='The column name in [destination-table] for the inserted values. Defaults to \'values\'.')
-  annotate.add_argument('-dvs', '--destination-value-sql',       action='store',      dest='dst_val_sql',        help='The SQL type of inserted values. Defaults to \'VARCHAR(255)\'.')
+  annotate.add_argument('-x',   '--connection',                  action='store',      dest='connection',   help='A database URI connection string (e.g. mysql://user:pass@host:port/DB) if $DATABASE is not defined.')
+  annotate.add_argument('-d',   '--destination-table',           action='store',      dest='dst_tbl',      help='The name of the destination table. Defaults to \'ssm\'.')
+  annotate.add_argument('-dic', '--destination-id-column',       action='store',      dest='dst_id_col',   help='The primary key column name of [destination-table]. Defaults to [destination-table]_id.')
+  annotate.add_argument('-dis', '--destination-id-sql',          action='store',      dest='dst_id_sql',   help='The SQL type of id (primary key). Defaults to \'BIGINT\'.')
+  annotate.add_argument('-c',   '--destination-value-column',    action='store',      dest='dst_val_col',  help='The column name in [destination-table] for the inserted values. Defaults to \'values\'.')
+  annotate.add_argument('-dvs', '--destination-value-sql',       action='store',      dest='dst_val_sql',  help='The SQL type of inserted values. Defaults to \'VARCHAR(255)\'.')
   # Processing options
-  annotate.add_argument('-A',   '--acceptable',                  action='store',      dest='acceptable',         help='A list of acceptable values for the value column in the destination table (space-delimit list items; default: accept all).', nargs='+')
-  annotate.add_argument('-I',   '--id-processor',                action='store',      dest='id_processor',       help='Python lambda function as a string that will be applied to the id column before inserting into the destination table. Defaults to None.')
-  annotate.add_argument('-S',   '--sequence-processor',          action='store',      dest='seq_processor',      help='Python lambda function as a string that will be applied to fasta sequence entries before inserting into the destination table. Defaults to None.')
-  annotate.add_argument('-V',   '--value-processor',             action='store',      dest='val_processor',      help='Python lambda function as a string that will be applied to value column entries before inserting into the destination table. Defaults to None.')
+  annotate.add_argument('-A',   '--acceptable',                  action='store',      dest='acceptable',   help='A list of acceptable values for the value column in the destination table (space-delimit list items; default: accept all).', nargs='+')
+  annotate.add_argument('-I',   '--id-processor',                action='store',      dest='id_processor', help='Python lambda function as a string that will be applied to the id column before inserting into the destination table. Defaults to None.')
+  annotate.add_argument('-S',   '--sequence-processor',          action='store',      dest='seq_processor',help='Python lambda function as a string that will be applied to fasta sequence entries before inserting into the destination table. Defaults to None.')
+  annotate.add_argument('-V',   '--value-processor',             action='store',      dest='val_processor',help='Python lambda function as a string that will be applied to value column entries before inserting into the destination table. Defaults to None.')
   # Debug options 
-  annotate.add_argument('-v',   '--verbose',                     action='store_true', dest='verbose',            help='Whether to be verbose and display status on the command line.')
-  annotate.add_argument('-vv',  '--show-sql',                    action='store_true', dest='show_sql',           help='Whether to show sql statements, excluding insert/update queries.')
-  annotate.add_argument('-vvv', '--show-all-sql',                action='store_true', dest='show_all_sql',       help='Whether to show sql statements, inclusing insert/update queries.')
+  annotate.add_argument('-v',   '--verbose',                     action='store_true', dest='verbose',      help='Whether to be verbose and display status on the command line.')
+  annotate.add_argument('-vv',  '--show-sql',                    action='store_true', dest='show_sql',     help='Whether to show sql statements, excluding insert/update queries.')
+  annotate.add_argument('-vvv', '--show-all-sql',                action='store_true', dest='show_all_sql', help='Whether to show sql statements, inclusing insert/update queries.')
   # JSON list of options 
-  annotate.add_argument('-j',   '--json',                        action='store',      dest='json',               help='A JSON string of command arguments as a map')
+  annotate.add_argument('-j',   '--json',                        action='store',      dest='json',         help='A JSON string of command arguments as a map')
 
   args = parser.parse_args()
 

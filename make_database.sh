@@ -2,10 +2,11 @@
 ## You can specify custom code locations in a machine specific manner when building a database. 
 ## Simply replace 'local' or 'cluster' with the machine's hostname and the the location of orchid's workflow directory.
 ## When running this script within the orchid directory (recommented), you don't need to do anything.
-case `hostname` in
-  (local) WF_DIR=`pwd`/workflow;;
+
+case $(hostname) in
+  (local)   WF_DIR=$(pwd)/workflow;;
   (cluster) WF_DIR=/cluster/pathto/orchid;;
-  (*) WF_DIR=`pwd`/workflow; echo "Using the default nextflow code directory for this host...";;
+  (*)       WF_DIR=$(pwd)/workflow; echo "Using the default nextflow code directory for this host...";;
 esac
 
 # If DB parameters are defined as environment variables (such as through docker) use them

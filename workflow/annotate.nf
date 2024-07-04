@@ -6,14 +6,14 @@
  * This script populates annotation columns from various datasets.
  *
  * Notes:
- *     DATA_DIR, CODE_DIR, DATABASE (mysql connection string), and other variables are defined in nextflow.config, which nextflow automatically loads.
+ *     DATA_DIR, CODE_DIR, DATABASE (mysql connection string), and other variables are defined in nextflow.config, which nextflow automatically loads
  *     Individual MySQL parameters are prefixed with MYSQL_ and include USER, PASS, IP, PORT, DB
  */
 
 
-cmd           = "mysql --user=$MYSQL_USER --password=$MYSQL_PWD --host=$MYSQL_IP --port=$MYSQL_PORT --database=$MYSQL_DB -NB -e 'SHOW TABLE STATUS LIKE \"${params.mutation_table_name}\"' | cut -f5"
+cmd = "mysql --user=$MYSQL_USER --password=$MYSQL_PWD --host=$MYSQL_IP --port=$MYSQL_PORT --database=$MYSQL_DB -NB -e 'SHOW TABLE STATUS LIKE \"${params.mutation_table_name}\"' | cut -f5"
 num_mutations = [ '/bin/sh', '-c', cmd ].execute().text.trim()
-chunk_num     = Math.ceil((num_mutations.toInteger()/params.chunk_size)).toInteger()
+chunk_num = Math.ceil((num_mutations.toInteger()/params.chunk_size)).toInteger()
 
 
 println "======================== Run Info =================================================="
