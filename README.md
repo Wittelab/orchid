@@ -14,7 +14,7 @@ Bioinformatics, btx709, [https://doi.org/10.1093/bioinformatics/btx709](https://
 <br />  
 
 
-_What is orchid?_ 
+_What is *Orchid*?_ 
 
 The objective of **Orchid** is to facilitate meaningful biological and clinical interpretation of tumor genetic data through the use of machine learning. For example, **Orchid** could be used to classify aggressive vs. non-aggressive prostate cancer or determine the tissue-of-origin from the cell-free DNA molecules of a patient with cancer.
   
@@ -49,4 +49,4 @@ Please refer to the [wiki](https://github.com/Wittelab/orchid/wiki) to begin!
 
 
 _NOTICE:_
-_This software requires the use of other code and/or data that must be obtained with respect to its license or copyright. Generally speaking, this implies orchid's use is restricted to non-commercial activities. Orchid itself is licensed under the MIT license requiring only preservation of copyright and license notices. Please see the LICENSE file for more details._
+_This software requires the use of other code and/or data that must be obtained with respect to its license or copyright. Generally speaking, this implies **Orchid**'s use is restricted to non-commercial activities. **Orchid** itself is licensed under the MIT license requiring only preservation of copyright and license notices. Please see the LICENSE file for more details._
